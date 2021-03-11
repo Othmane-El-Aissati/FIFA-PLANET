@@ -10,8 +10,8 @@ School project
 * Short explaintion about what you did 
     - bv. "UPDATE README: new rules for commiting/code writting" 
 
-## Rules when writing code  :
-* ALWAYS add comments before writing code 
+## Rules when writing code :
+* Where nessecary add comments before writing code 
 * Write code in ENG. but where nessecary NL
 * Names :
     - id="a" //bad 
