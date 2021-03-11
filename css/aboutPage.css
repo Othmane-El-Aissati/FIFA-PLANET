@@ -1,7 +1,5 @@
-body {
-    background-color: 020E3A;
-}
+/* changing background color for body and navigation */
 
-nav {
-    background-color: grey;
+body {
+    background-color: #020E3A;
 }

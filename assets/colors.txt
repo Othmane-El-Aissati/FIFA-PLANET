@@ -4,7 +4,7 @@
 
 - border : E5C685 (FIFA goud)
 
-- menu background: #343a40 (donker grijs)
+- menu background: #343A40 (donker grijs)
 
 - btn, velden : 7B7979 (grijs)
 
