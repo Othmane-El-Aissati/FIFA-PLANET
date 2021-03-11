@@ -29,24 +29,35 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/login.html">Login</a>
-                        </li>
                     </ul>
+                    <div class="d-flex">
+                        <a class="a-link" href="/html/login.html">Login</a>
+                    </div>
                 </div>
-            </div>
         </nav>
     </header>
-    <main>
+    <main class="container">
         <section>
             <p id="p-over" class="row justify-content-md-center">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbout" aria-expanded="false" aria-controls="collapseExample">
                   Over de site
                 </button>
             </p>
-            <div class="collapse" id="collapseExample">
+            <div class="collapse" id="collapseAbout">
                 <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    Hier komt informatie over de site zelf.
+                </div>
+            </div>
+        </section>
+        <section>
+            <p id="p-over" class="row justify-content-md-center">
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDevs" aria-expanded="false" aria-controls="collapseExample">
+                  De developers
+                </button>
+            </p>
+            <div class="collapse" id="collapseDevs">
+                <div class="card card-body">
+                    Hier komen de namen van de developers.
                 </div>
             </div>
         </section>

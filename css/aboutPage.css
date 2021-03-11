@@ -9,5 +9,17 @@ body {
 }
 
 #p-over {
-    margin-top: 25px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+header {
+    margin-bottom: 100px;
+}
+
+.a-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
