@@ -1,0 +1,78 @@
+/* changing background color for body and navigation */
+
+body {
+    background-color: #020E3A;
+}
+
+#bootstrap-overrides .nav-link {
+    color: white;
+}
+
+
+
+header {
+    margin-bottom: 100px;
+}
+
+
+/* De navaigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
+
+.a-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    font-size: 1.05rem;
+}
+
+#nav-links {
+    justify-content: space-between;
+    width: 25%;
+    font-size: 1.05rem;
+}
+
+
+
+
+
+
+
+
+/* Login en registratie form*/
+
+form
+{
+    background-color: white;
+    display: grid;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 4px;
+}
+
+input
+{
+    border-radius: 3px;
+    
+    justify-self: center;
+    display: block;
+    width: 60%;
+    height: 3rem;
+}
+
+.login_button
+{
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10%;
+    border-radius: 4px;
+    background-color: #020E3A ;
+    color: white;
+}
+
+.link_registratie
+{
+    text-align: center;
+    color: white;
+}
