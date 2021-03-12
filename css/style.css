@@ -17,9 +17,10 @@ body{
     width: 25%;
 }
 #nav-links .nav-link{
+    /* font color of the links */
     color: #ffffff;
 }
-    /* a link on the left side of the menu */
+/* a link on the left side of the menu */
 .a-link {
     text-decoration: none;
     color: white;
