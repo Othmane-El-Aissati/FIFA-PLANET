@@ -63,8 +63,8 @@ input
 
 .login_button
 {
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-left: 37%;
+    margin-right: 37%;
     margin-top: 10%;
     border-radius: 4px;
     background-color: #020E3A ;
@@ -75,4 +75,13 @@ input
 {
     text-align: center;
     color: white;
+}
+
+@media screen and (max-width: 400px){
+    .link_registratie{
+        font-size: 12px;
+    }      
+    .login_button{
+        font-size: 13px;
+    }    
 }
