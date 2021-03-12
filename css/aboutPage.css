@@ -3,6 +3,7 @@
 body {
     background-color: #020E3A;
     color: white;
+    margin-bottom: 100px;
 }
 
 #bootstrap-overrides .nav-link {
@@ -33,4 +34,14 @@ header {
     justify-content: space-between;
     width: 25%;
     font-size: 1.05rem;
+}
+
+footer {
+    background-color: #343a40;
+    border-top: 1px solid #E5C685;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
