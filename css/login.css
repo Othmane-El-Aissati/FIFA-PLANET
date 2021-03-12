@@ -1,7 +1,13 @@
 /* changing background color for body and navigation */
 
 body {
+    width: 100%;
+    min-height: 100vh;
+    color: #ffffff;
+    font-family: fifa-font;
+    font-size: 1.5rem;
     background-color: #020E3A;
+    margin-bottom: 100px;
 }
 
 #bootstrap-overrides .nav-link {
@@ -84,4 +90,17 @@ input
     .login_button{
         font-size: 13px;
     }    
+}
+
+
+/* footer style voor elke pagina */
+
+footer {
+    background-color: #343a40;
+    border-top: 1px solid #E5C685;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
