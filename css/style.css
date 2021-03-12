@@ -1,4 +1,32 @@
 body{
+    width: 100%;
+    min-height: 100vh;
+    color: #ffffff;
+    font-family: fifa-font;
+    font-size: 1.5rem;
     background-color:  #020E3A;
 }
 
+/* Costum changes in the header */
+#nav-header{
+    color: #ffffff;
+    border-bottom: 1px solid #E5C685;
+}
+#nav-links{
+    justify-content: space-between;
+    width: 25%;
+}
+#nav-links .nav-link{
+    color: #ffffff;
+}
+    /* a link on the left side of the menu */
+.a-link {
+    text-decoration: none;
+    color: white;
+}
+
+/* footer style voor elke pagina */
+footer{
+    background-color: #343a40;
+    border-top: 1px solid #E5C685;
+}
