@@ -2,104 +2,101 @@
 <html lang="nl-BE">
 
 <head>
+
     <head>
         <!-- Required meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
-            rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
-            crossorigin="anonymous">
-    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
         <!-- Bootstrap Script -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" 
-            crossorigin="anonymous"></script>
-    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
         <!-- Custom style CSS -->
         <link rel="stylesheet" type="text/css" href="/css/registratie.css">
 
         <!--jQuery google CDN to include Password confirm script-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        
+
         <!-- Page title -->
         <title>Registratie Pagina </title>
     </head>
 </head>
 
 <body>
-<header>
-    <!-- Navigation bar with responsive design -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <header>
+        <!-- Navigation bar with responsive design -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/html/about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a class="a-link" href="/html/login.html">Login</a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <a class="a-link" href="#">Login</a>
+                    </div>
                 </div>
-            </div>
-    </nav>
-</header>
-<!--Registration form-->
-<form action="#">
+        </nav>
+    </header>
+    <!--Registration form-->
+    <form action="#">
         <hr>
-      <label for="username"></label>
-      <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required>
+        <label for="username"></label>
+        <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required>
         <br>
-      <label for="email"></label>
-      <input type="text" placeholder="E-mailadres" name="email" id="email" required>
+        <label for="email"></label>
+        <input type="text" placeholder="E-mailadres" name="email" id="email" required>
         <br>
-      <label for="psw"></label>
-      <input type="password"  placeholder="Wachtwoord" name="psw" id="psw" required>
+        <label for="psw"></label>
+        <input type="password" placeholder="Wachtwoord" name="psw" id="psw" required>
         <br>
-      <label for="psw-repeat"></label>
-      <input type="password"  placeholder="Bevestig Wachtwoord" name="psw-repeat" id="psw-repeat" required>
-      <span class="message" id='message'></span>
+        <label for="psw-repeat"></label>
+        <input type="password" placeholder="Bevestig Wachtwoord" name="psw-repeat" id="psw-repeat" required>
+        <span class="message" id='message'></span>
         <br>
-      <label for="travel"></label>
-      <select id="travel" placeholder="Choose your travel" name="travel">
+        <label for="travel"></label>
+        <select id="travel" placeholder="Choose your travel" name="travel">
           <option value="keuze">Choose your travel</option>
           <option value="lego">Lego</option>
           <option value="fifa">Fifa Planet</option>
           <option value="lord of the rings">Lord of the Rings</option>
           <option value="fortnite">Fortnite</option>
       </select>
-      <hr>
-      <button type="submit" class="register_button">Registreer</button>
-    </div>
+        <hr>
+        <button type="submit" class="register_button">Registreer</button>
+        </div>
 
-  </form>
+    </form>
 
-  <footer>
-    <div class="container"> 
-        <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
-        <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
-    </div>
-</footer>
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
+            <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
+        </div>
+    </footer>
 
-<!--Script to check if passwords match in registration form-->
-<script>
-$('#psw, #psw-repeat').on('keyup', function () {
-  if ($('#psw').val() == $('#psw-repeat').val()) {
-    $('#message').html('Wachtwoorden zijn identiek').css('color', 'green');
-  } else 
-    $('#message').html('Wachtwoorden komen niet overeen').css('color', 'red');
-});
- </script>
+    <!--Script to check if passwords match in registration form-->
+    <script>
+        $('#psw, #psw-repeat').on('keyup', function() {
+            if ($('#psw').val() == $('#psw-repeat').val()) {
+                $('#message').html('Wachtwoorden zijn identiek').css('color', 'green');
+            } else
+                $('#message').html('Wachtwoorden komen niet overeen').css('color', 'red');
+        });
+    </script>
 
 
 </body>
