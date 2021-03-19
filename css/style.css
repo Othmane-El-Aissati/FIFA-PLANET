@@ -21,6 +21,7 @@ html {
     height: 100%;
 }
 
+
 body {
     background-color: #020E3A;
     color: white;
@@ -33,15 +34,10 @@ body {
     position: relative;
 }
 
-<<<<<<< HEAD
 /* Costum changes in the header */
 #nav-header {
     color: #ffffff;
     border-bottom: 1px solid #E5C685;
-=======
-main {
-    padding-bottom: 100px;
->>>>>>> 01856e8cfd21245470d05b43c4397ca2de37b9b8
 }
 
 #bootstrap-overrides .nav-link {
@@ -53,31 +49,25 @@ header {
 }
 
 
-<<<<<<< HEAD
 /* a link on the left side of the menu */
-=======
-/* De navaigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
-
->>>>>>> 01856e8cfd21245470d05b43c4397ca2de37b9b8
 .a-link {
     display: block;
+}
+.a-link{
     text-decoration: none;
     color: white;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
     font-size: 1.05rem;
 }
 
-<<<<<<< HEAD
 
 /* footer style voor elke pagina */
-=======
 #nav-links {
     justify-content: space-between;
     width: 25%;
     font-size: 1.05rem;
 }
 
->>>>>>> 01856e8cfd21245470d05b43c4397ca2de37b9b8
 footer {
     background-color: #343a40;
     border-top: 1px solid #E5C685;
