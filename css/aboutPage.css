@@ -22,6 +22,7 @@
     body {
         background-color: #020E3A;
         color: white;
+        min-height: 100%;
         /*margin-bottom: 100px;*/
     }
     
@@ -66,6 +67,7 @@
         background-color: #343a40;
         border-top: 1px solid #E5C685;
         width: 100%;
+        height: fit-content;
         text-align: center;
         position: fixed;
         left: 0px;
@@ -93,8 +95,8 @@
         background: #555;
     }
     
-    @media only screen and (max-height: 703px) {
-        footer {
+    @media only screen and (max-height: 650px) {
+        /*footer {
             position: absolute;
-        }
+        }*/
     }
