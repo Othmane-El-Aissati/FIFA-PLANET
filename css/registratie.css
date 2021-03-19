@@ -1,0 +1,118 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    color: #ffffff;
+    font-family: fifa-font;
+    font-size: 1.5rem;
+    background-color: #020E3A;
+    margin-bottom: 100px;
+}
+
+#bootstrap-overrides .nav-link {
+    color: white;
+}
+
+header {
+    margin-bottom: 100px;
+}
+
+/* De navigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
+.a-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    font-size: 1.05rem;
+}
+
+#nav-links {
+    justify-content: space-between;
+    width: 25%;
+    font-size: 1.05rem;
+}
+
+
+/* Login en registratie form*/
+
+form
+{
+    background-color: white;
+    display: grid;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 4px;
+}
+
+input
+{
+    border-radius: 3px;
+    
+    justify-self: center;
+    display: block;
+    width: 60%;
+    height: 3rem;
+    
+}
+
+
+/* Select hoort bij dropdownmenu 'choose your travel'*/
+
+select
+{
+    border-radius: 3px;
+    
+    justify-self: center;
+    display: block;
+    width: 60%;
+    height: 3rem;
+    margin-top: -50px;
+}
+
+/* .message Hoort bij output van script om passwords te checken*/
+
+.message
+{
+    border-radius: 3px;
+    
+    justify-self: center;
+    display: block;
+    width: 60%;
+    height: 3rem; 
+    font-size: 1.1rem; 
+}
+
+
+.register_button
+{
+    margin-left: 37%;
+    margin-right: 37%;
+    margin-top: 10%;
+    border-radius: 4px;
+    background-color: #020E3A ;
+    color: white;
+    position: relative;top: -60px;
+}
+
+
+@media screen and (max-width: 400px){
+    .link_inloggen{
+        font-size: 12px;
+    }      
+    .register_button{
+        font-size: 13px;
+    }    
+}
+
+/* footer style voor elke pagina */
+
+footer {
+    background-color: #343a40;
+    border-top: 1px solid #E5C685;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
