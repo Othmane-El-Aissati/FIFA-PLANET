@@ -16,20 +16,30 @@ header {
     margin-bottom: 100px;
 }
 
-/* De navigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
-.a-link {
-    display: block;
-    text-decoration: none;
-    color: white;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-    font-size: 1.05rem;
+#nav-header {
+    color: #ffffff;
+    border-bottom: 1px solid #E5C685;
 }
 
 #nav-links {
     justify-content: space-between;
     width: 25%;
-    font-size: 1.05rem;
+    font-size: ;
 }
+
+#nav-links .nav-link {
+    /* font color of the links */
+    color: #ffffff;
+}
+
+/* De navigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
+.a-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: ;
+}
+
 
 
 /* Login en registratie form*/
