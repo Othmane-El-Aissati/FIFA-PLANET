@@ -23,62 +23,65 @@
     <!-- Page title -->
     <title>FIFA-PLANET | FIFA Spelen </title>
 </head>
-<body>
-    <!-- Test page meant to work as a single page app on fifa-spelen -->
-    <header>
-        <!-- Navigatie bar met responsive design -->
-        <!-- nav-header for border bottom line -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-header">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/html/about.html">About</a>
-                    </li>
-                    <li class="nav-item">                            
-                        <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a class="a-link" href="/html/login.html">Login</a>
+<body id="bootstrap-overrides" >
+    <div id="wrapper">
+
+        <!-- Test page meant to work as a single page app on fifa-spelen -->
+        <header>
+            <!-- Navigatie bar met responsive design -->
+            <!-- nav-header for border bottom line -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-header">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/about.html">About</a>
+                        </li>
+                        <li class="nav-item">                            
+                            <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <a class="a-link" href="/html/login.html">Login</a>
+                    </div>
                 </div>
+            </nav>
+        </header>
+        <main class="container" id="main-start-page">
+            <!-- new game button -->
+            <br>
+            <section class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button" id="newGameBtn">New Game</button>
+            </section>
+            <br>
+            <!-- continue button -->
+            <section class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button" id="continueBtn">Continue</button>
+            </section>
+            <br>
+            <!-- Rules button -->
+            <section class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button" id="rulesBtn">Rules</button>
+            </section>
+            <br>
+            <!-- Scoreboard button -->
+            <section class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button" id="scoreboardBtn">Scoreboard</button>
+            </section>
+            <br>
+        </main>
+        <footer>
+            <div class="container">
+                <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
+                <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
             </div>
-        </nav>
-    </header>
-    <main class="container" id="main-start-page">
-        <!-- new game button -->
-        <br>
-        <section class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="button" id="newGameBtn">New Game</button>
-        </section>
-        <br>
-        <!-- continue button -->
-        <section class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="button" id="continueBtn">Continue</button>
-        </section>
-        <br>
-        <!-- Rules button -->
-        <section class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="button" id="rulesBtn">Rules</button>
-        </section>
-        <br>
-        <!-- Scoreboard button -->
-        <section class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="button" id="scoreboardBtn">Scoreboard</button>
-        </section>
-        <br>
-    </main>
-    <footer>
-        <div class="container">
-            <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
-            <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
