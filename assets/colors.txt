@@ -1,0 +1,15 @@
+// basic website colors
+
+- background : 020E3A (donker blauw)
+
+- border : E5C685 (FIFA goud)
+
+- menu background: #343a40 (donker grijs)
+
+- btn, velden : 7B7979 (grijs)
+
+- juist antwoord : 126103 (FIFA Groen)
+
+- fout antwoord : D30208 (FIFA Rood)
+
+- aangeduid aanwoord : 015386 (FIFA blauw)

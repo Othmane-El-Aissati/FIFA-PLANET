@@ -1,3 +1,5 @@
+/* changing background color for body and navigation */
+
 body {
     width: 100%;
     min-height: 100vh;
@@ -12,25 +14,47 @@ body {
     color: white;
 }
 
+
+
 header {
     margin-bottom: 100px;
 }
 
 
-/* De navigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
+/* De navaigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
+
 .a-link {
     display: block;
     text-decoration: none;
     color: white;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-    font-size: 1.05rem;
+    
+}
+
+
+
+/* Costum changes in the header */
+
+#nav-header {
+    color: #ffffff;
+    border-bottom: 1px solid #E5C685;
 }
 
 #nav-links {
     justify-content: space-between;
     width: 25%;
-    font-size: 1.05rem;
 }
+
+#nav-links .nav-link {
+    /* font color of the links */
+    color: #ffffff;
+}
+
+
+
+
+
+
 
 
 /* Login en registratie form*/
@@ -49,43 +73,15 @@ form
 input
 {
     border-radius: 3px;
-    
     justify-self: center;
     display: block;
     width: 60%;
     height: 3rem;
-    
 }
 
 
-/* Select hoort bij dropdownmenu 'choose your travel'*/
 
-select
-{
-    border-radius: 3px;
-    
-    justify-self: center;
-    display: block;
-    width: 60%;
-    height: 3rem;
-    margin-top: -50px;
-}
-
-/* .message Hoort bij output van script om passwords te checken*/
-
-.message
-{
-    border-radius: 3px;
-    
-    justify-self: center;
-    display: block;
-    width: 60%;
-    height: 3rem; 
-    font-size: 1.1rem; 
-}
-
-
-.register_button
+.login_button
 {
     margin-left: 37%;
     margin-right: 37%;
@@ -93,18 +89,23 @@ select
     border-radius: 4px;
     background-color: #020E3A ;
     color: white;
-    position: relative;top: -60px;
 }
 
+.link_registratie
+{
+    text-align: center;
+    color: white;
+}
 
 @media screen and (max-width: 400px){
-    .link_inloggen{
+    .link_registratie{
         font-size: 12px;
     }      
-    .register_button{
+    .login_button{
         font-size: 13px;
     }    
 }
+
 
 /* footer style voor elke pagina */
 

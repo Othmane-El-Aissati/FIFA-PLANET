@@ -1,0 +1,117 @@
+body,
+header,
+nav,
+main,
+article,
+section,
+footer,
+figure,
+figcaption,
+p,
+button,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* changing background color for body and navigation */
+
+html {
+    height: 100%;
+}
+
+
+body {
+    background-color: #020E3A;
+    color: white;
+    min-height: 100%;
+    /*margin-bottom: 100px;*/
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+/* Costum changes in the header */
+#nav-header {
+    color: #ffffff;
+    border-bottom: 1px solid #E5C685;
+}
+
+#bootstrap-overrides .nav-link {
+    color: white;
+}
+
+header {
+    margin-bottom: 100px;
+}
+
+
+/* a link on the left side of the menu */
+.a-link {
+    display: block;
+}
+.a-link{
+    text-decoration: none;
+    color: white;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    font-size: 1.05rem;
+}
+
+
+/* footer style voor elke pagina */
+#nav-links {
+    justify-content: space-between;
+    width: 25%;
+    font-size: 1.05rem;
+}
+
+footer {
+    background-color: #343a40;
+    border-top: 1px solid #E5C685;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+}
+
+
+/* custom scroll bar */
+
+
+/* width */
+
+ ::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media only screen and (max-height: 700px) {
+    footer {
+        position: absolute;
+    }
+}
