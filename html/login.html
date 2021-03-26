@@ -19,6 +19,9 @@
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <title>Login-page</title>
+
+    <!-- Costum music script -->
+    <script defer src="/js/music.js" ></script>
 </head>
 
 <body id="bootstrap-overrides">
@@ -56,6 +59,16 @@
 
     
     <p class="link_registratie">Nog geen account? <a href="/html/registratie.html">Registreer hier</a></p>
+
+    
+    <button onclick="setVolumeOff()" type="button">volume off</button>
+    <button onclick="setVolumeOn()" type="button">volume on</button><br> 
+
+    <audio autoplay  id="mySong">
+        
+        <source src="/assets/playlist/Watch Out Now-The Beatnuts-004JHPTr1gAqbp.mp3" type="audio/mp3">
+      
+      </audio>
 
     <footer>
         <div class="container"> 
