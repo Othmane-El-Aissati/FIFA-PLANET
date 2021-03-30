@@ -50,6 +50,11 @@ header {
     color: #ffffff;
 }
 
+/* audio controls */
+#audio_buttons{
+    margin-left: 85%;
+    color: lightblue;
+}
 
 
 
