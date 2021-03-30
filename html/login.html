@@ -22,6 +22,7 @@
 
     <!-- Costum music script -->
     <script defer src="/js/music.js" ></script>
+    <script src="https://kit.fontawesome.com/a9c44a0e6d.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="bootstrap-overrides">
@@ -50,6 +51,13 @@
                     </div>
                 </div>
         </nav>
+
+        <!--muziek buttons en playlist-->
+    <div id="audio_buttons">
+        <i onclick="setVolumeOff()" type="button" class="fas fa-volume-mute"></i>
+        <i onclick="setVolumeOn()" type="button" class="fas fa-music"></i>
+    </div>
+
     </header>
     <form action="#">
         <input type="text" placeholder="username"> <br>
@@ -62,13 +70,9 @@
 
     
 
-    <!--muziek buttons en playlist-->
-    <button onclick="setVolumeOff()" type="button">volume off</button>
-    <button onclick="setVolumeOn()" type="button">volume on</button><br> 
-
+    
     <audio autoplay loop id="mySong">
-        <source src="/assets/playlist/Wake Up in the Sky (Explicit)-Gucci Mane-003gCxxb1i8hfF.mp3" type="audio/mp3">
-        <source src="/assets/playlist/Watch Out Now-The Beatnuts-004JHPTr1gAqbp.mp3" type="audio/mp3">
+        
     </audio>
 
 
