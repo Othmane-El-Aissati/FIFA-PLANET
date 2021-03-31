@@ -58,7 +58,14 @@ header {
 
 
 
-
+.main-container{
+    width: 90%;
+	min-height: 80%;
+    margin: auto;
+	position: relative;
+    background-color: rgba(255,255,255,0.1);
+	border-radius: 3px;
+}
 
 
 
