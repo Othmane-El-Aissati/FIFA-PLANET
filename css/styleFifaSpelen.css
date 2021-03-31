@@ -67,6 +67,7 @@ footer{
     Costum Image effect / design
 ===================================== 
 */
+
 #topFifaImage{
 	position: absolute;
 	left: 0px;
@@ -75,8 +76,6 @@ footer{
 }
 #buttomFifaImage{
 	position: absolute;
-	width: auto;
-    height: auto;
 	right: 0px;
 	bottom: 0px;
 	z-index: -1;
@@ -91,7 +90,7 @@ footer{
 #fifa-logo{
 	width: 10%;
 	height: auto;
-	margin: 5% calc(100% - 7% - 50%) ;
+	margin: 5% calc(100% - 7% - 50%);
 }
 
 
