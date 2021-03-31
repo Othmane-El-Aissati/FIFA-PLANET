@@ -17,7 +17,8 @@
         crossorigin="anonymous"></script>
 
     <!-- Costum style CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/styleFifaSpelen.css">
     <link rel="stylesheet" href="/css/fonts.css">
     
     <!-- Page title -->
@@ -51,8 +52,143 @@
             </div>
         </nav>
     </header>
-    <main class="container">
-        
+    <main class="main-container">
+        <img src="/assets/images/colorDetail.png" alt="fifa 2020 color detail"  id="topFifaImage">
+        <section class="sectionGame" >
+            <br>
+            <!-- new game button -->
+            <article class="box-3">
+                <div class="btn btn-three" id="div-element">
+                    <span id="span-text">New Game</span>
+                </div>
+            </article>
+            <br>
+            <!-- continue button -->
+            <article class="box-3">
+                <div class="btn btn-three" id="div-element">
+                    <span id="span-text">Continue</span>
+                </div>
+            </article>
+            <br>
+            <!-- Rules button -->
+            <article class="box-3">
+                <div class="btn btn-three" id="div-element">
+                    <span id="span-text">Rules</span>
+                </div>
+            </article>
+            <br>
+            <!-- Scoreboard button -->
+            <article class="box-3">
+                <div class="btn btn-three" id="div-element">
+                    <span id="span-text">Scoreboard</span>
+                </div>
+            </article>
+            <br>
+        </section>
+
+        <!-- ============================ -->
+        <!-- after a user clicks new game  id="sectionNewGame"-->
+        <section id="hideSection" >
+            <label class="field field_v3">
+                <input class="field__input" placeholder="e.g. Practice Game">
+                <span class="field__label-wrap">
+                <span class="field__label">Enter a game name</span>
+                </span>
+            </label>
+            <br>
+            <article class="custom-select-wrapper">
+                <div class="custom-select">
+                    <div class="custom-select__trigger"><span>LVL</span>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="custom-options" >
+                        <span class="custom-option selected" data-value="ez">Easy Level</span>
+                        <span class="custom-option" data-value="m">Medium Level</span>
+                        <span class="custom-option" data-value="dif">diffecult Level</span>
+                    </div>
+                </div>
+            </article>
+            <br>
+            <article class="box-3" id="btnNewGameSetUp">
+                <div class="btn btn-three" id="div-element">
+                    <span id="span-text">Start Game</span>
+                </div>
+            </article>
+        </section>
+        <!-- ============================ -->
+
+        <!-- ============================ -->
+            <!-- clubs image and answers -->
+            <!-- game page, shown club static not API connected (testing purposes) -->
+        <section class="clubSection">
+            <!-- club image & possible answers -->
+            <article>
+                <!-- club image -->
+                <div>
+                    <img src="" alt="">
+                </div>
+                <p>In welke league speelt deze club ?</p>
+            </article>
+            <hr>
+            <article>
+                <!-- club answer, where 1 anwser is correct -->
+                <div>
+                    <!-- possible answer 1 -->
+                </div>
+                <div>
+                    <!-- possible answer 2 -->
+                </div>
+                <div>
+                    <!-- possible answer 3 -->
+                </div>
+                <div> 
+                    <!-- posibble answer 4 -->
+                </div>
+            </article>
+        </section>
+
+        <!-- league image and choice of the possible clubs that play in it -->
+        <section id="hideSection">
+            <article class="article-title-green">
+                <!-- league image -->
+                <div id="image-league">
+                    <img src="./assets/images/Premier_League-Logo.wine.png" alt="premier-league">
+                </div>
+                <p id="question-league">Welke clubs spelen nog in deze league ?</p>
+            </article>
+            <hr>
+            <article class="article-green">
+                <!-- possible answer to choose from, where 3 answers are correct-->
+                <div class="div-red">
+                    <!-- possible answer 1 -->
+                    <img src="./assets/images/arsenal.png" alt="Arsenal" >
+                    <button>Answer 1</button>
+                </div>
+                <div class="div-red">
+                    <!-- possible answer 2 -->
+                    <img src="./assets/images/bristolCity.png" alt="bristolCity">
+                    <button>Answer 2</button>
+                </div>
+                <div class="div-red">
+                    <!-- possible answer 3 -->
+                    <img src="./assets/images/chelsea.png" alt="chelsea">
+                    <button>Answer 3</button>
+                </div>
+                <div class="div-red"> 
+                    <!-- posibble answer 4 -->
+                    <img src="./assets/images/manchester-city.png" alt="manchester-city">
+                    <button>Answer 4</button>
+                </div>
+                <div class="div-red">
+                    <!-- possible answer 5 -->
+                    <img src="./assets/images/Newcastle_United_Logo.png" alt="newcastle-united">
+                    <button>Answer 5</button>
+                </div>
+            </article>
+        </section>
+        <!-- ============================ -->
+
+        <img src="/assets/images/colorDetail.png" alt="fifa 2020 color detail"  id="buttomFifaImage">
     </main>
     <footer>
         <div class="container"> 
@@ -60,7 +196,6 @@
             <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
         </div>
     </footer>
-
 </body>
 
 </html>
