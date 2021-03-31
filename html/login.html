@@ -26,7 +26,7 @@
 </head>
 
 <body id="bootstrap-overrides">
-    <div id="wrapper" >
+    
         <header>
             <!-- Navigatie bar met responsive design -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-header">
@@ -52,7 +52,9 @@
                     </div>
                 </div>
             </nav>
-
+            
+        </header>
+        <main class="main-container">
             <!--muziek buttons en playlist-->
             <div id="audio_buttons">
                 <i onclick="setVolumeOff()" type="button" class="fas fa-volume-mute"></i>
@@ -62,22 +64,21 @@
                     <source src="/assets/playlist/mix_36m27s (audio-joiner.com).mp3" type="audio/mp3">
                 </audio>
             </div>
-        </header>
-        <main class="main-container">
             <form action="#">
                 <input type="text" placeholder="username"> <br>
                 <input type="password" placeholder="password">
-                <button class="login_button"> log in </button>
+                <button type="submit" class="login_button"> log in </button>
                 <p class="link_registratie">Nog geen account? <a href="/html/registratie.html">Registreer hier</a></p>
             </form>
         </main>
+            
+        
         <footer>
             <div class="container"> 
                 <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
                 <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
             </div>
         </footer>
-    </div>
 </body>
 
 </html>
