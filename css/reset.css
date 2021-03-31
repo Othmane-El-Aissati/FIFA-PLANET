@@ -1,0 +1,15 @@
+body,
+header,
+nav,
+main,
+article,
+section,
+footer,
+figure,
+figcaption,
+p,
+button,
+div {
+    margin: 0;
+    padding: 0;
+}
