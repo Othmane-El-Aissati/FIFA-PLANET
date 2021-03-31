@@ -6,7 +6,7 @@
 
     <head>
         <!-- Required meta tags -->
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -56,12 +56,11 @@
     </header>
     <!--Registration form-->
     <form action="#">
-        <hr>
         <label for="username"></label>
         <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required>
         <br>
         <label for="email"></label>
-        <input type="text" placeholder="E-mailadres" name="email" id="email" required>
+        <input type="email" placeholder="Emailadres" name="email" id="email" required>
         <br>
         <label for="psw"></label>
         <input type="password" placeholder="Wachtwoord" name="psw" id="psw" required>
@@ -71,17 +70,17 @@
         <span class="message" id='message'></span>
         <br>
         <label for="travel"></label>
-        <select id="travel" placeholder="Choose your travel" name="travel">
+        <select id="travel" name="travel" required>
 
-          <option value="keuze">Choose your travel</option>
-          <option value="lego">Lego</option>
-          <option value="fifa">Fifa Planet</option>
-          <option value="lord of the rings">Lord of the Rings</option>
-          <option value="fortnite">Fortnite</option>
+          <option value="" disabled selected hidden=>Kies jouw travel</option>
+          <option>Lego</option>
+          <option>Fifa Planet</option>
+          <option>Lord of the Rings</option>
+          <option>Fortnite</option>
       </select>
 
         <hr>
-        <button type="submit" class="register_button">Registreer</button>
+        <button type="submit" class="register_button">Registreren</button>
         </div>
 
     </form>
