@@ -26,65 +26,59 @@
 </head>
 
 <body id="bootstrap-overrides">
-    <div id="wrapper" >
-<header>
-        <!-- Navigatie bar met responsive design -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-header">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex">
-                        <a class="a-link" href="#">Login</a>
+    
+        <header>
+            <!-- Navigatie bar met responsive design -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-header">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/html/about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex">
+                            <a class="a-link" href="#">Login</a>
+                        </div>
                     </div>
                 </div>
-        </nav>
-
-        <!--muziek buttons en playlist-->
-    <div id="audio_buttons">
-        <i onclick="setVolumeOff()" type="button" class="fas fa-volume-mute"></i>
-        <i onclick="setVolumeOn()" type="button" class="fas fa-music"></i>
-    </div>
-
-    </header>
-    <form action="#">
-        <input type="text" placeholder="username"> <br>
-        <input type="password" placeholder="password">
-        <button class="login_button"> log in </button>
-        <p class="link_registratie">Nog geen account? <a href="/html/registratie.html">Registreer hier</a></p>
-    </form>
-
-    
-    
-
-    
-
-    
-    <audio autoplay loop id="mySong">
-        <source src="/assets/playlist/mix_36m27s (audio-joiner.com).mp3" type="">
-    </audio>
-
-
-
-    <footer>
-        <div class="container"> 
-            <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
-            <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
-        </div>
-    </footer>
-</div>
+            </nav>
+            
+        </header>
+        <main class="main-container">
+            <!--muziek buttons en playlist-->
+            <div id="audio_buttons">
+                <i onclick="setVolumeOff()" type="button" class="fas fa-volume-mute"></i>
+                <i onclick="setVolumeOn()" type="button" class="fas fa-music"></i>
+            
+                <audio autoplay loop id="mySong">
+                    <source src="/assets/playlist/mix_36m27s (audio-joiner.com).mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <form action="#">
+                <input type="text" placeholder="username"> <br>
+                <input type="password" placeholder="password">
+                <button type="submit" class="login_button"> log in </button>
+                <p class="link_registratie">Nog geen account? <a href="/html/registratie.html">Registreer hier</a></p>
+            </form>
+        </main>
+            
+        
+        <footer>
+            <div class="container"> 
+                <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
+                <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
+            </div>
+        </footer>
 </body>
 
 </html>

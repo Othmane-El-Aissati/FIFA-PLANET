@@ -16,11 +16,6 @@ body {
 
 
 
-header {
-    margin-bottom: 100px;
-}
-
-
 /* De navaigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
 
 .a-link {
@@ -58,7 +53,16 @@ header {
 
 
 
-
+.main-container{
+    width: 90%;
+	min-height: 80%;
+    margin: auto;
+	position: relative;
+    background-color: rgba(255,255,255,0.1);
+	border-radius: 3px;
+    padding-bottom: 30%;
+    margin-bottom: 0;
+}
 
 
 
@@ -66,13 +70,12 @@ header {
 
 form
 {
-    position: absolute;
+    margin-left: 20%;
     display: grid;
-    margin-left: 32%;
-    margin-right: 35%;
+    justify-content: center;
     padding-top: 3.5%;
     border-radius: 8px;
-    width: 30%;
+    width: 60%;
     height: 300px;
     color: #020E3A;
 	background: rgb(19, 61, 100);
@@ -85,9 +88,7 @@ input
     border-color:#020E3A;
     border-radius: 8px;
     font: "fifa-font";
-    justify-self: center;
-    display: block;
-    width: 60%;
+    width: 100%;
     height: 2.4rem;
     font-size: 1.2rem;
 }
@@ -96,12 +97,14 @@ input
 
 .login_button
 {
-    margin-left: 37%;
-    margin-right: 37%;
-    margin-top: 10%;
-    border-radius: 4px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 9%;
+    border-radius: 6px;
+    border-style: none;
     background-color: #020E3A ;
     color: white;
+    position: relative;
 }
 
 .link_registratie
@@ -114,12 +117,16 @@ input
     
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
     .link_registratie{
-        font-size: 12px;
+        font-size: 15px;
     }      
     .login_button{
-        font-size: 13px;
+        font-size: 20px;
+    }
+    form{
+        margin-left: 0%;
+        width: 100%;
     }    
 }
 
@@ -135,3 +142,5 @@ footer {
     width: 100%;
     text-align: center;
 }
+
+
