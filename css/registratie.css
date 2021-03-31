@@ -18,26 +18,29 @@ body {
     color: white;
 }
 
-header {
-    margin-bottom: 100px;
+/* De navigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
+.a-link {
+        display: block;
+        text-decoration: none;
+        color: white;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
 
-/* De navigatie links spacing geven, een goede font size en ook juist plaatsen op de website */
-.a-link {
-    display: block;
-    text-decoration: none;
-    color: white;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-    font-size: 1.05rem;
+#nav-header {
+    color: #ffffff;
+    border-bottom: 1px solid #E5C685;
 }
 
 #nav-links {
     justify-content: space-between;
     width: 25%;
-    font-size: 1.05rem;
 }
 
+#nav-links .nav-link {
+    /* font color of the links */
+    color: #ffffff;
+}
 
 /* Login en registratie form*/
 
@@ -145,12 +148,13 @@ select:required:invalid {
 
 /* footer style voor elke pagina */
 
-footer {
+footer{
     background-color: #343a40;
     border-top: 1px solid #E5C685;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     text-align: center;
+    font-size: 1rem;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
 }
