@@ -17,7 +17,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
         <!-- Custom style CSS -->
-        <link rel="stylesheet" type="text/css" href="/css/registratie.css">
+        <link rel="stylesheet" type="text/css" href="/css/RegistratieLoginCSS.css">
 
         <!--jQuery google CDN to include Password confirm script-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -49,13 +49,14 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <a class="a-link" href="/html/login.html">Login</a>
+                        <a class="a-link" href="/html/login.html">Inloggen</a>
                     </div>
                 </div>
         </nav>
     </header>
+    <main class="main-container" id="Mainregistratie"></main>
     <!--Registration form-->
-    <form action="#">
+    <form Id="Registratie" action="#">
         <label for="username"></label>
         <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required>
         <br>
@@ -82,9 +83,10 @@
         <hr>
         <button type="submit" class="register_button">Registreren</button>
         </div>
+        <p class="link_login">Heb je al een account? <a href="/html/login.html">Inloggen</a></p>
 
     </form>
-
+    </main>
     <footer>
         <div class="container">
             <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
