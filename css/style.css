@@ -110,6 +110,11 @@ footer {
     background: #555;
 }
 
+/* section in about page */
+#about-section {
+    margin-bottom: 50px;
+}
+
 @media only screen and (max-height: 700px) {
     footer {
         position: absolute;
