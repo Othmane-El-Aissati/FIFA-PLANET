@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="/css/fonts.css">
     
     <!-- Page title -->
-    <title>FIFA-PLANET | HOME </title>
+    <title>FIFA-PLANET | lotr </title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/htmlLogin/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/htmlLogin/about.html">About</a>
@@ -46,7 +46,7 @@
                             <a class="nav-link" href="#">thema's</a>
                             <div class="dropdown-content">
                                 <a href="/htmlLogin/lego.html">lego</a>
-                                <a href="/htmlLogin/lotr.html">lord of the rings</a>
+                                <a href="#">lord of the rings</a>
                                 <a href="/htmlLogin/fifa.html">fifa</a>
                                 <a href="/htmlLogin/fortnite.html">fortnite</a>
                             </div>
@@ -65,12 +65,10 @@
         </nav>
     </header>
     <main class="container">
-        <section>
-            <h2>Kies jouw thema</h2>
-        </section>
-        <section>
-            <h2>infotamtie over thema's</h2>
-        </section>
+        <div>
+            <h1>Lord of the rings spelen</h1>
+            <img src="/assets/images/lotrLogo.jpg" alt="lord of the rings logo" onclick="check()">
+        </div>
     </main>
     <footer>
         <div class="container"> 
@@ -83,5 +81,14 @@
     let userData = sessionStorage.getItem("usersJSON")
     let users = JSON.parse(userData)
     document.getElementById("username").innerHTML = users.Username
+
+    let check = () =>{
+        if (users.Travel === "Lord of the Rings") {
+            alert("Het spel is helaas nog niet beschikbaar")
+        }
+        else{
+            alert("Je bent niet ingeschreven voor de 'lord of the rings' reis")
+        }
+    }
 </script>
 </html>
