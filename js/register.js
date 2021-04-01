@@ -9,5 +9,6 @@ let check = () => {
         let user = { Email: email.value, Username: username.value, Password: psw.value, Travel: travel.value }
         myJSON = JSON.stringify(user)
         sessionStorage.setItem("usersJSON", myJSON)
+        alert(`${user.Username} is geregistreerd`)
     }
 }
