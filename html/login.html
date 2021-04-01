@@ -23,6 +23,7 @@
     <!-- Costum music script -->
     <script defer src="/js/music.js" ></script>
     <script src="https://kit.fontawesome.com/a9c44a0e6d.js" crossorigin="anonymous"></script>
+    <script defer src="/js/login.js"></script>
 </head>
 
 <body id="bootstrap-overrides">
@@ -66,10 +67,10 @@
             </div>
             <form id="LogIn" action="#">
                 <label for ="username"></label>
-                <input Id= "Loginbox" type="text" placeholder="Gebruikersnaam">
+                <input class= "Loginbox" type="text" placeholder="Gebruikersnaam" id="username">
                 <label for ="password"></label>
-                <input Id= "Loginbox" type="password" placeholder="Wachtwoord">
-                <button type="submit" class="login_button"> Inloggen </button>
+                <input class= "Loginbox" type="password" placeholder="Wachtwoord" id="password">
+                <button  type="button" type="submit" class="login_button" onclick="checkLoginUsers()"> Inloggen </button>
                 <p class="link_registratie">Nog geen account? <a href="/html/registratie.html">Registreren</a></p>
             </form>
         </main>
