@@ -65,6 +65,10 @@
         </nav>
     </header>
     <main class="container">
+        <div>
+            <h1>Fortnite spelen</h1>
+            <img src="/assets/images/fortniteLogo.png" alt="fornite logo" onclick="check()">
+        </div>
     </main>
     <footer>
         <div class="container"> 
@@ -77,5 +81,14 @@
     let userData = sessionStorage.getItem("usersJSON")
     let users = JSON.parse(userData)
     document.getElementById("username").innerHTML = users.Username
+
+    let check = () =>{
+        if (users.Travel === "Fortnite") {
+            alert("Het spel is helaas nog niet beschikbaar")
+        }
+        else{
+            alert("Je bent niet ingeschreven voor de 'fortnite' reis")
+        }
+    }
 </script>
 </html>
