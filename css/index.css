@@ -66,35 +66,104 @@ footer>div>p{
 section, article, h2{
     width: 100%;
 }
+
+/*    Heading settings */
 h2{
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-family: EA-font;
     text-align: center;
+    color: whitesmoke;
+    opacity: .7;
+    animation: slideout 5s ease-out 2s forwards;
 }
 #apos-span{
     margin: 0;
     padding: 0;
     height: fit-content;
     width: fit-content;
-    font-size: calc(2.5rem + .5rem);
+    font-size: calc(4.5rem + .5rem);
     font-family: 'Courier New', Courier;
+    animation: aposSlideout 3s ease-out 2s forwards;
 }
-img{
-    width: 200px;
-    height: auto;
+@keyframes slideout{
+    from{
+        font-size: 4rem;
+    }
+    to{
+        font-size: 3rem;
+    }
 }
+@keyframes aposSlideout{
+    from{
+        font-size: calc(4.5rem + .5rem);
+    }
+    to{
+        font-size: calc(3.5rem + .5rem);
+    }
+}
+
+
 /* 
 ===================================== 
 	    info games settings 
 ===================================== 
 */
 .info-games{
+    
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
 .info-games>article{
-    height: 250px;
+    
     border: 1px solid red;
+    
+}
+.infoSection-each-game{
+    width: 80%;
+    margin: auto;
+    height: 200px;
     display: flex;
     flex-direction: row;
+    transition: transform .2s;
+}
+.logo-div{
+    width: 30%;
+    height: 100%;
+    border: 1px solid greenyellow;
+    display: inline-flex;
+    vertical-align: middle;
+    text-align: center;
+}
+.logo-div>img{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: auto ;
+    padding: 10px;
+    
+    border: 1px solid blueviolet;
+}
+.test1:hover{
+    transform: scale(1.2);
+}
+.game-description{
+    position: relative;
+    width: 70%;
+    order: 1;
+}
+.game-description p{
+    width: 100%;
+    text-align: justify;
+    position: absolute;
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+@media screen and (min-width: 1025px) {
+    .info-games{
+        width: 90%;
+        
+    }
 }
