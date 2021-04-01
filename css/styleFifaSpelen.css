@@ -411,8 +411,10 @@ footer{
 
 
 #audio_buttons{
-    margin-left: 85%;
+	padding: 10px;
     color: lightblue;
-	
+	position: absolute;
+	top:0px;
+	right: 0px;
 }
 
