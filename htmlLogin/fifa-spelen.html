@@ -17,6 +17,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Costum style CSS -->
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/styleFifaSpelen.css">
     <link rel="stylesheet" href="/css/fonts.css">
@@ -37,17 +38,22 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
+                        <a class="nav-link" href="/htmlLogin/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/html/about.html">About</a>
+                        <a class="nav-link" href="/htmlLogin/about.html">About</a>
                     </li>
                     <li class="nav-item">                            
-                        <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
+                        <a class="nav-link" href="#">Fifa-spelen</a>
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a class="a-link" href="/html/login.html">Login</a>
+                    <div class="dropdown">
+                        <a class="a-link" href="#" id="username"></a>
+                        <div class="dropdown-content">
+                            <a href="/index.html">Uitloggen</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -198,5 +204,9 @@
         </div>
     </footer>
 </body>
-
+<script>
+    let userData = sessionStorage.getItem("usersJSON")
+    let users = JSON.parse(userData)
+    document.getElementById("username").innerHTML = users.Username
+</script>
 </html>

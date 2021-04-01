@@ -22,17 +22,22 @@
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
                             <li class="nav-item">
-                                <a class="nav-link" href="/index.html">Home</a>
+                                <a class="nav-link" href="/htmlLogin/index.html">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/html/fifa-spelen.html">Fifa-spelen</a>
+                                <a class="nav-link" href="/htmlLogin/fifa-spelen.html">Fifa-spelen</a>
                             </li>
                         </ul>
                         <div class="d-flex">
-                            <a class="a-link" href="/html/login.html">Login</a>
+                            <div class="dropdown">
+                                <a class="a-link" href="#" id="username"></a>
+                                <div class="dropdown-content">
+                                    <a href="/index.html">Uitloggen</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
             </nav>
@@ -66,5 +71,9 @@
     </div>
 
 </body>
-
+<script>
+    let userData = sessionStorage.getItem("usersJSON")
+    let users = JSON.parse(userData)
+    document.getElementById("username").innerHTML = users.Username
+</script>
 </html>
