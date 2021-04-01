@@ -72,5 +72,9 @@
         </div>
     </footer>
 </body>
-
+<script>
+    let userData = sessionStorage.getItem("usersJSON")
+    let users = JSON.parse(userData)
+    document.getElementById("username").innerHTML = users.Username
+</script>
 </html>
