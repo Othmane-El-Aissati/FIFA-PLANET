@@ -47,11 +47,7 @@ body {
     color: #ffffff;
 }
 
-/* audio controls */
-#audio_buttons{
-    margin-left: 85%;
-    color: lightblue;
-}
+
 
 .main-container{
     width: 90%;
@@ -61,6 +57,7 @@ body {
 	border-radius: 3px;
     padding-bottom: 30%;
     margin-bottom: 0;
+    padding-top: 7%;
 }
 
 #Mainregistratie{

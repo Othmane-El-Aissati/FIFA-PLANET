@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/styleFifaSpelen.css">
     <link rel="stylesheet" href="/css/fonts.css">
+
+    <!-- Costum music script -->
+    <script defer src="/js/music.js" ></script>
+    <script src="https://kit.fontawesome.com/a9c44a0e6d.js" crossorigin="anonymous"></script>
     
     <!-- Page title -->
     <title>FIFA-PLANET | Spelen</title>
@@ -67,6 +71,15 @@
         </nav>
     </header>
     <main class="main-container">
+         <!--muziek buttons en playlist-->
+         <div id="audio_buttons">
+            <i onclick="setVolumeOff()" type="button" class="fas fa-volume-mute"></i>
+            <i onclick="setVolumeOn()" type="button" class="fas fa-music"></i>
+        
+            <audio autoplay loop id="mySong">
+                <source src="/assets/playlist/mix_36m27s (audio-joiner.com).mp3" type="audio/mp3">
+            </audio>
+         </div>
         <img src="/assets/images/colorDetail.png" alt="fifa 2020 color detail" class="colorDetail" id="topFifaImage">
         <img src="/assets/images/fifa_logo.png" alt="fifa logo" class="colorDetail" id="fifa-logo">
         <section class="sectionGame" >
