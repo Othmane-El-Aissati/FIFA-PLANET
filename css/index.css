@@ -1,3 +1,6 @@
+.hide{
+    display: none;
+}
 /* 
 ===================================== 
         Index design - HOME
@@ -7,6 +10,7 @@ html{
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    --navheight: 63px;
 }
 body{
     width: inherit;
@@ -23,11 +27,12 @@ body{
 */
 header{
 	width: 100%;
-	height: 56px;
+	height: var(--navheight);
 }
 main{
 	width: 90%;
-	min-height: calc(100% - 56px - 10%);
+    margin: auto;
+	min-height: calc(100% - var(--navheight) - 10%);
 }
 footer{
     background-color: #343a40;
@@ -40,8 +45,56 @@ footer{
 footer>div{
     height: 100%;
     text-align: center;
-    line-height: 3.5rem;
+    line-height: 2rem;
 }
 footer>div>p{
-    font-size: 20px;
+    font-size: 15px;
+}
+
+/* nav settings */
+#nav-links {
+    justify-content: space-between;
+    width: 35%;
+    font-size: 1.3rem;
+}
+
+/* 
+===================================== 
+	    main settings 
+===================================== 
+*/
+section, article, h2{
+    width: 100%;
+}
+h2{
+    font-size: 2.5rem;
+    font-family: EA-font;
+    text-align: center;
+}
+#apos-span{
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    width: fit-content;
+    font-size: calc(2.5rem + .5rem);
+    font-family: 'Courier New', Courier;
+}
+img{
+    width: 200px;
+    height: auto;
+}
+/* 
+===================================== 
+	    info games settings 
+===================================== 
+*/
+.info-games{
+    display: flex;
+    flex-direction: column;
+}
+.info-games>article{
+    height: 250px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
 }
