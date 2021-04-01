@@ -18,12 +18,18 @@ div {
 /* changing background color for body and navigation */
 
 html {
+    /* add for home  */
+    width: 100%;
+    /* ------ */
     height: 100%;
 }
 
 
 body {
-    background-color: #020E3A;
+    /* add for home  */
+    width: 100%;
+    /* ------ */
+    background-color: #303F4F;
     color: white;
     min-height: 100%;
     /*margin-bottom: 100px;*/
@@ -120,3 +126,7 @@ footer {
         position: absolute;
     }
 }
+
+
+
+

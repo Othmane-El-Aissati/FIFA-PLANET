@@ -1,0 +1,41 @@
+/* 
+===================================== 
+        Index design - HOME
+===================================== 
+*/
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: inherit;
+    height: inherit;
+	min-height: 100vh;
+	background-color: #303F4F;
+	overflow-y: scroll;
+}
+
+/* 
+===================================== 
+	header-main-footer settings 
+===================================== 
+*/
+header{
+	width: 100%;
+	height: 56px;
+}
+main{
+	width: 90%;
+	min-height: calc(100% - 56px - 10%);
+}
+footer{
+    background-color: #343a40;
+    border-top: 1px solid #ff00ff;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    line-height:  1rem;
+    font-size: .7rem;
+    padding: 10px 0;
+    color: white;
+}
