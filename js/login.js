@@ -1,6 +1,5 @@
-let username = document.getElementsByClassName("username")
-let password = document.getElementsByClassName("password")
-
+let username = document.getElementById("username")
+let password = document.getElementById("password")
 let userData = sessionStorage.getItem("usersJSON")
 let users = JSON.parse(userData)
 let checkLoginUsers = () => {
