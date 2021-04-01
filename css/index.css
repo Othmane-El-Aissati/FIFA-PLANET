@@ -1,0 +1,161 @@
+.hide{
+    display: none;
+}
+/* 
+===================================== 
+        Index design - HOME
+===================================== 
+*/
+html{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    --navheight: 63px;
+}
+body{
+    width: inherit;
+    height: inherit;
+	min-height: 100vh;
+	background-color: #303F4F;
+	overflow-y: scroll;
+}
+
+/* 
+===================================== 
+	header-main-footer settings 
+===================================== 
+*/
+header{
+	width: 100%;
+	height: var(--navheight);
+}
+main{
+	width: 90%;
+    margin: auto;
+	min-height: calc(100% - var(--navheight) - 10%);
+    background-color: rgba(255,255,255,0.1);
+}
+footer{
+    background-color: #343a40;
+    border-top: 1px solid #ff00ff;
+    width: 100%;
+    height: 10%;
+    padding: 10px 0;
+    color: white;
+}
+footer>div{
+    height: 100%;
+    text-align: center;
+    line-height: 2rem;
+}
+footer>div>p{
+    font-size: 15px;
+}
+
+/* nav settings */
+#nav-links {
+    justify-content: space-between;
+    width: 35%;
+    font-size: 1.3rem;
+}
+
+/* 
+===================================== 
+	    main settings 
+===================================== 
+*/
+section, article, h2{
+    width: 100%;
+}
+
+/*    Heading settings */
+h2{
+    font-size: 4rem;
+    font-family: EA-font;
+    text-align: center;
+    color: whitesmoke;
+    opacity: .7;
+    animation: slideout 5s ease-out 2s forwards;
+}
+#apos-span{
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    width: fit-content;
+    font-size: calc(4.5rem + .5rem);
+    font-family: 'Courier New', Courier;
+    animation: aposSlideout 3s ease-out 2s forwards;
+}
+@keyframes slideout{
+    from{
+        font-size: 4rem;
+    }
+    to{
+        font-size: 3rem;
+    }
+}
+@keyframes aposSlideout{
+    from{
+        font-size: calc(4.5rem + .5rem);
+    }
+    to{
+        font-size: calc(3.5rem + .5rem);
+    }
+}
+
+
+/* 
+===================================== 
+	    info games settings 
+===================================== 
+*/
+.info-games{
+    
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.infoSection-each-game{
+    width: 70%;
+    margin: auto;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    transition: transform .2s;
+    border: 1px solid #E5C685;
+}
+.infoSection-each-game:hover{
+    transform: scale(1.2);
+}
+
+.game-description.second-element{
+    order: -1;
+}
+.logo-div{
+    width: 30%;
+    height: 100%;
+    display: inline-flex;
+    vertical-align: middle;
+    text-align: center;
+}
+.logo-div>img{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: auto ;
+    padding: 10px;
+}
+
+.game-description{
+    position: relative;
+    width: 70%;
+    order: 1;
+}
+.game-description p{
+    width: 100%;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1rem;
+    color: whitesmoke;
+}
