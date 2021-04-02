@@ -6,5 +6,5 @@ music.volume = setVolumeOn();
   } 
     
   function setVolumeOn() { 
-    music.volume = 0.01;
+    music.volume = 0.03;
   } 
