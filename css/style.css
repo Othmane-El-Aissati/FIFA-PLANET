@@ -51,9 +51,9 @@ body {
 }
 
 
-/* header {
+.header-about {
     margin-bottom: 100px;
-} */
+} 
 
 
 /* a link on the left side of the menu */
@@ -161,6 +161,23 @@ footer {
     background-color: #ddd;
 }
 
+/* thema pages */
+
+.thema-position{
+    display: flex;
+    flex-direction: column;
+    margin-top: 22.5%;
+}
+
+.thema-titel{
+    text-align: center;
+}
+
+.thema-foto{
+    align-self: center;
+    max-width: 250px;
+    max-height: 250px;
+}
 
 /* Show the dropdown menu on hover */
 
