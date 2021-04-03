@@ -58,6 +58,9 @@ footer>div>p{
     width: 35%;
     font-size: 1.3rem;
 }
+.navbar{
+    z-index: 2;
+}
 
 /* 
 ===================================== 
@@ -75,6 +78,7 @@ h2{
     text-align: center;
     color: whitesmoke;
     opacity: .7;
+    z-index: 1;
     animation: slideout 5s ease-out 2s forwards;
 }
 #apos-span{
@@ -118,22 +122,17 @@ h2{
 .infoSection-each-game{
     width: 70%;
     margin: auto;
-    height: 200px;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     transition: transform .2s;
     border: 1px solid #E5C685;
 }
-.infoSection-each-game:hover{
-    transform: scale(1.2);
-}
-
-.game-description.second-element{
-    order: -1;
-}
 .logo-div{
     width: 30%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
     display: inline-flex;
     vertical-align: middle;
     text-align: center;
@@ -146,11 +145,12 @@ h2{
     margin: auto ;
     padding: 10px;
 }
-
+.game-description.second-element{
+    order: -1;
+}
 .game-description{
     position: relative;
     width: 70%;
-    order: 1;
 }
 .game-description p{
     width: 100%;
@@ -158,4 +158,35 @@ h2{
     padding: 10px;
     font-size: 1rem;
     color: whitesmoke;
+}
+
+
+/* 
+===================================== 
+	    Media queries settings 
+===================================== 
+*/
+@media screen and (min-width: 1024px){
+    .infoSection-each-game:hover{
+        transform: scale(1.2);
+    }
+    
+}
+@media screen and (max-width: 770px){
+    .infoSection-each-game{
+        flex-direction: column;
+    }
+    .logo-div{
+        width: 100%;
+    }
+    .game-description{
+        width: 100%;
+    }
+    .game-description.second-element{
+        order: 0;
+    }
+    .logo-div>img{
+        max-width: 50%;
+        max-height: 50%;
+    }
 }
