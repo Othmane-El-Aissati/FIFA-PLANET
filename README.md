@@ -17,3 +17,9 @@ School project
     - id="a" //bad 
     - id="header-a-aboutPage" //beter 
     - avoid spaces in names (using '-')
+
+## Remark 
+* Hidden section in the html page 'fifa-spelen'
+    - section where you can start a new game  
+    - club image / league image (+answers)
+* Once we see more of SPA, we will apply it to our website and to those certain sections to enable the game
