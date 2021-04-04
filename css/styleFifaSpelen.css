@@ -421,27 +421,89 @@ footer{
 	text-align: center;
 }
 .club-image-container{
-
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	vertical-align: middle;
 }
 .image-wrapper{
-	width: 50%;
+	width: fit-content;
 	height: auto;
 }
 .image-wrapper img {
 	width: auto;
-	max-width: 100%;
+	max-width: 25%;
 	height: auto;
-	max-height: 100%;
-	margin: 5px;
+	max-height: 50%;
+	margin: 5% 5px 5px 5px;
+}
+.club-image-container p {
+
 }
 .answers-container{
-
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 	.btn-wrapper{
-
+		width: 150px;
+		height: 50px;
+		border: 1px solid #333;
+		margin: 10px;
+		text-align: center;
+		/* font-family: 'Cinzel', serif;
+		font-size: 20px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		color: transparent;
+		z-index: 0;
+		transition: 1s;
+		-webkit-tap-highlight-color: transparent; */
 	}
+	/* .btn-wrapper::before, .btn-wrapper::after {
+		position: absolute;
+		background: #eee;
+		z-index: -1;
+		transition: 1s;
+		content: '';
+	  }
+	  .btn-wrapper::before {
+		height: 50px;
+		width: 130px;
+	  }
+	  .btn-wrapper::after {
+		width: 150px;
+		height: 30px;
+	  }
+	  .btn-wrapper:hover::before {
+		width: 0px;
+		background: #fff;
+	  } */
+	  /* .btn-wrapper:hover::after {
+		height: 0px;
+		background: #fff;
+	  }
+	  
+	  .btn-wrapper:hover {
+		background: #fff;
+	  } */
+
 	.answer-btn{
+		user-select: none;
+	}
+
+	@media screen and (min-width: 1024px){
+		.answers-container{
+			flex-direction: column;
+		}
 		
 	}
-
+	
 
