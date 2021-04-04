@@ -399,6 +399,19 @@ footer{
 
 /* 
 ===================================== 
+    	Background music design
+===================================== 
+*/
+#audio_buttons{
+	padding: 10px;
+    color: lightblue;
+	position: absolute;
+	top:0px;
+	right: 0px;
+}
+
+/* 
+===================================== 
     	Club section design
 ===================================== 
 */
@@ -407,15 +420,28 @@ footer{
 	margin: auto;
 	text-align: center;
 }
+.club-image-container{
 
-
-
-#audio_buttons{
-	padding: 10px;
-    color: lightblue;
-	position: absolute;
-	top:0px;
-	right: 0px;
 }
+.image-wrapper{
+	width: 50%;
+	height: auto;
+}
+.image-wrapper img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	max-height: 100%;
+	margin: 5px;
+}
+.answers-container{
+
+}
+	.btn-wrapper{
+
+	}
+	.answer-btn{
+		
+	}
 
 

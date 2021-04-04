@@ -81,8 +81,8 @@
             </audio>
          </div>
         <img src="/assets/images/colorDetail.png" alt="fifa 2020 color detail" class="colorDetail" id="topFifaImage">
-        <img src="/assets/images/fifa_logo.png" alt="fifa logo" class="colorDetail" id="fifa-logo">
-        <section class="sectionGame">
+        <!-- <img src="/assets/images/fifa_logo.png" alt="fifa logo" class="colorDetail" id="fifa-logo" > -->
+        <section class="sectionGame" id="hideSection">
             <br>
             <!-- new game button -->
             <article class="box-3">
@@ -150,27 +150,31 @@
             <!-- game page, shown club static not API connected (testing purposes) -->
         <section class="clubSection">
             <!-- club image & possible answers -->
-            <article>
+            <article class="club-image-container">
                 <!-- club image -->
-                <div>
-                    <img src="" alt="">
+                <div class="image-wrapper">
+                    <img src="/assets/images/chelsea.png" alt="chelsea">
                 </div>
                 <p>In welke league speelt deze club ?</p>
             </article>
             <hr>
-            <article>
+            <article class="answers-container">
                 <!-- club answer, where 1 anwser is correct -->
-                <div>
+                <div class="btn-wrapper">
                     <!-- possible answer 1 -->
+                    <div class="answer-btn">Anwers 1</div>
                 </div>
-                <div>
+                <div class="btn-wrapper">
                     <!-- possible answer 2 -->
+                    <div class="answer-btn">Anwers 2</div>
                 </div>
-                <div>
+                <div class="btn-wrapper">
                     <!-- possible answer 3 -->
+                    <div class="answer-btn">Anwers 3</div>
                 </div>
-                <div> 
+                <div class="btn-wrapper"> 
                     <!-- posibble answer 4 -->
+                    <div class="answer-btn">Anwers 4</div>
                 </div>
             </article>
         </section>
