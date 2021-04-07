@@ -112,7 +112,6 @@ footer{
 	width: 50%;
 	cursor: pointer;
 }
-
 .box-3{
     margin: auto;
     text-align: center;
@@ -136,7 +135,6 @@ footer{
 .btn-three:hover::before {
 	opacity: 0 ;
 	transform: scale(0.5,0.5);
-	
 }
 .btn-three::after {
 	content: '';
@@ -177,9 +175,7 @@ footer{
 	font-size: 1rem;
 	margin: 1rem auto ;
 	width: 100%;
-	
 }
-
 .field__input{ 
 	--uiFieldPlaceholderColor: #767676;
 	
@@ -193,7 +189,6 @@ footer{
 	font-family: inherit;
 	font-size: inherit;
 }
-
 .field__input{
 	box-sizing: border-box;
 	width: var(--fieldWidth, 100%);
@@ -201,16 +196,13 @@ footer{
 	padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, .5rem) var(--uiFieldPaddingLeft);
 	border-bottom: var(--uiFieldBorderWidth) solid var(--fieldBorderColor, rgba(0, 0, 0, .25));  
 }
-  
 .field__input:focus{
 	outline: none;
 }
-  
 .field__input::-webkit-input-placeholder{
 	opacity: 0;
 	transition: opacity var(--transitionTimePlaceholder) ease-out;
-}
-  
+} 
 .field__input::-moz-placeholder{
 	opacity: 0;
 	transition: opacity var(--transitionTimePlaceholder) ease-out;
@@ -225,7 +217,6 @@ footer{
 	opacity: 1;
 	transition-delay: var(--transitionTimePlaceholder);
 }
-  
 .field__label-wrap{
 	box-sizing: border-box;
 	pointer-events: none;
@@ -237,7 +228,6 @@ footer{
 	bottom: 0;
 	left: 0;
 }
-  
 .field__label-wrap::after{
 	content: "";
 	box-sizing: border-box;
@@ -249,11 +239,9 @@ footer{
 	bottom: 0;
 	left: 0;
 }
-  
 .field__input:focus ~ .field__label-wrap::after{
 	opacity: 1;
 }
-  
 .field__label{
 	position: absolute;
 	left: var(--uiFieldPaddingLeft);
@@ -265,24 +253,20 @@ footer{
 	transition: top .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out, font-size .2s ease-out;
 	will-change: bottom, opacity, font-size;
 }
-  
 .field__input:focus ~ .field__label-wrap .field__label,
 .field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
 	--fieldHintFontSize: var(--fieldHintFontSizeFocused, .75rem);
   
 	top: var(--fieldHintTopHover, .25rem);
 }
-
 .field_v3 .field__label-wrap::after{
 	border: 1px solid #ff00ff;
 	will-change: opacity, height;
 	transition: height .2s ease-out, opacity .2s ease-out;
 }
-  
 .field_v3 .field__input:focus ~ .field__label-wrap::after{
 	height: 100%;
 }
-
 
 /* 
 ===================================== 
@@ -358,44 +342,41 @@ footer{
 	color: #ffffff;
 	background-color: #305c91;
 }
-
-	/* arrow animation */
-	.arrow {
-		position: relative;
-		height: 15px;
-		width: 15px;
-   }
-	.arrow::before, .arrow::after {
-		content: "";
-		position: absolute;
-		bottom: 0px;
-		width: 0.15rem;
-		height: 100%;
-		transition: all 0.5s;
-   }
-	.arrow::before {
-		left: -5px;
-		transform: rotate(45deg);
-		background-color: #394a6d;
-   }
-	.arrow::after {
-		left: 5px;
-		transform: rotate(-45deg);
-		background-color: #394a6d;
-   }
-	.open .arrow::before {
-		left: -5px;
-		transform: rotate(-45deg);
-   }
-	.open .arrow::after {
-		left: 5px;
-		transform: rotate(45deg);
-   }
-
+/* arrow animation */
+.arrow {
+	position: relative;
+	height: 15px;
+	width: 15px;
+}
+.arrow::before, .arrow::after {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	width: 0.15rem;
+	height: 100%;
+	transition: all 0.5s;
+}
+.arrow::before {
+	left: -5px;
+	transform: rotate(45deg);
+	background-color: #394a6d;
+}
+.arrow::after {
+	left: 5px;
+	transform: rotate(-45deg);
+	background-color: #394a6d;
+}
+.open .arrow::before {
+	left: -5px;
+	transform: rotate(-45deg);
+}
+.open .arrow::after {
+	left: 5px;
+	transform: rotate(45deg);
+}
 .btn-three {
 	width: 100%;
 }
-
 
 /* 
 ===================================== 
