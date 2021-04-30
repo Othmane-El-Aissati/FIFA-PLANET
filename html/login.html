@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="/css/fonts.css">
     <title>Login-page</title>
 
+    <!-- Jquery for remembermecookie-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- Costum js script -->
     <script defer src="/js/login.js"></script>
 </head>
@@ -57,6 +60,9 @@
                 <label for ="password"></label>
                 <input class= "Loginbox" type="password" placeholder="Wachtwoord" id="password">
                 <button  type="button" type="submit" class="login_button" onclick="checkLoginUsers()"> Inloggen </button>
+                <label  class ="checkbox">
+                    <input  type="checkbox" value="remember-me" id="remember_me"> Mijn inloggegevens onthouden
+                </label>
                 <p class="link_registratie">Nog geen account? <a href="/html/registratie.html">Registreren</a></p>
             </form>
         </main>
@@ -67,6 +73,36 @@
                 <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
                 <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
             </div>
+        
+        <script>
+            $(function() {
+     
+                if (localStorage.chkbx && localStorage.chkbx != '') {
+                        $('#remember_me').attr('checked', 'checked');
+                        $('#username').val(localStorage.usrname);
+                        $('#password').val(localStorage.pass); } 
+                else     
+                        {
+                        $('#remember_me').removeAttr('checked');
+                        $('#username').val('');
+                        $('#password').val('');
+                        }
+     
+                    $('#remember_me').click(function() {
+     
+                        if ($('#remember_me').is(':checked')) {
+                            // save username and password
+                            localStorage.usrname = $('#username').val();
+                            localStorage.pass = $('#password').val();
+                            localStorage.chkbx = $('#remember_me').val();
+                        } else {
+                            localStorage.usrname = '';
+                            localStorage.pass = '';
+                            localStorage.chkbx = '';
+                        }
+                    });
+                });
+        </script>
         </footer>
 </body>
 
