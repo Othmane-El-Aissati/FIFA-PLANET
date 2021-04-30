@@ -152,6 +152,21 @@ input
     font-size: 1.1rem;
 }
 
+input[type=checkbox] {
+    transform: scale(0.35);
+    float:left;
+    margin-right: -150px;
+    vertical-align: middle;
+    position: relative;
+    bottom: 9px;
+
+}
+
+.checkbox {
+    font-size: 0.89em;
+    margin-left: -10px;
+    color: black;
+}
 .link_registratie
 {
     
