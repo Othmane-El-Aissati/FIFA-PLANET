@@ -93,8 +93,6 @@ footer{
 	margin: 5% calc(100% - 7% - 50%);
 }
 
-
-
 /* 
 =============================== 
     Button effect / design
@@ -430,61 +428,76 @@ footer{
 	flex-direction: row;
 	justify-content: space-around;
 }
-	.btn-wrapper{
-		width: 150px;
-		height: 50px;
-		border: 1px solid #333;
-		margin: 10px;
-		text-align: center;
-		/* font-family: 'Cinzel', serif;
-		font-size: 20px;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-		color: transparent;
-		z-index: 0;
-		transition: 1s;
-		-webkit-tap-highlight-color: transparent; */
-	}
-	/* .btn-wrapper::before, .btn-wrapper::after {
-		position: absolute;
-		background: #eee;
-		z-index: -1;
-		transition: 1s;
-		content: '';
-	  }
-	  .btn-wrapper::before {
-		height: 50px;
-		width: 130px;
-	  }
-	  .btn-wrapper::after {
-		width: 150px;
-		height: 30px;
-	  }
-	  .btn-wrapper:hover::before {
-		width: 0px;
-		background: #fff;
-	  } */
-	  /* .btn-wrapper:hover::after {
-		height: 0px;
-		background: #fff;
-	  }
-	  
-	  .btn-wrapper:hover {
-		background: #fff;
-	  } */
 
-	.answer-btn{
-		user-select: none;
-	}
+/* button design  */
+.btn-wrapper{
+	width: 150px;
+	height: 50px;
+	border: 1px solid #ff00ff;
+	margin: 10px;
+	text-align: center;
+	font-family: 'Cinzel', serif;
+	font-size: 20px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	color: black;
+	z-index: 0;
+	transition: 1s;
+}
 
-	@media screen and (min-width: 1024px){
-		.answers-container{
-			flex-direction: column;
-		}
+.btn-wrapper::before, .btn-wrapper::after {
+	position: absolute;
+	background: rgba(255,255,255);
+	
+	opacity: 0;
+	z-index: -1;
+	transition: 1s;
+	content: '';
+  }
+  .btn-wrapper::before {
+	height: 50px;
+	width: 130px;
+  }
+  .btn-wrapper::after {
+	width: 150px;
+	height: 30px;
+  }
+
+  .btn-wrapper:hover::before {
+	width: 0px;
+	background: #fff;
+	border: transparent;
+  } 
+  .btn-wrapper:hover::after {
+	height: 0px;
+	background: #fff;
+	border: transparent;
+  }
+  
+  .btn-wrapper:hover {
+	background: #fff;
+  }
+  
+.answer-btn{
+	user-select: none;
+}
+@keyframes hello {
+	from{
 		
 	}
+	to{
+
+	}
+}
+
+@media screen and (min-width: 1024px){
+	.answers-container{
+		flex-direction: column;
+	}
+	
+}
 	
 
