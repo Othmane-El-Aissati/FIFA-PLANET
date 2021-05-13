@@ -1,7 +1,7 @@
 const express = require('express');
 const ejs = require('ejs');
 
-const PORT =  3000;
+const PORT :number =  3000;
 const app = express();
 
 // Server properties set-up
@@ -14,8 +14,10 @@ app.use(express.static('assets'));
 app.use(express.static('js'));
 
 // Routes to the specified path with the specified callback functions
-app.get();
+app.get('/', (req :any, res :any) => {
+    res.render('index');
+});
 
 // Listens for connections on the specified port 
-app.listen(PORT, () => console.log( '[server] http://localhost:' + app.get('port')));
+app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
 export{};
