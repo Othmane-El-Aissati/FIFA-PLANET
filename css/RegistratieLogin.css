@@ -6,13 +6,29 @@
 
 /* changing background color for body and navigation */
 
-body {
+
+main{
+	width: 100%;
+    margin: auto;
+	min-height: calc(100% - var(--navheight) - 10%);
+    background-color: rgba(255,255,255,0.1);
+    }
+html{
+    box-sizing: border-box;
     width: 100%;
-    min-height: 100vh;
-    color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #020E3A;
-    margin-bottom: 100px;
+    height: 100%;
+    --navheight: 63px;
+}
+body{
+    width: inherit;
+    height: inherit;
+	min-height: 100vh;
+	background-color: #303F4F;
+	overflow-y: scroll;
+}
+#wrapper {
+    min-height: 100%;
+    position: relative;
 }
 
 #bootstrap-overrides .nav-link {
@@ -38,8 +54,8 @@ body {
 
 #nav-links {
     justify-content: space-between;
-    width: 25%;
-    font-size: 1.05rem;
+    width: 35%;
+    font-size: 1.3rem;
 }
 
 #nav-links .nav-link {
@@ -245,13 +261,13 @@ select:required:invalid {
 
 }
 
-footer{
+footer {
     background-color: #343a40;
-    border-top: 1px solid #E5C685;
+    border-top: 1px solid #ff00ff;
     width: 100%;
-    height: fit-content;
+    height: 10%;
+    padding: 10px 0;
+    color: white;
     text-align: center;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
+    font-size: 0.9rem;
 }
