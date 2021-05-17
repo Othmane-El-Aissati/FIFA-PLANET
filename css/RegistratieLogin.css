@@ -22,7 +22,7 @@ html{
 body{
     width: inherit;
     height: inherit;
-	min-height: 100vh;
+	min-height: 100;
 	background-color: #303F4F;
 	overflow-y: scroll;
 }
@@ -48,7 +48,7 @@ body{
 /* Costum changes in the header */
 
 #nav-header {
-    color: #ffffff;
+    color: grey;
     border-bottom: 1px solid #E5C685;
 }
 
@@ -60,14 +60,14 @@ body{
 
 #nav-links .nav-link {
     /* font color of the links */
-    color: #ffffff;
+    color: rgba(255,255,255,.55)
 }
 
 
 
-.main-container{
+.main-container1{
     width: 90%;
-	min-height: 80%;
+	min-height: 90%;
     margin: auto;
     background-color:  rgba(255,255,255,0.1);
 	border-radius: 3px;
@@ -76,9 +76,18 @@ body{
     padding-top: 7%;
 }
 
-#Mainregistratie{
-    padding-bottom: 45%;
+.main-container2{
+    width: 90%;
+	min-height: 80%;
+    margin: auto;
+    background-color:  rgba(255,255,255,0.1);
+	border-radius: 3px;
+    padding-bottom: 15%;
+    margin-bottom: 0;
+    padding-top: 7%;
 }
+
+
 
 /* Login en registratie form*/
 
@@ -104,12 +113,12 @@ body{
     margin-right: 35%;
     padding-top: 3.5%;
     border-radius: 8px;
-    width: 550px;
+    width: 500px;
     height: 525px;
-
     color: #020E3A;
 	background: rgb(19, 61, 100);
 	border: 1px solid #020E3A;
+    
 }
 
 
@@ -270,4 +279,12 @@ footer {
     color: white;
     text-align: center;
     font-size: 0.9rem;
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-height: 700px) {
+    footer {
+        position: absolute;
+    }
 }
