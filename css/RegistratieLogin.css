@@ -6,13 +6,29 @@
 
 /* changing background color for body and navigation */
 
-body {
+
+main{
+	width: 100%;
+    margin: auto;
+	min-height: calc(100% - var(--navheight) - 10%);
+    background-color: rgba(255,255,255,0.1);
+    }
+html{
+    box-sizing: border-box;
     width: 100%;
-    min-height: 100vh;
-    color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #020E3A;
-    margin-bottom: 100px;
+    height: 100%;
+    --navheight: 63px;
+}
+body{
+    width: inherit;
+    height: inherit;
+	min-height: 100;
+	background-color: #303F4F;
+	overflow-y: scroll;
+}
+#wrapper {
+    min-height: 100%;
+    position: relative;
 }
 
 #bootstrap-overrides .nav-link {
@@ -32,26 +48,26 @@ body {
 /* Costum changes in the header */
 
 #nav-header {
-    color: #ffffff;
+    color: grey;
     border-bottom: 1px solid #E5C685;
 }
 
 #nav-links {
     justify-content: space-between;
-    width: 25%;
-    font-size: 1.05rem;
+    width: 35%;
+    font-size: 1.3rem;
 }
 
 #nav-links .nav-link {
     /* font color of the links */
-    color: #ffffff;
+    color: rgba(255,255,255,.55)
 }
 
 
 
-.main-container{
+.main-container1{
     width: 90%;
-	min-height: 80%;
+	min-height: 90%;
     margin: auto;
     background-color:  rgba(255,255,255,0.1);
 	border-radius: 3px;
@@ -60,9 +76,18 @@ body {
     padding-top: 7%;
 }
 
-#Mainregistratie{
-    padding-bottom: 45%;
+.main-container2{
+    width: 90%;
+	min-height: 80%;
+    margin: auto;
+    background-color:  rgba(255,255,255,0.1);
+	border-radius: 3px;
+    padding-bottom: 15%;
+    margin-bottom: 0;
+    padding-top: 7%;
 }
+
+
 
 /* Login en registratie form*/
 
@@ -88,12 +113,12 @@ body {
     margin-right: 35%;
     padding-top: 3.5%;
     border-radius: 8px;
-    width: 550px;
+    width: 500px;
     height: 525px;
-
     color: #020E3A;
 	background: rgb(19, 61, 100);
 	border: 1px solid #020E3A;
+    
 }
 
 
@@ -245,13 +270,21 @@ select:required:invalid {
 
 }
 
-footer{
+footer {
     background-color: #343a40;
-    border-top: 1px solid #E5C685;
+    border-top: 1px solid #ff00ff;
     width: 100%;
-    height: fit-content;
+    height: 10%;
+    padding: 10px 0;
+    color: white;
     text-align: center;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-height: 700px) {
+    footer {
+        position: absolute;
+    }
 }
