@@ -26,6 +26,10 @@ app.get('/about', (req :any, res :any) => {
     res.render('about');
 });
 
+app.get('/login', (req :any, res :any) => {
+    res.render('login');
+});
+
 // Listens for connections on the specified port 
 app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
 export{};
