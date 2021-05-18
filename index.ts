@@ -14,26 +14,58 @@ app.use(express.static('assets'));
 app.use(express.static('js'));
 
 let status: boolean = false;
+let nav: string;
+
 
 // Routes to the specified path with the specified callback functions
 app.get('/', (req :any, res :any) => {
-    res.render('index');
+    if (status == false || status == undefined) {
+        nav = "navigatieFalse"
+    }
+    else{
+        nav = "navigatieTrue"
+    }
+    res.render('index', {navigatie: nav});
 });
 
 app.get('/index', (req :any, res :any) => {
-    res.render('index');
+    if (status == false || status == undefined) {
+        nav = "navigatieFalse"
+    }
+    else{
+        nav = "navigatieTrue"
+    }
+    res.render('index', {navigatie: nav});
 });
 
 app.get('/about', (req :any, res :any) => {
-    res.render('about');
+    if (status == false || status == undefined) {
+        nav = "navigatieFalse"
+    }
+    else{
+        nav = "navigatieTrue"
+    }
+    res.render('about', {navigatie: nav});
 });
 
 app.get('/login', (req :any, res :any) => {
-    res.render('login');
+    if (status == false || status == undefined) {
+        nav = "navigatieFalse"
+    }
+    else{
+        nav = "navigatieTrue"
+    }
+    res.render('login', {navigatie: nav});
 });
 
 app.get('/registratie', (req :any, res :any) => {
-    res.render('registratie');
+    if (status == false || status == undefined) {
+        nav = "navigatieFalse"
+    }
+    else{
+        nav = "navigatieTrue"
+    }
+    res.render('registratie', {navigatie: nav});
 });
 
 // Listens for connections on the specified port 
