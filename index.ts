@@ -13,6 +13,8 @@ app.use(express.static('css'));
 app.use(express.static('assets'));
 app.use(express.static('js'));
 
+let status: boolean = false;
+
 // Routes to the specified path with the specified callback functions
 app.get('/', (req :any, res :any) => {
     res.render('index');
