@@ -13,7 +13,7 @@ app.use(express.static('css'));
 app.use(express.static('assets'));
 app.use(express.static('js'));
 
-let status: boolean = false;
+let status: boolean = true;
 let nav: string;
 
 
@@ -66,6 +66,26 @@ app.get('/registratie', (req :any, res :any) => {
         nav = "navigatieTrue"
     }
     res.render('registratie', {navigatie: nav});
+});
+
+app.get('/fifa', (req :any, res :any) => {
+    res.render('fifa');
+});
+
+app.get('/fortnite', (req :any, res :any) => {
+    res.render('fortnite');
+});
+
+app.get('/lego', (req :any, res :any) => {
+    res.render('lego');
+});
+
+app.get('/lotr', (req :any, res :any) => {
+    res.render('lotr');
+});
+
+app.get('/fifaSpelen', (req :any, res :any) => {
+    res.render('fifaSpelen');
 });
 
 // Listens for connections on the specified port 
