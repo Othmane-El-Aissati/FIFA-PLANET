@@ -13,7 +13,7 @@ app.use(express.static('css'));
 app.use(express.static('assets'));
 app.use(express.static('js'));
 
-let status: boolean = true;
+let status: boolean;
 let nav: string;
 
 
@@ -55,7 +55,7 @@ app.get('/login', (req :any, res :any) => {
     else{
         nav = "navigatieTrue"
     }
-    res.render('login', {navigatie: nav});
+    res.render('login', {navigatie: nav, status: status});
 });
 
 app.get('/registratie', (req :any, res :any) => {
