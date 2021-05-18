@@ -18,6 +18,14 @@ app.get('/', (req :any, res :any) => {
     res.render('index');
 });
 
+app.get('/index', (req :any, res :any) => {
+    res.render('index');
+});
+
+app.get('/about', (req :any, res :any) => {
+    res.render('about');
+});
+
 // Listens for connections on the specified port 
 app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
 export{};
