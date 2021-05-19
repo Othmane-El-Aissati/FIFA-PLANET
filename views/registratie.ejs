@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
+<head>    
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
-    <head>
-        <!-- Required meta tags -->
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" type="text/css" href="/RegistratieLogin.css">
 
+    <!--jQuery google CDN to include Password confirm script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="/register.js"></script>
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-        <!-- Bootstrap Script -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-        <!-- Custom style CSS -->
-        <link rel="stylesheet" type="text/css" href="/RegistratieLogin.css">
-
-        <!--jQuery google CDN to include Password confirm script-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script defer src="/register.js"></script>
-
-        <!-- Page title -->
-        <title>Registratie Pagina </title>
-    </head>
+    <!-- Page title -->
+    <title>Registratie Pagina </title>
 </head>
-
-
 <body>
     <header>
         <!-- Navigation bar with responsive design -->
@@ -36,7 +28,7 @@
     </header>
     <main class="main-container1" id="Mainregistratie"></main>
     <!--Registration form-->
-    <form Id="Registratie" action="#">
+    <form method="POST" Id="Registratie" action="#">
         <label for="username"></label>
         <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required>
         <br>
@@ -52,7 +44,6 @@
         <br>
         <label for="travel"></label>
         <select id="travel" name="travel" required>
-
           <option value="" disabled selected hidden=>Kies jouw travel</option>
           <option>Lego</option>
           <option>Fifa Planet</option>
@@ -83,7 +74,6 @@
                 $('#message').html('Wachtwoorden komen niet overeen').css('color', 'red');
         });
     </script>
-
 
 </body>
 
