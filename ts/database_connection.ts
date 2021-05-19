@@ -6,6 +6,10 @@ const mongoDB_URI :any = 'mongodb+srv://TestUser1:IAmATestUser@webontwikkelingdb
 // MongoDB Client Connection
 const client = new MongoClient( mongoDB_URI , { useUnifiedTopology: true });
 
+// Database name & collection name
+const DATABASE :string = 'FifaPlanetDB';
+const COLLECTION :string = 'Users'; 
+
 let connect_to_db = async() => {
     try {
         // Creating a connection to the database
@@ -20,8 +24,7 @@ let connect_to_db = async() => {
 };
 
 let close_db_connection =  async() => {
-    // Making sure the database connection in close regardless of anything
     await client.close();
 };
 
-export{client, connect_to_db, close_db_connection};
+export{client, connect_to_db, close_db_connection, DATABASE, COLLECTION};
