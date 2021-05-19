@@ -8,7 +8,7 @@ const app = express();
 app.set('port', PORT);
 app.set('view engine', 'ejs');
 
-//'IMPORT' STATIC FILES
+// 'IMPORT' STATIC FILES
 app.use(express.static('css'));
 app.use(express.static('assets'));
 app.use(express.static('js'));
