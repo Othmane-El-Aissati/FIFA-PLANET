@@ -11,6 +11,6 @@ let check = () =>
         myJSON = JSON.stringify(user)
         sessionStorage.setItem("usersJSON", myJSON)
         alert(`${user.Username} is geregistreerd`)
-        window.location.href = "FIFA-PLANET/html/login.html";
+        window.location.href = "login";
     }
 }
