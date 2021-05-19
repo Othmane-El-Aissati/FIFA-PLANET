@@ -16,7 +16,6 @@ app.use(express.static('js'));
 let status: boolean;
 let nav: string;
 
-
 // Routes to the specified path with the specified callback functions
 app.get('/', (req :any, res :any) => {
     if (status == false || status == undefined) {
@@ -66,6 +65,15 @@ app.get('/registratie', (req :any, res :any) => {
         nav = "navigatieTrue"
     }
     res.render('registratie', {navigatie: nav});
+});
+
+app.post('/registratie' ,(req :any, res :any) => {
+    // Extracting user info to be saved in the DB
+    console.log("extracting data.");
+    let username = req.body.username;
+    let password = req.body.password;
+    console.log({username, password});
+    
 });
 
 app.get('/fifa', (req :any, res :any) => {

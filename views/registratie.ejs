@@ -35,8 +35,8 @@
         <label for="email"></label>
         <input type="email" placeholder="Emailadres" name="email" id="email" required>
         <br>
-        <label for="psw"></label>
-        <input type="password" placeholder="Wachtwoord" name="psw" id="psw" required>
+        <label for="password"></label>
+        <input type="password" placeholder="Wachtwoord" name="password" id="password" required>
         <br>
         <label for="psw-repeat"></label>
         <input type="password" placeholder="Bevestig Wachtwoord" name="psw-repeat" id="psw-repeat" required>
@@ -44,13 +44,12 @@
         <br>
         <label for="travel"></label>
         <select id="travel" name="travel" required>
-          <option value="" disabled selected hidden=>Kies jouw travel</option>
-          <option>Lego</option>
-          <option>Fifa Planet</option>
-          <option>Lord of the Rings</option>
-          <option>Fortnite</option>
-      </select>
-
+            <option value="" disabled selected hidden=>Kies jouw travel</option>
+            <option value="lego">Lego</option>
+            <option value="fifa">Fifa Planet</option>
+            <option value="lord-of-the-rings">Lord of the Rings</option>
+            <option value="fortnite">Fortnite</option>
+        </select>
         <hr>
         <button type="submit" class="register_button" onclick="check()">Registreren</button>
         </div>
@@ -67,8 +66,8 @@
 
     <!--Script to check if passwords match in registration form-->
     <script>
-        $('#psw, #psw-repeat').on('keyup', function() {
-            if ($('#psw').val() == $('#psw-repeat').val()) {
+        $('#password, #psw-repeat').on('keyup', function() {
+            if ($('#password').val() == $('#psw-repeat').val()) {
                 $('#message').html('Wachtwoorden zijn identiek').css('color', 'green');
             } else
                 $('#message').html('Wachtwoorden komen niet overeen').css('color', 'red');
