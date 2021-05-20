@@ -1,5 +1,6 @@
 // Importing files
 import { addUserToDB } from "./ts/userinfoToDB";
+import { IUser } from "./ts/interfaces";
 
 const express = require('express');
 const ejs = require('ejs');
@@ -18,15 +19,6 @@ app.use(express.static('js'));
 // URL encoded (To extracte user data from body)
 app.use(express.json({ limit: '1mb' })); // limit of the 'to be' extracted data
 app.use(express.urlencoded({ extended: true}));
-
-// Required user information to register 
-interface IUser {
-    name :string,
-    password :string,
-    email :string,
-    travel :string,
-    score :number,
-}
 
 let status: boolean;
 let nav: string;

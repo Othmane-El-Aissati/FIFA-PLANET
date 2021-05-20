@@ -1,12 +1,5 @@
 import {client, connect_to_db, close_db_connection, DATABASE, COLLECTION} from "./database_connection";
-
-interface IUser {
-    name :string,
-    password :string,
-    email :string,
-    travel :string,
-    score :number,
-}
+import { IUser } from "./interfaces";
 
 // Before clearing the database, data will be saved just in case
 let saveAllUsers: IUser[] = [];

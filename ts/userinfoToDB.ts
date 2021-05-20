@@ -1,13 +1,5 @@
 import {client, connect_to_db, close_db_connection, DATABASE, COLLECTION} from "./database_connection";
-
-// Required user information to register 
-interface IUser {
-    name :string,
-    password :string,
-    email :string,
-    travel :string,
-    score :number,
-};
+import { IUser } from "./interfaces";
 
 // start connection to Database
 let addUserToDB = async (userData :IUser) => {
