@@ -31,11 +31,18 @@ interface IAccount{
     email: string
 }
 
+interface ICurrentUser{
+    name: string,
+    travel: string
+}
+
 let accounts: IAccount[] = [
     {name: "oth", password: "123", travel: "fifa", email: "oth@oth.com"},
     {name: "Kr1s", password: "test123", travel: "lord-of-the-rings", email: "kr1s@gmail.com"},
     {name: "account1", password: "account1", travel: "fortnite", email: "account1@gmail.com"}
 ]
+
+let currentUser: ICurrentUser;
 
 // Routes to the specified path with the specified callback functions
 app.get('/', (req :any, res :any) => {
@@ -55,7 +62,7 @@ app.get('/index', (req :any, res :any) => {
     else{
         nav = "navigatieTrue"
     }
-    res.render('index', {navigatie: nav});
+    res.render('index', {navigatie: nav, name: currentUser.name});
 });
 
 app.get('/about', (req :any, res :any) => {
@@ -65,7 +72,7 @@ app.get('/about', (req :any, res :any) => {
     else{
         nav = "navigatieTrue"
     }
-    res.render('about', {navigatie: nav});
+    res.render('about', {navigatie: nav, name: currentUser.name});
 });
 
 app.get('/login', (req :any, res :any) => {
@@ -92,6 +99,7 @@ app.post('/login', (req :any, res :any) => {
     for (let index = 0; index < accounts.length; index++) {
         if (username == accounts[index].name && password == accounts[index].password) {
             check = 1;
+            currentUser = {name: accounts[index].name, travel: accounts[index].travel}
         }
     }
     if (check == 1) {
@@ -144,23 +152,23 @@ app.post('/registratie' ,(req :any, res :any) => {
 });
 
 app.get('/fifa', (req :any, res :any) => {
-    res.render('fifa');
+    res.render('fifa', {name: currentUser.name});
 });
 
 app.get('/fortnite', (req :any, res :any) => {
-    res.render('fortnite');
+    res.render('fortnite', {name: currentUser.name});
 });
 
 app.get('/lego', (req :any, res :any) => {
-    res.render('lego');
+    res.render('lego', {name: currentUser.name});
 });
 
 app.get('/lotr', (req :any, res :any) => {
-    res.render('lotr');
+    res.render('lotr', {name: currentUser.name});
 });
 
 app.get('/fifaSpelen', (req :any, res :any) => {
-    res.render('fifaSpelen');
+    res.render('fifaSpelen', {name: currentUser.name});
 });
 
 app.get('/logout', (req :any, res :any) => {
