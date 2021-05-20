@@ -1,10 +1,9 @@
 import { IUser, IClubs, ILeague} from "./interfaces";
 
-const fs = require('fs');
+const fs = require('fs'); 
 
 const clubFileLink :string = '../data/clubs.json';
 const leagueFileLink :string = '../data/leagues.json';
-const userFileLink :string = '../data/users.json'
 
 function saveClubsData(dataToSave :IClubs[]) {
     try {
@@ -38,21 +37,6 @@ function saveLeaguesData(dataToSave :ILeague[]) {
     }
 }
 
-function saveUserData( newUser :IUser ){
-    try {
-        console.log('file searching...');
-        
-        if (fs.existsSync(userFileLink)) {
-            fs.appendFileSync(userFileLink, newUser);
-        }else{
-            console.warn('File does not exists.')
-            fs.writeFileSync(userFileLink);
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
-
 function getClubs(){
     try {
         if (fs.existsSync(clubFileLink)) {
@@ -81,14 +65,9 @@ function getLeagues(){
     }
 }
 
-let newUser :IUser = { 
-    name : 'new user',
-    password : 'new user',
-    email : 'new user',
-    travel : 'new user',
-    score : 0,
-}
-
-saveUserData(newUser);
-
 export{ saveLeaguesData, saveClubsData };
+
+/*  CODE TO IMPROVE FUNCTIONS (for later):
+    let users = require("./users.json");
+    console.log(users); // returns { users: [] }
+*/
