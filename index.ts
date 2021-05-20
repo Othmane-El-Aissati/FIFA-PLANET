@@ -1,6 +1,7 @@
 // Importing files
-import { addUserToDB } from "./ts/userinfoToDB";
-import { IUser } from "./ts/interfaces";
+//import { addUserToDB } from "./ts/userinfoToDB";
+//import { IUser } from "./ts/interfaces";
+import { createRequireFromPath } from "module";
 
 const express = require('express');
 const ejs = require('ejs');
@@ -22,6 +23,19 @@ app.use(express.urlencoded({ extended: true}));
 
 let status: boolean;
 let nav: string;
+
+interface IAccount{
+    name: string,
+    password: string,
+    travel: string,
+    email: string
+}
+
+let accounts: IAccount[] = [
+    {name: "oth", password: "123", travel: "fifa", email: "oth@oth.com"},
+    {name: "Kr1s", password: "test123", travel: "lord-of-the-rings", email: "kr1s@gmail.com"},
+    {name: "account1", password: "account1", travel: "fortnite", email: "account1@gmail.com"}
+]
 
 // Routes to the specified path with the specified callback functions
 app.get('/', (req :any, res :any) => {
@@ -64,6 +78,31 @@ app.get('/login', (req :any, res :any) => {
     res.render('login', {navigatie: nav, status: status});
 });
 
+app.post('/login', (req :any, res :any) => {
+    if (status == false || status == undefined) {
+        nav = "navigatieFalse"
+    }
+    else{
+        nav = "navigatieTrue"
+    }
+    let username: string = req.body.username;
+    let password: string = req.body.password;
+    let check: number = 0;
+
+    for (let index = 0; index < accounts.length; index++) {
+        if (username == accounts[index].name && password == accounts[index].password) {
+            check = 1;
+        }
+    }
+    if (check == 1) {
+        status = true;
+        res.redirect('index')
+    }
+    else{
+        res.render('login', {navigatie: nav, status: status});
+    }
+});
+
 app.get('/registratie', (req :any, res :any) => {
     if (status == false || status == undefined) {
         nav = "navigatieFalse"
@@ -76,12 +115,22 @@ app.get('/registratie', (req :any, res :any) => {
 
 app.post('/registratie' ,(req :any, res :any) => {
     // Extracting user info to be saved in the DB
-    let username = req.body.username;
-    let password = req.body.password;
-    let email = req.body.email;
-    let travel = req.body.travel;
+    let username: string = req.body.username;
+    let password: string = req.body.password;
+    let passwordRepeat: string = req.body.pswRepeat;
+    let email: string = req.body.email;
+    let travel: string = req.body.travel;
 
-    //Making a new user object
+    if (password == passwordRepeat) {
+        let account: IAccount = {name: username, password: password, travel: travel, email: email}
+        accounts.push(account)
+        res.redirect('/login');
+    }
+    else{
+        res.render('registratie')
+    }
+
+    /*Making a new user object
     let newUser :IUser = {
         name: username,
         password : password,
@@ -91,10 +140,7 @@ app.post('/registratie' ,(req :any, res :any) => {
     };
 
     //Add new user to DB
-    addUserToDB(newUser);
-    
-    //Redirecting after registration is submitted
-    res.redirect('/login');
+    addUserToDB(newUser);*/
 });
 
 app.get('/fifa', (req :any, res :any) => {
@@ -115,6 +161,11 @@ app.get('/lotr', (req :any, res :any) => {
 
 app.get('/fifaSpelen', (req :any, res :any) => {
     res.render('fifaSpelen');
+});
+
+app.get('/logout', (req :any, res :any) => {
+    status = false;
+    res.redirect('index');
 });
 
 // Listens for connections on the specified port 
