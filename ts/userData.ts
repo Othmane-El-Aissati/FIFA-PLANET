@@ -2,8 +2,7 @@ import { IUser } from "./interfaces";
 
 const fs = require('fs'); 
 
-const userFileLink :string = '../data/users.json';
-
+const userFileLink :string = './data/users.json';
 function saveUserData(newUser :IUser){
     try {
         // Checking if user.json file exists, if not, create with empty array

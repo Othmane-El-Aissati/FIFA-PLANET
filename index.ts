@@ -1,7 +1,9 @@
 // Importing files
 //import { addUserToDB } from "./ts/userinfoToDB";
-//import { IUser } from "./ts/interfaces";
-import { createRequireFromPath } from "module";
+import { IUser } from "./ts/interfaces";
+import { saveUserData, getUsers, updateScore } from './ts/userData';
+
+
 
 const express = require('express');
 const ejs = require('ejs');
@@ -17,6 +19,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('css'));
 app.use(express.static('assets'));
 app.use(express.static('js'));
+app.use(express.static('data'));
 // URL encoded (To extracte user data from body)
 app.use(express.json({ limit: '1mb' })); // limit of the 'to be' extracted data
 app.use(express.urlencoded({ extended: true}));
@@ -24,23 +27,24 @@ app.use(express.urlencoded({ extended: true}));
 let status: boolean;
 let nav: string;
 
-interface IAccount{
+/*interface IAccount{
     name: string,
     password: string,
+    email: string,
     travel: string,
-    email: string
-}
+    score: number
+}*/
 
 interface ICurrentUser{
     name: string,
     travel: string
 }
 
-let accounts: IAccount[] = [
+/*[
     {name: "oth", password: "123", travel: "fifa", email: "oth@oth.com"},
     {name: "Kr1s", password: "test123", travel: "lord-of-the-rings", email: "kr1s@gmail.com"},
     {name: "account1", password: "account1", travel: "fortnite", email: "account1@gmail.com"}
-]
+]*/
 
 let currentUser: ICurrentUser;
 
@@ -95,7 +99,7 @@ app.post('/login', (req :any, res :any) => {
     let username: string = req.body.username;
     let password: string = req.body.password;
     let check: number = 0;
-
+    let accounts: IUser[] = getUsers().users;
     for (let index = 0; index < accounts.length; index++) {
         if (username == accounts[index].name && password == accounts[index].password) {
             check = 1;
@@ -130,8 +134,9 @@ app.post('/registratie' ,(req :any, res :any) => {
     let travel: string = req.body.travel;
 
     if (password == passwordRepeat) {
-        let account: IAccount = {name: username, password: password, travel: travel, email: email}
-        accounts.push(account)
+        let account: IUser = {name: username, password: password, email: email, travel: travel, score: 0}
+        saveUserData(account)
+        //accounts.push(account)
         res.redirect('/login');
     }
     else{
