@@ -27,24 +27,10 @@ app.use(express.urlencoded({ extended: true}));
 let status: boolean;
 let nav: string;
 
-/*interface IAccount{
-    name: string,
-    password: string,
-    email: string,
-    travel: string,
-    score: number
-}*/
-
 interface ICurrentUser{
     name: string,
     travel: string
 }
-
-/*[
-    {name: "oth", password: "123", travel: "fifa", email: "oth@oth.com"},
-    {name: "Kr1s", password: "test123", travel: "lord-of-the-rings", email: "kr1s@gmail.com"},
-    {name: "account1", password: "account1", travel: "fortnite", email: "account1@gmail.com"}
-]*/
 
 let currentUser: ICurrentUser;
 
