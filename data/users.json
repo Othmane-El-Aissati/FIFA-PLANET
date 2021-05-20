@@ -1,10 +1,31 @@
 {
   "users": [
     {
-      "name": "oth",
-      "password": "123",
-      "email": "oth@g.com",
-      "travel": "fifa",
+      "name": "user1",
+      "password": "user1",
+      "email": "user1",
+      "travel": "user1",
+      "score": 30
+    },
+    {
+      "name": "user2",
+      "password": "user2",
+      "email": "user2",
+      "travel": "user2",
+      "score": 20
+    },
+    {
+      "name": "user3",
+      "password": "user3",
+      "email": "user3",
+      "travel": "user3",
+      "score": 50
+    },
+    {
+      "name": "user4",
+      "password": "user4",
+      "email": "user4",
+      "travel": "user4",
       "score": 0
     }
   ]
