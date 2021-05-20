@@ -1,4 +1,5 @@
 import { IClubs, ILeague } from "./interfaces";
+import {} 
 
 const fetch = require('node-fetch');
 
@@ -31,25 +32,23 @@ async function fetchClubs() :Promise<IClubs[]> {
 
 // Function to store all the leagues 
 // ( proventing to many fetches by reusing the array )
-function getLeagues() :ILeague[] {
+async function fetchLeagues() :Promise<void> {
     let leagues :ILeague[] = [];
-    let fetchLeagues = async() => {
-        for (let index = 1; index < 2; index++) {
-            await fetch(`https://futdb.app/api/leagues?page=${index}&limit=30`,{
-                headers: {
-                    'Accept': 'application/json',
-                    'X-AUTH-TOKEN': API_TOKEN
-                }
-            })
-            .then((response :any) => response.json())
-            .then((json :any) => {
-                leagues.push(...json.items);
-            });
-        }
-        console.log('data saved.');
+    for (let index = 1; index < 4; index++) {
+        await fetch(`https://futdb.app/api/leagues?page=${index}&limit=30`,{
+            headers: {
+                'Accept': 'application/json',
+                'X-AUTH-TOKEN': API_TOKEN
+            }
+        })
+        .then((response :any) => response.json())
+        .then((json :any) => {
+            leagues.push(...json.items);
+        });
     }
-    fetchLeagues();
-    return leagues;
+
 };
 
-export{ getLeagues };
+console.log(fetchLeagues());
+
+export{ fetchLeagues };
