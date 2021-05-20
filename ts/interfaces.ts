@@ -7,6 +7,15 @@ interface IUser {
     score :number,
 }
 
+interface IClubs{
+    id :number,
+    name :string,
+    league :number
+}
 
+interface ILeague{
+    id: number,
+    name: string
+}
 
-export{IUser};
+export{IUser, IClubs, ILeague};
