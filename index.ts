@@ -1,9 +1,8 @@
 // Importing files
 //import { addUserToDB } from "./ts/userinfoToDB";
-import { IUser } from "./ts/interfaces";
 import { saveUserData, getUsers, updateScore } from './ts/userData';
-
-
+import { IClubs, IUser } from "./ts/interfaces";
+import { getClubs, getLeagues } from "./ts/API_Data";
 
 const express = require('express');
 const ejs = require('ejs');
@@ -27,26 +26,16 @@ app.use(express.urlencoded({ extended: true}));
 let status: boolean;
 let nav: string;
 
-/*interface IAccount{
-    name: string,
-    password: string,
-    email: string,
-    travel: string,
-    score: number
-}*/
-
 interface ICurrentUser{
     name: string,
     travel: string
 }
 
-/*[
-    {name: "oth", password: "123", travel: "fifa", email: "oth@oth.com"},
-    {name: "Kr1s", password: "test123", travel: "lord-of-the-rings", email: "kr1s@gmail.com"},
-    {name: "account1", password: "account1", travel: "fortnite", email: "account1@gmail.com"}
-]*/
-
 let currentUser: ICurrentUser;
+
+function getRandom(max :number) {
+    return Math.floor(Math.random() * (max - 0 + 1)) + 0;
+}
 
 // Routes to the specified path with the specified callback functions
 app.get('/', (req :any, res :any) => {
@@ -173,7 +162,19 @@ app.get('/lotr', (req :any, res :any) => {
 });
 
 app.get('/fifaSpelen', (req :any, res :any) => {
-    res.render('fifaSpelen', {name: currentUser.name});
+    const clubAmount :number = 797;
+    const leagueAmount :number = 48;
+
+    let clubName :IClubs = getClubs()[getRandom(clubAmount)];
+
+    res.render('fifaSpelen', {
+        name: currentUser.name,
+        club1: clubName.name,
+        leagueAnswer1: getLeagues()[getRandom(leagueAmount)].name,
+        leagueAnswer2: getLeagues()[getRandom(leagueAmount)].name,
+        leagueAnswer3: getLeagues()[getRandom(leagueAmount)].name,
+        leagueAnswer4: getLeagues()[getRandom(leagueAmount)].name
+    });
 });
 
 app.get('/logout', (req :any, res :any) => {
