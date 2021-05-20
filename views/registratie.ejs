@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>    
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" type="text/css" href="/RegistratieLogin.css">
+
+    <!--jQuery google CDN to include Password confirm script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="/register.js"></script>
+
+    <!-- Page title -->
+    <title>Registratie Pagina </title>
+</head>
+<body>
+    <header>
+        <!-- Navigation bar with responsive design -->
+        <%- include(navigatie); %>
+    </header>
+    <main class="main-container1" id="Mainregistratie"></main>
+    <!--Registration form-->
+    <form method="POST" id="Registratie" action="">
+        <label for="username"></label>
+        <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required>
+        <br>
+        <label for="email"></label>
+        <input type="email" placeholder="Emailadres" name="email" id="email" required>
+        <br>
+        <label for="password"></label>
+        <input type="password" placeholder="Wachtwoord" name="password" id="password" required>
+        <br>
+        <label for="psw-repeat"></label>
+        <input type="password" placeholder="Bevestig Wachtwoord" name="psw-repeat" id="psw-repeat" required>
+        <span class="message" id='message'></span>
+        <br>
+        <label for="travel"></label>
+        <select id="travel" name="travel" required>
+            <option value="" disabled selected hidden=>Kies jouw travel</option>
+            <option value="lego">Lego</option>
+            <option value="fifa">Fifa Planet</option>
+            <option value="lord-of-the-rings">Lord of the Rings</option>
+            <option value="fortnite">Fortnite</option>
+        </select>
+        <hr>
+        <button type="submit" class="register_button" onclick="check()">Registreren</button>
+        </div>
+        <p class="link_login">Heb je al een account? <a href="login">Inloggen</a></p>
+
+    </form>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
+            <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
+        </div>
+    </footer>
+
+    <!--Script to check if passwords match in registration form-->
+    <script>
+        $('#password, #psw-repeat').on('keyup', function() {
+            if ($('#password').val() == $('#psw-repeat').val()) {
+                $('#message').html('Wachtwoorden zijn identiek').css('color', 'green');
+            } else
+                $('#message').html('Wachtwoorden komen niet overeen').css('color', 'red');
+        });
+    </script>
+
+</body>
+
+</html>

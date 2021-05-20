@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Costum style CSS -->
+    <link rel="stylesheet" type="text/css" href="/RegistratieLogin.css">
+    <link rel="stylesheet" href="/fonts.css">
+    <title>Login-page</title>
+
+    <!-- Jquery for remembermecookie-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Costum js script -->
+    <script defer src="/login.js"></script>
+</head>
+
+<body id="bootstrap-overrides">
+    
+        <header>
+            <!-- Navigatie bar met responsive design -->
+            <%- include(navigatie); %>
+        </header>
+        <main class="main-container2">
+            <form id="LogIn" action="#">
+                <label for ="username"></label>
+                <input class= "Loginbox" type="text" placeholder="Gebruikersnaam" id="username">
+                <label for ="password"></label>
+                <input class= "Loginbox" type="password" placeholder="Wachtwoord" id="password">
+                <button  type="button" type="submit" class="login_button" onclick="checkLoginUsers()"> Inloggen </button>
+                <label  class ="checkbox">
+                    <input  type="checkbox" value="remember-me" id="remember_me"> Mijn inloggegevens onthouden
+                </label>
+                <p class="link_registratie">Nog geen account? <a href="registratie">Registreren</a></p>
+            </form>
+        </main>
+            
+        
+        <footer>
+            <div class="container"> 
+                <p>Copyright &copy; 2021 | IT Project | FIFA-Planet</p>
+                <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
+            </div>
+        <script>
+            $(function() {
+     
+                if (localStorage.chkbx && localStorage.chkbx != '') {
+                        $('#remember_me').attr('checked', 'checked');
+                        $('#username').val(localStorage.usrname);
+                        $('#password').val(localStorage.pass); } 
+                else     
+                        {
+                        $('#remember_me').removeAttr('checked');
+                        $('#username').val('');
+                        $('#password').val('');
+                        }
+     
+                    $('#remember_me').click(function() {
+     
+                        if ($('#remember_me').is(':checked')) {
+                            // save username and password
+                            localStorage.usrname = $('#username').val();
+                            localStorage.pass = $('#password').val();
+                            localStorage.chkbx = $('#remember_me').val();
+                        } else {
+                            localStorage.usrname = '';
+                            localStorage.pass = '';
+                            localStorage.chkbx = '';
+                        }
+                    });
+                });
+        </script>
+        </footer>
+</body>
+
+</html>

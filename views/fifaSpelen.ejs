@@ -17,14 +17,14 @@
         crossorigin="anonymous"></script>
 
     <!-- Costum style CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/css/styleFifaSpelen.css">
-    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/styleFifaSpelen.css">
+    <link rel="stylesheet" href="/fonts.css">
 
     <!-- Costum music script -->
-    <script defer src="/js/music.js" ></script>
-    <script src="/js/answerButtonDesign.js" defer></script>
+    <script defer src="/music.js" ></script>
+    <script src="/answerButtonDesign.js" defer></script>
     <script src="https://kit.fontawesome.com/a9c44a0e6d.js" crossorigin="anonymous"></script>
     
     <!-- Page title -->
@@ -35,42 +35,7 @@
     <header>
         <!-- Navigatie bar met responsive design -->
         <!-- nav-header for border bottom line -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-header">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/htmlLogin/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/htmlLogin/about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="nav-link" href="#">Thema's</a>
-                            <div class="dropdown-content">
-                                <a href="/htmlLogin/lego.html">lego</a>
-                                <a href="/htmlLogin/lotr.html">lord of the rings</a>
-                                <a href="/htmlLogin/fifa-spelen.html">fifa</a>
-                                <a href="/htmlLogin/fortnite.html">fortnite</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <div class="dropdown">
-                        <a class="a-link" href="#" id="username"></a>
-                        <p class="a-link">▼</p>
-                        <div class="dropdown-content">
-                            <a href="/index.html">Uitloggen</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <%- include('navigatieTrue'); %>
     </header>
     <main class="main-container">
          <!--muziek buttons en playlist-->
@@ -79,10 +44,10 @@
             <i onclick="setVolumeOn()" type="button" class="fas fa-music"></i>
         
             <audio autoplay loop id="mySong">
-                <source src="/assets/playlist/mix_36m27s (audio-joiner.com).mp3" type="audio/mp3">
+                <source src="/playlist/mix_36m27s (audio-joiner.com).mp3" type="audio/mp3">
             </audio>
          </section>
-        <img src="/assets/images/colorDetail.png" alt="fifa 2020 color detail" class="colorDetail" id="topFifaImage">
+        <img src="/images/colorDetail.png" alt="fifa 2020 color detail" class="colorDetail" id="topFifaImage">
         <!-- <img src="/assets/images/fifa_logo.png" alt="fifa logo" class="colorDetail" id="fifa-logo" > -->
         <section class="sectionGame" id="hideSection">
             <br>
@@ -124,7 +89,7 @@
             <article class="club-image-container">
                 <!-- club image -->
                 <div class="image-wrapper">
-                    <img src="/assets/images/chelsea.png" alt="chelsea">
+                    <img src="/images/chelsea.png" alt="chelsea">
                 </div>
                 <p>In welke league speelt deze club ?</p>
             </article>
@@ -151,7 +116,7 @@
             <article class="article-title-green">
                 <!-- league image -->
                 <div id="image-league">
-                    <img src="./assets/images/Premier_League-Logo.wine.png" alt="premier-league">
+                    <img src="./images/Premier_League-Logo.wine.png" alt="premier-league">
                 </div>
                 <p id="question-league">Welke clubs spelen nog in deze league ?</p>
             </article>
@@ -160,34 +125,34 @@
                 <!-- possible answer to choose from, where 3 answers are correct-->
                 <div class="div-red">
                     <!-- possible answer 1 -->
-                    <img src="./assets/images/arsenal.png" alt="Arsenal" >
+                    <img src="./images/arsenal.png" alt="Arsenal" >
                     <button>Answer 1</button>
                 </div>
                 <div class="div-red">
                     <!-- possible answer 2 -->
-                    <img src="./assets/images/bristolCity.png" alt="bristolCity">
+                    <img src="./images/bristolCity.png" alt="bristolCity">
                     <button>Answer 2</button>
                 </div>
                 <div class="div-red">
                     <!-- possible answer 3 -->
-                    <img src="./assets/images/chelsea.png" alt="chelsea">
+                    <img src="./images/chelsea.png" alt="chelsea">
                     <button>Answer 3</button>
                 </div>
                 <div class="div-red"> 
                     <!-- posibble answer 4 -->
-                    <img src="./assets/images/manchester-city.png" alt="manchester-city">
+                    <img src="./images/manchester-city.png" alt="manchester-city">
                     <button>Answer 4</button>
                 </div>
                 <div class="div-red">
                     <!-- possible answer 5 -->
-                    <img src="./assets/images/Newcastle_United_Logo.png" alt="newcastle-united">
+                    <img src="./images/Newcastle_United_Logo.png" alt="newcastle-united">
                     <button>Answer 5</button>
                 </div>
             </article>
         </section>
         <!-- ============================ -->
 
-        <img src="/assets/images/colorDetail.png" alt="fifa 2020 color detail"  id="buttomFifaImage">
+        <img src="/images/colorDetail.png" alt="fifa 2020 color detail"  id="buttomFifaImage">
     </main>
     <footer>
         <div class="container"> 
