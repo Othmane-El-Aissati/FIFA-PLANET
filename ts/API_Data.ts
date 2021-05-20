@@ -63,7 +63,7 @@ function getLeagues(){
     }
 }
 
-
+console.log(getLeagues().length);
 // saveLeaguesData & saveClubsData to be used during API call, not needed anywhere else
 export{ saveLeaguesData, saveClubsData, getClubs, getLeagues};
 
