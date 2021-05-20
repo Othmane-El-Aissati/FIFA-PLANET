@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "name": "Denmark Superliga (1)"
+  },
+  {
+    "id": 4,
+    "name": "Belgium Pro League (1)"
+  },
+  {
+    "id": 10,
+    "name": "Holland Eredivisie (1)"
+  },
+  {
+    "id": 13,
+    "name": "England Premier League (1)"
+  },
+  {
+    "id": 14,
+    "name": "England Championship (2)"
+  },
+  {
+    "id": 16,
+    "name": "France Ligue 1 (1)"
+  },
+  {
+    "id": 17,
+    "name": "France Ligue 2 (2)"
+  },
+  {
+    "id": 19,
+    "name": "Germany 1. Bundesliga (1)"
+  },
+  {
+    "id": 20,
+    "name": "Germany 2. Bundesliga (2)"
+  },
+  {
+    "id": 31,
+    "name": "Italy Serie A (1)"
+  },
+  {
+    "id": 32,
+    "name": "Calcio B"
+  },
+  {
+    "id": 39,
+    "name": "USA Major League Soccer (1)"
+  },
+  {
+    "id": 41,
+    "name": "Norway Eliteserien (1)"
+  },
+  {
+    "id": 50,
+    "name": "Scotland Premiership (1)"
+  },
+  {
+    "id": 53,
+    "name": "Spain Primera División (1)"
+  },
+  {
+    "id": 54,
+    "name": "Spain Segunda División (2)"
+  },
+  {
+    "id": 56,
+    "name": "Sweden Allsvenskan (1)"
+  },
+  {
+    "id": 60,
+    "name": "England League One (3)"
+  },
+  {
+    "id": 61,
+    "name": "England League Two (4)"
+  },
+  {
+    "id": 63,
+    "name": "Greece A'Ethniki (1)"
+  },
+  {
+    "id": 65,
+    "name": "Rep. Ireland Premier Division (1)"
+  },
+  {
+    "id": 66,
+    "name": "Poland Ekstraklasa (1)"
+  },
+  {
+    "id": 68,
+    "name": "Turkey Süper Lig (1)"
+  },
+  {
+    "id": 80,
+    "name": "Austria Bundesliga (1)"
+  },
+  {
+    "id": 83,
+    "name": "Korea K League 1 (1)"
+  },
+  {
+    "id": 189,
+    "name": "Switzerland Super League (1)"
+  },
+  {
+    "id": 308,
+    "name": "Portugal Primeira Liga (1)"
+  },
+  {
+    "id": 317,
+    "name": "Croatia Prva HNL (1)"
+  },
+  {
+    "id": 319,
+    "name": "Czech Republic HET Liga (1)"
+  },
+  {
+    "id": 322,
+    "name": "Finland Veikkausliiga (1)"
+  },
+  {
+    "id": 330,
+    "name": "Romania Liga I (1)"
+  },
+  {
+    "id": 332,
+    "name": "Ukraine Premier Liga (1)"
+  },
+  {
+    "id": 335,
+    "name": "Campeonato Scotiabank"
+  },
+  {
+    "id": 336,
+    "name": "Liga Dimayor"
+  },
+  {
+    "id": 341,
+    "name": "Mexico Liga MX (1)"
+  },
+  {
+    "id": 347,
+    "name": "South Africa Premier SL (1)"
+  },
+  {
+    "id": 349,
+    "name": "Japan J1 League (1)"
+  },
+  {
+    "id": 350,
+    "name": "Saudi Pro League (1)"
+  },
+  {
+    "id": 351,
+    "name": "Australia A-League (1)"
+  },
+  {
+    "id": 353,
+    "name": "Argentina Primera División (1)"
+  },
+  {
+    "id": 1003,
+    "name": "CONMEBOL Libertadores"
+  },
+  {
+    "id": 1014,
+    "name": "CONMEBOL Sudamericana"
+  },
+  {
+    "id": 2012,
+    "name": "China Super League (1)"
+  },
+  {
+    "id": 2076,
+    "name": "Germany 3. Liga (3)"
+  },
+  {
+    "id": 2118,
+    "name": "Icons"
+  },
+  {
+    "id": 2172,
+    "name": "UAE FUT League"
+  },
+  {
+    "id": 2179,
+    "name": "FUT Calcio B"
+  },
+  {
+    "id": 3006,
+    "name": "Russia FUT League"
+  }
+]
