@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "name": "oth",
+      "password": "123",
+      "email": "oth@g.com",
+      "travel": "fifa",
+      "score": 0
+    }
+  ]
+}
