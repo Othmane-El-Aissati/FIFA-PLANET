@@ -20,8 +20,10 @@ async function fetchClubs() :Promise<IClubs[]> {
                 'Accept': 'application/json',
                 'X-AUTH-TOKEN': API_TOKEN
             }
-        }).then((response :any) => response.json());
-        clubs.push(...fetchClubsJson.items);
+        }).then((response :any) => response.json())
+        .then((json :any) => {
+           clubs.push(...json.items); 
+        });
     }
 
     return await clubs;
@@ -29,19 +31,25 @@ async function fetchClubs() :Promise<IClubs[]> {
 
 // Function to store all the leagues 
 // ( proventing to many fetches by reusing the array )
-async function fetchLeagues() :Promise<ILeague[]> {
+function getLeagues() :ILeague[] {
     let leagues :ILeague[] = [];
-    for (let index = 1; index < 2; index++) {
-        let fetchLeaguesJson =  await fetch(`https://futdb.app/api/leagues?page=${index}&limit=30`,{
-            headers: {
-                'Accept': 'application/json',
-                'X-AUTH-TOKEN': API_TOKEN
-            }
-        }).then((response :any) => response.json());
-        await leagues.push(...fetchLeaguesJson.items);
+    let fetchLeagues = async() => {
+        for (let index = 1; index < 2; index++) {
+            await fetch(`https://futdb.app/api/leagues?page=${index}&limit=30`,{
+                headers: {
+                    'Accept': 'application/json',
+                    'X-AUTH-TOKEN': API_TOKEN
+                }
+            })
+            .then((response :any) => response.json())
+            .then((json :any) => {
+                leagues.push(...json.items);
+            });
+        }
+        console.log('data saved.');
     }
-    console.log("Leageus in array");
-    return await leagues;
+    fetchLeagues();
+    return leagues;
 };
 
-export{ fetchLeagues, fetchClubs };
+export{ getLeagues };

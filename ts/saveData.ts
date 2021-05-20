@@ -1,5 +1,37 @@
-import { fetchLeagues, fetchClubs } from "./fetchFutDB";
+import { FILE } from "dns";
+import { getLeagues } from "./fetchFutDB";
 import {IClubs, ILeague} from "./interfaces";
+
+const fs = require('fs');
+
+// let clubs :IClubs[] = fetchClubs();
+
+// const fileLink :string = '../';
+
+function saveData() {
+    try {
+        if(!fs.existsSyns('../data/clubs.json')) console.log('hello');
+
+    } catch (error) {
+        console.error(error);   
+    }
+}
+
+saveData();
+
+export{ saveData } ;
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Generating a random number to choose a club 
 let randomPage = () :number => {
