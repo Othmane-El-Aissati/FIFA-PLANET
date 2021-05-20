@@ -1,6 +1,6 @@
-import {IClubs, ILeague} from "./interfaces";
+import { IUser, IClubs, ILeague} from "./interfaces";
 
-const fs = require('fs');
+const fs = require('fs'); 
 
 const clubFileLink :string = '../data/clubs.json';
 const leagueFileLink :string = '../data/leagues.json';
@@ -37,12 +37,26 @@ function saveLeaguesData(dataToSave :ILeague[]) {
     }
 }
 
-// TO BE DELETED - saved to readFiles ... later
-function refactorFile(){
+function getClubs(){
+    try {
+        if (fs.existsSync(clubFileLink)) {
+            console.log('Reading file...');
+            let data = fs.readFileSync(clubFileLink);
+            
+            console.log('File read.');
+            console.log(JSON.parse(data));
+        }else console.warn('File does not exists.');
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function getLeagues(){
     try {
         if (fs.existsSync(leagueFileLink)) {
             console.log('Reading file...');
             let data = fs.readFileSync(leagueFileLink);
+
             console.log('File read.');
             console.log(JSON.parse(data));
         }else console.warn('File does not exists.');
@@ -52,3 +66,8 @@ function refactorFile(){
 }
 
 export{ saveLeaguesData, saveClubsData };
+
+/*  CODE TO IMPROVE FUNCTIONS (for later):
+    let users = require("./users.json");
+    console.log(users); // returns { users: [] }
+*/
