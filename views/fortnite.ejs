@@ -34,6 +34,7 @@
         <div class="thema-position">
             <h1 class="thema-titel">Fortnite spelen</h1>
             <img src="/images/fortnite-Logo.png" alt="fornite logo" class="thema-foto" onclick="check()">
+            <p id="travelValue" style="visibility: hidden;"><%= travel %></p>
         </div>
     </main>
     <footer>
@@ -44,12 +45,9 @@
     </footer>
 </body>
 <script>
-    let userData = sessionStorage.getItem("usersJSON")
-    let users = JSON.parse(userData)
-    document.getElementById("username").innerHTML = users.Username
-
+    let travel = document.getElementById("travelValue").innerHTML;
     let check = () =>{
-        if (users.Travel === "Fortnite") {
+        if (travel === "fortnite") {
             alert("Het spel is helaas nog niet beschikbaar")
         }
         else{
