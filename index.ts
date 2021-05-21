@@ -167,6 +167,10 @@ app.get('/fifaSpelen', (req :any, res :any) => {
 
     let clubName :IClubs = getClubs()[getRandom(clubAmount)];
 
+    document.getElementsByClassName('answer-btn')[0]?.addEventListener('click', ()=>{
+        console.log('I got clicked');
+    });
+
     res.render('fifaSpelen', {
         name: currentUser.name,
         club1: clubName.name,
