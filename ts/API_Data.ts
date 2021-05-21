@@ -1,9 +1,9 @@
-import {IClubs, ILeague} from "./interfaces";
+import { IUser, IClubs, ILeague} from "./interfaces";
 
-const fs = require('fs');
+const fs = require('fs'); 
 
-const clubFileLink :string = '../data/clubs.json';
-const leagueFileLink :string = '../data/leagues.json';
+const clubFileLink :string = './data/clubs.json';
+const leagueFileLink :string = './data/leagues.json';
 
 function saveClubsData(dataToSave :IClubs[]) {
     try {
@@ -37,18 +37,37 @@ function saveLeaguesData(dataToSave :ILeague[]) {
     }
 }
 
-// TO BE DELETED - saved to readFiles ... later
-function refactorFile(){
+function getClubs() {
     try {
-        if (fs.existsSync(leagueFileLink)) {
+        if (fs.existsSync(clubFileLink)) {
             console.log('Reading file...');
-            let data = fs.readFileSync(leagueFileLink);
-            console.log('File read.');
-            console.log(JSON.parse(data));
+            let data = JSON.parse(fs.readFileSync(clubFileLink, {'flag' : 'r'}));
+            console.log('Data extracted.');
+            return data;
         }else console.warn('File does not exists.');
     } catch (error) {
         console.error(error);
     }
 }
 
-export{ saveLeaguesData, saveClubsData };
+function getLeagues(){
+    try {
+        if (fs.existsSync(leagueFileLink)) {
+            console.log('Reading file...');
+            let data = JSON.parse(fs.readFileSync(leagueFileLink, {'flag' : 'r'}));
+            console.log('Data extracted.');
+            return data;
+        }else console.warn('File does not exists.');
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+console.log(getLeagues().length);
+// saveLeaguesData & saveClubsData to be used during API call, not needed anywhere else
+export{ saveLeaguesData, saveClubsData, getClubs, getLeagues};
+
+/*  CODE TO IMPROVE FUNCTIONS (for later):
+    let users = require("./users.json");
+    console.log(users); // returns { users: [] }
+*/
