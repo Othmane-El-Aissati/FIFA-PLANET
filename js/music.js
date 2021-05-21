@@ -1,5 +1,6 @@
 var music = document.getElementById("mySong");
 music.volume = setVolumeOn();
+
     
   function setVolumeOff() { 
     music.volume = 0.0;
