@@ -29,11 +29,54 @@
       "score": 0
     },
     {
+<<<<<<< HEAD
       "name": "chr1s",
       "password": "test",
       "email": "some@some.com",
       "travel": "fifa",
       "score": 0
+=======
+      "name": "account2",
+      "password": "123",
+      "email": "account2@gmail.com",
+      "travel": "fifa",
+      "score": 0
+    },
+    {
+      "name": "account3",
+      "password": "account3",
+      "email": "account3@fifaplanet.com",
+      "travel": "fifa",
+      "score": 0
+    },
+    {
+      "name": "fifa",
+      "password": "fifa",
+      "email": "fifa@fifa.com",
+      "travel": "fifa",
+      "score": 0
+    },
+    {
+      "name": "lego",
+      "password": "lego",
+      "email": "lego@lego.com",
+      "travel": "lego",
+      "score": 0
+    },
+    {
+      "name": "lotr",
+      "password": "lotr",
+      "email": "lotr@lotr.com",
+      "travel": "lord-of-the-rings",
+      "score": 0
+    },
+    {
+      "name": "fortnite",
+      "password": "fortnite",
+      "email": "fortnite@fortnite.com",
+      "travel": "fortnite",
+      "score": 0
+>>>>>>> main
     }
   ]
 }
