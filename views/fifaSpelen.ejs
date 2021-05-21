@@ -17,7 +17,6 @@
         crossorigin="anonymous"></script>
 
     <!-- Costum style CSS -->
-    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" type="text/css" href="/styleFifaSpelen.css">
     <link rel="stylesheet" href="/fonts.css">
@@ -27,12 +26,10 @@
     <script defer src="/sound_effecs.js"></script>
 
 
-    <!-- Costum music script -->
+    <!-- Costum script -->
     <script defer src="/music.js" ></script>
     <script src="/answerButtonDesign.js" defer></script>
     <script src="https://kit.fontawesome.com/a9c44a0e6d.js" crossorigin="anonymous"></script>
-
-
     
     <!-- Page title -->
     <title>FIFA-PLANET | Spelen</title>
@@ -109,31 +106,17 @@
             <hr>
             <article class="answers-container">
                 <!-- club answer, where 1 anwser is correct -->
-<<<<<<< HEAD
                 <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper">
-                    <span  class="answer-btn" >Answer 1</span>
-                </div>
-                <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper">
-                    <span class="answer-btn">Answer 2</span>
+                    <span  class="answer-btn" > <%= leagueAnswer1 %> </span>
                 </div>
                 <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper">
-                    <span class="answer-btn">Answer 3</span>
-                </div>
-                <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper"> 
-                    <span class="answer-btn">Answer 4</span>
-=======
-                <div class="btn-wrapper">
-                    <span class="answer-btn"> <%= leagueAnswer1 %> </span>
-                </div>
-                <div class="btn-wrapper">
                     <span class="answer-btn"> <%= leagueAnswer2 %> </span>
                 </div>
-                <div class="btn-wrapper">
+                <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper">
                     <span class="answer-btn"> <%= leagueAnswer3 %> </span>
                 </div>
-                <div class="btn-wrapper"> 
+                <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper"> 
                     <span class="answer-btn"> <%= leagueAnswer4 %> </span>
->>>>>>> main
                 </div>
             </article>
         </section>

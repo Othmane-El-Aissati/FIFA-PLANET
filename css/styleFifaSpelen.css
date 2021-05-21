@@ -217,7 +217,7 @@ footer{
 .field__input:focus::-moz-placeholder{
 	opacity: 1;
 	transition-delay: var(--transitionTimePlaceholder);
-}
+} 
 .field__label-wrap{
 	box-sizing: border-box;
 	pointer-events: none;
