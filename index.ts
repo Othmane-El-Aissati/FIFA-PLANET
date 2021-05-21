@@ -97,6 +97,7 @@ app.post('/login', (req :any, res :any) => {
     }
     if (check == 1) {
         status = true;
+        console.log(currentUser.travel)
         res.redirect('index')
     }
     else{
@@ -146,19 +147,19 @@ app.post('/registratie' ,(req :any, res :any) => {
 });
 
 app.get('/fifa', (req :any, res :any) => {
-    res.render('fifa', {name: currentUser.name});
+    res.render('fifa', {name: currentUser.name, travel: currentUser.travel});
 });
 
 app.get('/fortnite', (req :any, res :any) => {
-    res.render('fortnite', {name: currentUser.name});
+    res.render('fortnite', {name: currentUser.name, travel: currentUser.travel});
 });
 
 app.get('/lego', (req :any, res :any) => {
-    res.render('lego', {name: currentUser.name});
+    res.render('lego', {name: currentUser.name, travel: currentUser.travel});
 });
 
 app.get('/lotr', (req :any, res :any) => {
-    res.render('lotr', {name: currentUser.name});
+    res.render('lotr', {name: currentUser.name, travel: currentUser.travel});
 });
 
 app.get('/fifaSpelen', (req :any, res :any) => {

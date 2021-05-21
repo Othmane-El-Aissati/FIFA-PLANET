@@ -34,6 +34,7 @@
         <div class="thema-position">
             <h1 class="thema-titel">Lord of the rings spelen</h1>
             <img src="/images/lord-of-the-rings-logo.png" alt="lord of the rings logo" class="thema-foto" onclick="check()">
+            <p id="travelValue" style="visibility: hidden;"><%= travel %></p>
         </div>
     </main>
     <footer>
@@ -44,12 +45,10 @@
     </footer>
 </body>
 <script>
-    let userData = sessionStorage.getItem("usersJSON")
-    let users = JSON.parse(userData)
-    document.getElementById("username").innerHTML = users.Username
 
+    let travel = document.getElementById("travelValue").innerHTML;
     let check = () =>{
-        if (users.Travel === "Lord of the Rings") {
+        if (travel === "lord-of-the-rings") {
             alert("Het spel is helaas nog niet beschikbaar")
         }
         else{

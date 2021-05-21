@@ -33,7 +33,8 @@
     <main class="main-container4">
         <div class="thema-position">
             <h1 class="thema-titel">FIFA spelen</h1>
-            <a href="fifaSpelen"><img src="/images/fifa_logo.png" alt="fifa logo" class="thema-foto" onclick="check()"></a>
+            <!--<a href="fifaSpelen">--><img src="/images/fifa_logo.png" alt="fifa logo" class="thema-foto" onclick="check()"><!--</a>-->
+            <p id="travelValue" style="visibility: hidden;"><%= travel %></p>
         </div>
     </main>
     <footer>
@@ -44,12 +45,9 @@
     </footer>
 </body>
 <script>
-    let userData = sessionStorage.getItem("usersJSON")
-    let users = JSON.parse(userData)
-    document.getElementById("username").innerHTML = users.Username
-
+    let travel = document.getElementById("travelValue").innerHTML;
     let check = () =>{
-        if (users.Travel === "Fifa Planet") {
+        if (travel === "fifa") {
             window.open("fifaSpelen", "_self")
         }
         else{
