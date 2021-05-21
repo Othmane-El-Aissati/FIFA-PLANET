@@ -1,9 +1,8 @@
 // Importing files
 //import { addUserToDB } from "./ts/userinfoToDB";
-import { IUser } from "./ts/interfaces";
 import { saveUserData, getUsers, updateScore } from './ts/userData';
-
-
+import { IClubs, IUser } from "./ts/interfaces";
+import { getClubs, getLeagues } from "./ts/API_Data";
 
 const express = require('express');
 const ejs = require('ejs');
@@ -33,6 +32,10 @@ interface ICurrentUser{
 }
 
 let currentUser: ICurrentUser;
+
+function getRandom(max :number) {
+    return Math.floor(Math.random() * (max - 0 + 1)) + 0;
+}
 
 // Routes to the specified path with the specified callback functions
 app.get('/', (req :any, res :any) => {
@@ -159,7 +162,19 @@ app.get('/lotr', (req :any, res :any) => {
 });
 
 app.get('/fifaSpelen', (req :any, res :any) => {
-    res.render('fifaSpelen', {name: currentUser.name});
+    const clubAmount :number = 797;
+    const leagueAmount :number = 48;
+
+    let clubName :IClubs = getClubs()[getRandom(clubAmount)];
+
+    res.render('fifaSpelen', {
+        name: currentUser.name,
+        club1: clubName.name,
+        leagueAnswer1: getLeagues()[getRandom(leagueAmount)].name,
+        leagueAnswer2: getLeagues()[getRandom(leagueAmount)].name,
+        leagueAnswer3: getLeagues()[getRandom(leagueAmount)].name,
+        leagueAnswer4: getLeagues()[getRandom(leagueAmount)].name
+    });
 });
 
 app.get('/logout', (req :any, res :any) => {
