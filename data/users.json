@@ -34,6 +34,13 @@
       "email": "account2@gmail.com",
       "travel": "fifa",
       "score": 0
+    },
+    {
+      "name": "account3",
+      "password": "account3",
+      "email": "account3@fifaplanet.com",
+      "travel": "fifa",
+      "score": 0
     }
   ]
 }

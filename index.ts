@@ -31,7 +31,7 @@ interface ICurrentUser{
     travel: string
 }
 
-let currentUser: ICurrentUser;
+let currentUser: ICurrentUser = {name: "", travel: ""};
 
 function getRandom(max :number) {
     return Math.floor(Math.random() * (max - 0 + 1)) + 0;
