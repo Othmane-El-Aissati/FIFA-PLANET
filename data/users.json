@@ -27,6 +27,13 @@
       "email": "user4",
       "travel": "user4",
       "score": 0
+    },
+    {
+      "name": "account2",
+      "password": "123",
+      "email": "account2@gmail.com",
+      "travel": "fifa",
+      "score": 0
     }
   ]
 }
