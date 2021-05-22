@@ -18,4 +18,11 @@ interface ILeague{
     name: string
 }
 
-export{IUser, IClubs, ILeague};
+interface ICombo{
+    club: string,
+    clubLeague: number,
+    league: string,
+    leagueId: number
+}
+
+export{IUser, IClubs, ILeague, ICombo};
