@@ -29,13 +29,6 @@
       "score": 0
     },
     {
-<<<<<<< HEAD
-      "name": "chr1s",
-      "password": "test",
-      "email": "some@some.com",
-      "travel": "fifa",
-      "score": 0
-=======
       "name": "account2",
       "password": "123",
       "email": "account2@gmail.com",
@@ -76,7 +69,6 @@
       "email": "fortnite@fortnite.com",
       "travel": "fortnite",
       "score": 0
->>>>>>> main
     }
   ]
 }
