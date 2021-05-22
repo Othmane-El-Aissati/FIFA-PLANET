@@ -2,8 +2,8 @@ import { IUser, IClubs, ILeague} from "./interfaces";
 
 const fs = require('fs'); 
 
-const clubFileLink :string = './data/clubs.json';
-const leagueFileLink :string = './data/leagues.json';
+const clubFileLink :string = '../data/clubs.json';
+const leagueFileLink :string = '../data/leagues.json';
 
 function saveClubsData(dataToSave :IClubs[]) {
     try {

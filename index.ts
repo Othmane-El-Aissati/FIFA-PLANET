@@ -3,6 +3,7 @@
 import { saveUserData, getUsers, updateScore } from './ts/userData';
 import { IClubs, IUser } from "./ts/interfaces";
 import { getClubs, getLeagues } from "./ts/API_Data";
+import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
 
 const express = require('express');
 const ejs = require('ejs');
