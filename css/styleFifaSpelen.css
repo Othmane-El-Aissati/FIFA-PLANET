@@ -9,8 +9,9 @@ body{
 	background-color: #303F4F;
 	overflow-y: scroll;
 	
-	--answer-btn-width: 15.6rem;
+	--answer-btn-width: 16rem;
 	--answer-btn-heigth: 3.1rem;
+	--background-color : #6f7984;
 }
 
 /* 
@@ -48,7 +49,7 @@ footer{
 	min-height: 80%;
     margin: auto;
 	position: relative;
-    background-color: rgba(255,255,255,0.3);
+    background-color: var(--background-color);
 	border-radius: 3px;
 }
 
@@ -56,31 +57,22 @@ footer{
     display: none;
 }
 
-#sectionNewGame{
-	width: 30%;
-	margin: auto;
-	text-align: center;
-}
-
-
-
 /* 
 ===================================== 
     Costum Image effect / design
 ===================================== 
 */
-
 #topFifaImage{
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	z-index: -2;
+	z-index: 1;
 }
 #buttomFifaImage{
 	position: absolute;
 	right: 0px;
 	bottom: 0px;
-	z-index: -1;
+	z-index: 1;
 	transform: rotate(180deg);
 }
 
@@ -188,12 +180,11 @@ footer{
 	flex-direction: column;
 	text-align: center;
 	vertical-align: middle;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 .image-wrapper{
 	width: 100%;
 	height: auto;
-	border: 1px solid blue;
 }
 .image-wrapper img {
 	width: auto;
@@ -201,63 +192,96 @@ footer{
 	height: auto;
 	max-height: 50%;
 	margin: 5% 5px 5px 5px;
-	border: 1px solid greenyellow;
+}
+.quesitonMark{
+	font-size: inherit;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .club-image-container p{
 	font-family: EA-font;
 	letter-spacing: .2rem;
 	word-spacing: .6rem;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 .answers-container{
 	width: 100%;
 	height: 100%;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	border: 1px solid yellow;
+	flex-direction: column;
+	align-items: center;
 }
 
 /* button design  */
-.btn-wrapper{
+.answer-btn1, .answer-btn2{
 	width: var(--answer-btn-width);
-    height: var(--answer-btn-heigth);
+   	height: var(--answer-btn-heigth);
+	   min-height: fit-content;
+	font-family: 'Cinzel', serif;
+	font-size: 20px;
+   	color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+   	backface-visibility: hidden;
+	border-radius: 3px;
+	border: 2px solid #ff00ff;
+	background-color: transparent;
 	margin: 5px;
-    border: 2px solid #ff00ff;
-    font-family: 'Cinzel', serif;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 1;
-    transition: 1s;
+	transition : .8s cubic-bezier(.775, .07, .575, .995);
 }
-.btn-wrapper span{
-	z-index: 4;
-}
-.btn-wrapper::before, .btn-wrapper::after {
-	position: absolute;
-	background: transparent;
-	border: 2px solid  #6f7984;
+.answer-btn1{
 	z-index: 2;
-	transition: 1s;
-	content: '';
+	position: absolute;
 }
-.btn-wrapper::before {
-	height: var(--answer-btn-heigth);
-	width: 230px;
+.answer-btn2{
+	color: rgba(0, 0, 0);
+	transform: rotateX(-180deg);
+	position: relative;
 }
-.btn-wrapper::after {
+
+hr{
 	width: var(--answer-btn-width);
-	height: 30px;
+	border: 0;
+    height: 1px;
+	margin: 1% auto;
+    background-image: linear-gradient(to right, var(--background-color), rgba(255, 0, 255, 0.75), var(--background-color));
 }
 
-
-@media screen and (max-width: 1130px){
-	.answers-container{
-		flex-direction: column;
-		align-items: center;
-	}
+/* 
+==============================================
+  Additional buttons (View score, stop game)
+==============================================
+*/
+.additional-buttons{
+	width: 100%;
+	height: fit-content;
+}
+.button-container{
+    display:flex;
+    justify-content: center;
+}
+.box{
+	margin: 5px;
+	width: var(--answer-btn-width);
+   	height: var(--answer-btn-heigth);
+	font-family: 'Cinzel', serif;
+	font-size: 20px;
+   	color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+   	backface-visibility: hidden;
+	border-radius: 3px;
+	border: 2px solid #ff00ff;
+	background-color: transparent;
+	transition : .8s cubic-bezier(.775, .07, .575, .995);
+}
+.side-one{
+   z-index: 2;
+   position: absolute;
+}
+.side-two{
+   color: rgba(0, 0, 0);
+   transform: rotateX(-180deg);
+   position: relative;
 }

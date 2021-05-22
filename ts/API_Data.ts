@@ -40,9 +40,9 @@ function saveLeaguesData(dataToSave :ILeague[]) {
 function getClubs() {
     try {
         if (fs.existsSync(clubFileLink)) {
-            console.log('Reading file...');
+            // console.log('Reading file...');
             let data = JSON.parse(fs.readFileSync(clubFileLink, {'flag' : 'r'}));
-            console.log('Data extracted.');
+            // console.log('Data extracted.');
             return data;
         }else console.warn('File does not exists.');
     } catch (error) {
@@ -53,9 +53,9 @@ function getClubs() {
 function getLeagues(){
     try {
         if (fs.existsSync(leagueFileLink)) {
-            console.log('Reading file...');
+            // console.log('Reading file...');
             let data = JSON.parse(fs.readFileSync(leagueFileLink, {'flag' : 'r'}));
-            console.log('Data extracted.');
+            // console.log('Data extracted.');
             return data;
         }else console.warn('File does not exists.');
     } catch (error) {
@@ -63,11 +63,5 @@ function getLeagues(){
     }
 }
 
-console.log(getLeagues().length);
 // saveLeaguesData & saveClubsData to be used during API call, not needed anywhere else
 export{ saveLeaguesData, saveClubsData, getClubs, getLeagues};
-
-/*  CODE TO IMPROVE FUNCTIONS (for later):
-    let users = require("./users.json");
-    console.log(users); // returns { users: [] }
-*/

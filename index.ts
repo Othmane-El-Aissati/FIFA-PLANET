@@ -33,8 +33,8 @@ interface ICurrentUser{
 
 let currentUser: ICurrentUser = {name: "", travel: ""};
 
-function getRandom(max :number) {
-    return Math.floor(Math.random() * (max - 0 + 1)) + 0;
+function getRandomNumber(maxValue :number) {
+    return Math.floor(Math.random() * (maxValue - 0 + 1)) + 0;
 }
 
 // Routes to the specified path with the specified callback functions
@@ -166,15 +166,15 @@ app.get('/fifaSpelen', (req :any, res :any) => {
     const clubAmount :number = 797;
     const leagueAmount :number = 48;
 
-    let clubName :IClubs = getClubs()[getRandom(clubAmount)];
+    let clubName :IClubs = getClubs()[getRandomNumber(clubAmount)];
     
     res.render('fifaSpelen', {
         name: currentUser.name,
         club1: clubName.name,
-        leagueAnswer1: getLeagues()[getRandom(leagueAmount)].name,
-        leagueAnswer2: getLeagues()[getRandom(leagueAmount)].name,
-        leagueAnswer3: getLeagues()[getRandom(leagueAmount)].name,
-        leagueAnswer4: getLeagues()[getRandom(leagueAmount)].name
+        leagueAnswer1: getLeagues()[getRandomNumber(leagueAmount)].name,
+        leagueAnswer2: getLeagues()[getRandomNumber(leagueAmount)].name,
+        leagueAnswer3: getLeagues()[getRandomNumber(leagueAmount)].name,
+        leagueAnswer4: getLeagues()[getRandomNumber(leagueAmount)].name
     });
 });
 
