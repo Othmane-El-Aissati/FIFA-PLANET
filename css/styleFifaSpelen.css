@@ -215,7 +215,7 @@ footer{
 .answer-btn1, .answer-btn2{
 	width: var(--answer-btn-width);
    	height: var(--answer-btn-heigth);
-	   min-height: fit-content;
+	min-height: fit-content;
 	font-family: 'Cinzel', serif;
 	font-size: 20px;
    	color: rgba(0, 0, 0, 0.5);
@@ -240,7 +240,6 @@ footer{
 	transform: rotateX(-180deg);
 	position: relative;
 }
-
 hr{
 	width: var(--answer-btn-width);
 	border: 0;
