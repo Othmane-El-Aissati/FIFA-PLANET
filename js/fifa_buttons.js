@@ -34,6 +34,7 @@ function selectButtonEffect(button, sideOne, sideTwo){
         document.getElementById(sideTwo).style.border = '2px solid #002db3';
         document.getElementById(sideTwo).style.background = '#809fff';
     });
+    console.log(clickOnBtn[0].value);
 }
 
 function e(a, b, c){

@@ -37,6 +37,7 @@ footer{
     font-size: .7rem;
     padding: 10px 0;
     color: white;
+	position: relative;
 }
 
 /* 
@@ -256,6 +257,7 @@ hr{
 .additional-buttons{
 	width: 100%;
 	height: fit-content;
+	position: relative;
 }
 .button-container{
     display:flex;
