@@ -106,7 +106,7 @@
                 <!-- club answer, where 1 anwser is correct -->
                 <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper anwser1">
                     <button  class="answer-btn1" id="answer1-side-one" > <%= leagueAnswer1 %> </button>
-                    <button  class="answer-btn2" id="answer1-side-two" > <%= leagueAnswer1 %> </button>
+                    <button  class="answer-btn2" id="answer1-side-two" value='answer1' > <%= leagueAnswer1 %> </button>
                 </div>
                 <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper anwser2">
                     <button class="answer-btn1" id="answer2-side-one" > <%= leagueAnswer2 %> </button>
@@ -168,6 +168,7 @@
         <br>
         <!-- additional buttons to stop the game and see the a user's current score -->
         <section class="additional-buttons">
+            <div></div>
             <div class="button-container">
                 <div class="box-area" id="turn">
                     <button class="box side-one">View current score</button>

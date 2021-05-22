@@ -12,29 +12,25 @@ window.addEventListener("load", init);
 // background-color: #ffbfbf;
 // border: 2px solid #8f0000;
 
-let a = 'turn';
-let b = 'side-one';
-let c = 'side-two'
-
 function init(){
     selectButtonEffect('anwser1', 'answer1-side-one', 'answer1-side-two');
     selectButtonEffect('anwser2', 'answer2-side-one', 'answer2-side-two');
     selectButtonEffect('anwser3', 'answer3-side-one', 'answer3-side-two');
     selectButtonEffect('anwser4', 'answer4-side-one', 'answer4-side-two');
-    e(a, b, c)
+    e('turn', 'side-one', 'side-two')
 }
 
 function selectButtonEffect(button, sideOne, sideTwo){
     console.log({button, sideTwo, sideOne})
     let clickOnBtn = document.getElementsByClassName(button);
     clickOnBtn[0].addEventListener('click', ()=>{
-        console.log({button, sideTwo, sideOne})
+        console.log(`Click button: ${button}  -  ${document.getElementById(sideTwo).value}`)
         document.getElementById(sideOne).style.transform = 'rotateX(180deg)'; 
         document.getElementById(sideTwo).style.transform = 'rotateX(0deg)';
         document.getElementById(sideTwo).style.border = '2px solid #002db3';
         document.getElementById(sideTwo).style.background = '#809fff';
     });
-    console.log(clickOnBtn[0].value);
+    
 }
 
 function e(a, b, c){
@@ -48,4 +44,12 @@ function e(a, b, c){
             document.getElementsByClassName(c)[0].style.transform = 'rotateX(-180deg)';
         }, 5000);
     });
+}
+
+function goodAnswer(){
+    
+}
+
+function wrongAnwser(){
+
 }
