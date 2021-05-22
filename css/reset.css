@@ -1,3 +1,8 @@
+html, body {
+    box-sizing: border-box;
+}
+
+html,
 body,
 header,
 nav,
@@ -6,10 +11,12 @@ article,
 section,
 footer,
 figure,
-figcaption,
+figcaption, 
+img,
 p,
 button,
-div {
+div,
+span {
     margin: 0;
     padding: 0;
 }

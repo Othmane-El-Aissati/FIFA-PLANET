@@ -18,13 +18,12 @@
 
     <!-- Costum style CSS -->
     <link rel="stylesheet" href="/reset.css">
-    <link rel="stylesheet" type="text/css" href="/styleFifaSpelen.css">
     <link rel="stylesheet" href="/fonts.css">
-
+    <link rel="stylesheet" href="/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="/styleFifaSpelen.css">
 
     <!-- Costum SFX script -->
     <script defer src="/sound_effecs.js"></script>
-
 
     <!-- Costum script -->
     <script defer src="/music.js" ></script>
@@ -171,9 +170,4 @@
         </div>
     </footer>
 </body>
-<script>
-    let userData = sessionStorage.getItem("usersJSON")
-    let users = JSON.parse(userData)
-    document.getElementById("username").innerHTML = users.Username
-</script>
 </html>

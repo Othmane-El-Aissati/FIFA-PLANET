@@ -1,12 +1,4 @@
-@font-face{
-    font-family: "fifa-font";
-    src: url(/assets/fonts/Denne2006.ttf);
-}
-
-
 /* changing background color for body and navigation */
-
-
 main{
 	width: 100%;
     margin: auto;

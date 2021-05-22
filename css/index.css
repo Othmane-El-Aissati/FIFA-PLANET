@@ -1,6 +1,3 @@
-.hide{
-    display: none;
-}
 /* 
 ===================================== 
         Index design - HOME
@@ -50,27 +47,6 @@ footer>div{
 }
 footer>div>p{
     font-size: 15px;
-}
-
-/* nav settings */
-#nav-links {
-    justify-content: space-between;
-    width: 35%;
-    font-size: 1.3rem;
-}
-.navbar{
-    z-index: 2;
-}
-
-.a-link {
-    display: block;
-}
-.a-link{
-    text-decoration: none;
-    color: white;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-    font-size: 1.05rem;
-    display:inline-block;
 }
 
 /* 
@@ -184,45 +160,6 @@ footer {
     
 }
 
-/* Dropdown Button */
-
-.dropbtn {
-    /*background-color: #4CAF50;
-    color: white;*/
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-}
-
-
-/* Dropdown Content (Hidden by Default) */
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-
-/* Links inside the dropdown */
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-
-/* Change color of dropdown links on hover */
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
 /* thema pages */
 
 .thema-position{
@@ -239,12 +176,6 @@ footer {
     align-self: center;
     max-width: 250px;
     max-height: 250px;
-}
-
-/* Show the dropdown menu on hover */
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* 
