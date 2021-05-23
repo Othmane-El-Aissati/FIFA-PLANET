@@ -9,7 +9,7 @@ const fetch = require('node-fetch');
 // Leagues total of 3 pages - API link
 // https://futdb.app/api/leagues?page=${}&limit=20
 
-const API_TOKEN = "860ce99e-9bd5-4a7b-916d-b862f56b50bb";
+const API_TOKEN = "4e13cc37-b81e-44ff-9b7c-7713299b703e";
 
 // Function to save clubs-data to local file retrieved from the API call  
 async function fetchClubs() :Promise<void> {
@@ -47,7 +47,20 @@ async function fetchLeagues() :Promise<void> {
     saveLeaguesData(leagues);
 };
 
+async function getClubImage(club_id: number) {
+    let image = await fetch(`https://futdb.app/api/clubs/${club_id}/image`,{
+        headers: {
+            'Accept': 'image/png',
+            'X-AUTH-TOKEN': API_TOKEN
+        }
+    }); 
+    return image.url ;
+    
+}
+getClubImage(10);
+
+
 // fetchClubs();
 // fetchLeagues();
 
-export{ };
+export{ getClubImage };

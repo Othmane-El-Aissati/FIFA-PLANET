@@ -194,6 +194,12 @@ footer{
 	max-height: 50%;
 	margin: 5% 5px 5px 5px;
 }
+#clubName{
+	margin: auto;
+	font-size: 2.5rem;
+	font-family: EA-font;
+	margin: 5% 5px 5px 5px;
+}
 .quesitonMark{
 	font-size: inherit;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
