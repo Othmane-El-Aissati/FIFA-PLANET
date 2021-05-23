@@ -29,8 +29,9 @@ function selectButtonEffect(button, sideOne, sideTwo){
         document.getElementById(sideTwo).style.transform = 'rotateX(0deg)';
         document.getElementById(sideTwo).style.border = '2px solid #002db3';
         document.getElementById(sideTwo).style.background = '#809fff';
-    });
-    
+        
+        setChosenAnswer(document.getElementById(sideTwo).value);
+    });    
 }
 
 function e(a, b, c){
@@ -44,6 +45,12 @@ function e(a, b, c){
             document.getElementsByClassName(c)[0].style.transform = 'rotateX(-180deg)';
         }, 5000);
     });
+}
+
+function setChosenAnswer(chosen){
+    return function getChosenAnswer(){
+        return chosen;
+    };
 }
 
 function goodAnswer(){
