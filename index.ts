@@ -1,8 +1,8 @@
 // Importing files
 //import { addUserToDB } from "./ts/userinfoToDB";
 import { saveUserData, getUsers, updateScore } from './ts/userData';
-import { IClubs, IUser } from "./ts/interfaces";
-import { getClubs, getLeagues } from "./ts/API_Data";
+import { ICombo, IUser } from "./ts/interfaces";
+import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
 
 const express = require('express');
 const ejs = require('ejs');
@@ -33,9 +33,6 @@ interface ICurrentUser{
 
 let currentUser: ICurrentUser = {name: "", travel: ""};
 
-function getRandomNumber(maxValue :number) {
-    return Math.floor(Math.random() * (maxValue - 0 + 1)) + 0;
-}
 
 // Routes to the specified path with the specified callback functions
 app.get('/', (req :any, res :any) => {
@@ -163,18 +160,16 @@ app.get('/lotr', (req :any, res :any) => {
 });
 
 app.get('/fifaSpelen', (req :any, res :any) => {
-    const clubAmount :number = 797;
-    const leagueAmount :number = 48;
-
-    let clubName :IClubs = getClubs()[getRandomNumber(clubAmount)];
+    
+    let combo: ICombo = getCombo();
     
     res.render('fifaSpelen', {
         name: currentUser.name,
-        club1: clubName.name,
-        leagueAnswer1: getLeagues()[getRandomNumber(leagueAmount)].name,
-        leagueAnswer2: getLeagues()[getRandomNumber(leagueAmount)].name,
-        leagueAnswer3: getLeagues()[getRandomNumber(leagueAmount)].name,
-        leagueAnswer4: getLeagues()[getRandomNumber(leagueAmount)].name
+        club1: combo.club,
+        leagueAnswer1: getLeagueAnswers(combo)[0],
+        leagueAnswer2: getLeagueAnswers(combo)[1],
+        leagueAnswer3: getLeagueAnswers(combo)[2],
+        leagueAnswer4: getLeagueAnswers(combo)[3]
     });
 });
 
