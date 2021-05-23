@@ -180,4 +180,4 @@ app.get('/logout', (req :any, res :any) => {
 
 // Listens for connections on the specified port 
 app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
-export{ getRandomNumber };
+export{  };

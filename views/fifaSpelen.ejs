@@ -90,78 +90,7 @@
         </section>
 
         <!-- ============================ -->
-            <!-- clubs image and answers -->
-        <section class="clubSection" >
-            <!-- club image & possible answers -->
-            <article class="club-image-container">
-                <!-- club image -->
-                <div class="image-wrapper">
-                    <!--<img src="/images/chelsea.png" alt="chelsea">-->
-                    <p><%= club1 %></p>
-                </div>
-                <p>In welke league speelt deze club </p>
-            </article>
-            <hr>
-            <article class="answers-container ">
-                <!-- club answer, where 1 anwser is correct -->
-                <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper anwser1">
-                    <button  class="answer-btn1" id="answer1-side-one" > <%= leagueAnswer1 %> </button>
-                    <button  class="answer-btn2" id="answer1-side-two" value='answer1' > <%= leagueAnswer1 %> </button>
-                </div>
-                <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper anwser2">
-                    <button class="answer-btn1" id="answer2-side-one" > <%= leagueAnswer2 %> </button>
-                    <button class="answer-btn2" id="answer2-side-two" > <%= leagueAnswer2 %> </button>
-                </div>
-                <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper anwser3">
-                    <button class="answer-btn1" id="answer3-side-one" > <%= leagueAnswer3 %> </button>
-                    <button class="answer-btn2" id="answer3-side-two" > <%= leagueAnswer3 %> </button>
-                </div>
-                <div type="button" onclick="PlayButtonSounds(1)" class="btn-wrapper anwser4"> 
-                    <button class="answer-btn1" id="answer4-side-one" > <%= leagueAnswer4 %> </button>
-                    <button class="answer-btn2" id="answer4-side-two" > <%= leagueAnswer4 %> </button>
-                </div>
-            </article>
-        </section>
-
-        <!-- league image and choice of the possible clubs that play in it -->
-        <section id="hideSection">
-            <article class="article-title-green">
-                <!-- league image -->
-                <div id="image-league">
-                    <img src="./images/Premier_League-Logo.wine.png" alt="premier-league">
-                </div>
-                <p id="question-league">Welke clubs spelen nog in deze league ?</p>
-            </article>
-            <hr>
-            <article class="article-green">
-                <!-- possible answer to choose from, where 3 answers are correct-->
-                <div class="div-red">
-                    <!-- possible answer 1 -->
-                    <img src="./images/arsenal.png" alt="Arsenal" >
-                    <button>Answer 1</button>
-                </div>
-                <div class="div-red">
-                    <!-- possible answer 2 -->
-                    <img src="./images/bristolCity.png" alt="bristolCity">
-                    <button>Answer 2</button>
-                </div>
-                <div class="div-red">
-                    <!-- possible answer 3 -->
-                    <img src="./images/chelsea.png" alt="chelsea">
-                    <button>Answer 3</button>
-                </div>
-                <div class="div-red"> 
-                    <!-- posibble answer 4 -->
-                    <img src="./images/manchester-city.png" alt="manchester-city">
-                    <button>Answer 4</button>
-                </div>
-                <div class="div-red">
-                    <!-- possible answer 5 -->
-                    <img src="./images/Newcastle_United_Logo.png" alt="newcastle-united">
-                    <button>Answer 5</button>
-                </div>
-            </article>
-        </section>
+        <%- include('fifaGameplay'); %>
         <!-- ============================ -->
         <br>
         <hr>

@@ -1,38 +1,77 @@
 window.addEventListener("load", init);
 
+
 // selected answer 
 // background-color: #809fff;
 // border: 2px solid #002db3;
 
-//good answer
-// background-color: #c0ffc0;
-// border: 2px solid #5ab35a;
 
 // bad answer
 // background-color: #ffbfbf;
 // border: 2px solid #8f0000;
 
-function init(){
-    selectButtonEffect('anwser1', 'answer1-side-one', 'answer1-side-two');
-    selectButtonEffect('anwser2', 'answer2-side-one', 'answer2-side-two');
-    selectButtonEffect('anwser3', 'answer3-side-one', 'answer3-side-two');
-    selectButtonEffect('anwser4', 'answer4-side-one', 'answer4-side-two');
-    e('turn', 'side-one', 'side-two')
+var effect1 = document.getElementById('Sfx_effect');
+effect1.volume = 0.2;
+
+function PlayButtonSounds(num){
+    if (num === 1) effect1.play();
 }
 
-function selectButtonEffect(button, sideOne, sideTwo){
-    console.log({button, sideTwo, sideOne})
-    let clickOnBtn = document.getElementsByClassName(button);
-    clickOnBtn[0].addEventListener('click', ()=>{
-        console.log(`Click button: ${button}  -  ${document.getElementById(sideTwo).value}`)
-        document.getElementById(sideOne).style.transform = 'rotateX(180deg)'; 
-        document.getElementById(sideTwo).style.transform = 'rotateX(0deg)';
-        document.getElementById(sideTwo).style.border = '2px solid #002db3';
-        document.getElementById(sideTwo).style.background = '#809fff';
-        
-        setChosenAnswer(document.getElementById(sideTwo).value);
-    });    
+function init(){
+    let a4 = document.getElementById('answer4');
+    console.log(a4)
+    document.getElementById('answer1').addEventListener('click', anwser1Selected); 
+    document.getElementById('answer2').addEventListener('click', anwser2Selected); 
+    document.getElementById('answer3').addEventListener('click', anwser3Selected); 
+    document.getElementById('answer4').addEventListener('click', anwser4Selected); 
+    e('turn', 'side-one', 'side-two');
 }
+
+function anwser1Selected(){
+    PlayButtonSounds(1);
+    document.getElementById('answer1-side-one').style.transform = 'rotateX(180deg)'; 
+    document.getElementById('answer1-side-two').style.transform = 'rotateX(0deg)';
+    document.getElementById('answer1-side-two').style.border = '2px solid #002db3';
+    document.getElementById('answer1-side-two').style.background = '#809fff';
+    removeSelectEvent();
+
+    setTimeout(goodAnswer, 3000);
+}
+function anwser2Selected(){
+    PlayButtonSounds(1); 
+    document.getElementById('answer2-side-one').style.transform = 'rotateX(180deg)'; 
+    document.getElementById('answer2-side-two').style.transform = 'rotateX(0deg)';
+    document.getElementById('answer2-side-two').style.border = '2px solid #002db3';
+    document.getElementById('answer2-side-two').style.background = '#809fff';
+    removeSelectEvent();
+
+    setTimeout(wrongAnwser, 3000);
+}
+function anwser3Selected(){
+    PlayButtonSounds(1);
+    document.getElementById('answer3-side-one').style.transform = 'rotateX(180deg)'; 
+    document.getElementById('answer3-side-two').style.transform = 'rotateX(0deg)';
+    document.getElementById('answer3-side-two').style.border = '2px solid #002db3';
+    document.getElementById('answer3-side-two').style.background = '#809fff';
+    removeSelectEvent();
+    
+}
+function anwser4Selected(){
+    PlayButtonSounds(1);
+    document.getElementById('answer4-side-one').style.transform = 'rotateX(180deg)'; 
+    document.getElementById('answer4-side-two').style.transform = 'rotateX(0deg)';
+    document.getElementById('answer4-side-two').style.border = '2px solid #002db3';
+    document.getElementById('answer4-side-two').style.background = '#809fff';
+    removeSelectEvent();
+}
+
+function removeSelectEvent(){
+    document.getElementById('answer1').removeEventListener('click', anwser1Selected);
+    document.getElementById('answer2').removeEventListener('click', anwser2Selected);
+    document.getElementById('answer3').removeEventListener('click', anwser3Selected);
+    document.getElementById('answer4').removeEventListener('click', anwser4Selected);
+}
+
 
 function e(a, b, c){
     document.getElementById(a).addEventListener('click', () => {
@@ -54,9 +93,25 @@ function setChosenAnswer(chosen){
 }
 
 function goodAnswer(){
-    
+    //good answer
+    // background-color: #c0ffc0;
+    // border: 2px solid #5ab35a;
+    document.getElementById('answer1-side-one').style.transform = 'rotateX(0deg)';
+    document.getElementById('answer1-side-two').style.transform = 'rotateX(-180deg)';
+
+    document.getElementById('answer1-side-one').style.border = '2px solid #5ab35a';
+    document.getElementById('answer1-side-one').style.background = '#c0ffc0';
+    document.getElementById('answer1-side-one').style.color = '#000';
 }
 
 function wrongAnwser(){
+    // bad answer
+    // background-color: #ffbfbf;
+    // border: 2px solid #8f0000;
+    document.getElementById('answer2-side-one').style.transform = 'rotateX(0deg)';
+    document.getElementById('answer2-side-two').style.transform = 'rotateX(-180deg)';
 
+    document.getElementById('answer2-side-one').style.border = '2px solid #8f0000';
+    document.getElementById('answer2-side-one').style.background = '#ffbfbf';
+    document.getElementById('answer2-side-one').style.color = '#000';
 }
