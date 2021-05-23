@@ -10,6 +10,9 @@ window.addEventListener("load", init);
 // background-color: #ffbfbf;
 // border: 2px solid #8f0000;
 
+//no answer selected (-1)
+let chosenAnswerValue = -1;
+
 var effect1 = document.getElementById('Sfx_effect');
 effect1.volume = 0.2;
 
@@ -33,9 +36,8 @@ function anwser1Selected(){
     document.getElementById('answer1-side-two').style.transform = 'rotateX(0deg)';
     document.getElementById('answer1-side-two').style.border = '2px solid #002db3';
     document.getElementById('answer1-side-two').style.background = '#809fff';
+    chosenAnswerValue =document.getElementById('answer1-side-two').value;
     removeSelectEvent();
-
-    setTimeout(goodAnswer, 3000);
 }
 function anwser2Selected(){
     PlayButtonSounds(1); 
@@ -43,9 +45,8 @@ function anwser2Selected(){
     document.getElementById('answer2-side-two').style.transform = 'rotateX(0deg)';
     document.getElementById('answer2-side-two').style.border = '2px solid #002db3';
     document.getElementById('answer2-side-two').style.background = '#809fff';
+    chosenAnswerValue = document.getElementById('answer2-side-two').value;
     removeSelectEvent();
-
-    setTimeout(wrongAnwser, 3000);
 }
 function anwser3Selected(){
     PlayButtonSounds(1);
@@ -53,6 +54,7 @@ function anwser3Selected(){
     document.getElementById('answer3-side-two').style.transform = 'rotateX(0deg)';
     document.getElementById('answer3-side-two').style.border = '2px solid #002db3';
     document.getElementById('answer3-side-two').style.background = '#809fff';
+    chosenAnswerValue = document.getElementById('answer3-side-two').value;
     removeSelectEvent();
     
 }
@@ -62,6 +64,7 @@ function anwser4Selected(){
     document.getElementById('answer4-side-two').style.transform = 'rotateX(0deg)';
     document.getElementById('answer4-side-two').style.border = '2px solid #002db3';
     document.getElementById('answer4-side-two').style.background = '#809fff';
+    chosenAnswerValue = document.getElementById('answer4-side-two').value;
     removeSelectEvent();
 }
 
@@ -72,6 +75,9 @@ function removeSelectEvent(){
     document.getElementById('answer4').removeEventListener('click', anwser4Selected);
 }
 
+function chosenAnwser(){
+    return chosenAnswerValue;
+}
 
 function e(a, b, c){
     document.getElementById(a).addEventListener('click', () => {
@@ -86,12 +92,7 @@ function e(a, b, c){
     });
 }
 
-function setChosenAnswer(chosen){
-    return function getChosenAnswer(){
-        return chosen;
-    };
-}
-
+// NOT yet finished
 function goodAnswer(){
     //good answer
     // background-color: #c0ffc0;
@@ -114,4 +115,9 @@ function wrongAnwser(){
     document.getElementById('answer2-side-one').style.border = '2px solid #8f0000';
     document.getElementById('answer2-side-one').style.background = '#ffbfbf';
     document.getElementById('answer2-side-one').style.color = '#000';
+}
+
+
+module.exports={
+    chosenAnwser, goodAnswer, wrongAnwser
 }

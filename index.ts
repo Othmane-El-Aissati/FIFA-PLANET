@@ -3,7 +3,6 @@
 import { saveUserData, getUsers, updateScore } from './ts/userData';
 import { ICombo, IUser } from "./ts/interfaces";
 import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
-import { getClubImage } from './ts/fetchFutDB';
 
 const express = require('express');
 const ejs = require('ejs');
