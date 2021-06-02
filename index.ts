@@ -6,6 +6,7 @@ import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
 
 const express = require('express');
 const ejs = require('ejs');
+const axios = require('axios');
 
 const PORT :number =  3000;
 const app = express();
@@ -169,9 +170,26 @@ app.get('/fifaSpelen', (req :any, res :any) => {
         leagueAnswer1: getLeagueAnswers(combo)[0],
         leagueAnswer2: getLeagueAnswers(combo)[1],
         leagueAnswer3: getLeagueAnswers(combo)[2],
-        leagueAnswer4: getLeagueAnswers(combo)[3]
+        leagueAnswer4: getLeagueAnswers(combo)[3],
+        usersScore: 40
     });
 });
+
+// checking the answer, if correct return true (color changes to green) else false (color changes to red)
+app.post('/fifaSpelen/check', (req: any, res: any) => {
+    console.log(req.body);
+
+    if (req.body.answer == 2){
+        console.log('true');
+        res.json(true);
+    }else{
+        console.log('false');
+        res.json(false);
+    }
+    setTimeout(() => {
+        res.redirect('/fifaSpelen');
+    }, 10000);
+})
 
 app.get('/logout', (req :any, res :any) => {
     status = false;

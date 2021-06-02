@@ -22,12 +22,9 @@
     <link rel="stylesheet" href="/header_footer.css">
     <link rel="stylesheet" type="text/css" href="/styleFifaSpelen.css">
 
-    <!-- Costum SFX script -->
-    <script defer src="/sound_effecs.js"></script>
-
     <!-- Costum script -->
     <script defer src="/music.js" ></script>
-    <script src="/fifa_buttons.js" defer></script>
+    <script defer src="/fifa_buttons.js" ></script>
     <script src="https://kit.fontawesome.com/a9c44a0e6d.js" crossorigin="anonymous"></script>
     
     <!-- Page title -->
@@ -92,25 +89,6 @@
         <!-- ============================ -->
         <%- include('fifaGameplay'); %>
         <!-- ============================ -->
-        <br>
-        <hr>
-        <br>
-        <!-- additional buttons to stop the game and see the a user's current score -->
-        <section class="additional-buttons" >
-            <div class="button-container">
-                <div class="box-area" id="turn">
-                    <button class="box side-one">View current score</button>
-                    <button class="box side-two">Back</button>
-                </div>
-            </div>
-            <div class="button-container">
-                <div class="box-area" id="turn">
-                    <button class="box side-one">STOP</button>
-                    <button class="box side-two">Saving score...</button>
-                </div>
-            </div>
-        </section>
-
 
         <img src="/images/colorDetail.png" alt="fifa 2020 color detail"  id="buttomFifaImage">
     </main>
@@ -120,5 +98,8 @@
             <p>Krystian Rola | Othmane El Aissati | Khayodele Wellens | Kevin Ver Elst </p>
         </div>
     </footer>
+
+    <!-- script adds axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>
