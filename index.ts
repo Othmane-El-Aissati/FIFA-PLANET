@@ -1,8 +1,10 @@
 // Importing files
 //import { addUserToDB } from "./ts/userinfoToDB";
+const {MongoClient} = require('mongodb');
 import { saveUserData, getUsers, updateScore } from './ts/userData';
 import { ICombo, IUser } from "./ts/interfaces";
 import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
+import {addUserToDB, getUsersFromDB, openConnection} from "./ts/database_connection";
 
 const express = require('express');
 const ejs = require('ejs');
@@ -22,6 +24,13 @@ app.use(express.static('data'));
 // URL encoded (To extracte user data from body)
 app.use(express.json({ limit: '1mb' })); // limit of the 'to be' extracted data
 app.use(express.urlencoded({ extended: true}));
+
+
+let connect = async () => {
+    await openConnection();
+}
+connect();
+
 
 let status: boolean;
 let nav: string;
@@ -75,7 +84,7 @@ app.get('/login', (req :any, res :any) => {
     res.render('login', {navigatie: nav, status: status});
 });
 
-app.post('/login', (req :any, res :any) => {
+app.post('/login', async(req :any, res :any) => {
     if (status == false || status == undefined) {
         nav = "navigatieFalse"
     }
@@ -85,7 +94,9 @@ app.post('/login', (req :any, res :any) => {
     let username: string = req.body.username;
     let password: string = req.body.password;
     let check: number = 0;
-    let accounts: IUser[] = getUsers().users;
+    //let accounts: IUser[] = getUsers().users;
+    //let accounts: IUser[] = getUsersFromDB();
+    let accounts: IUser[] = await getUsersFromDB();
     for (let index = 0; index < accounts.length; index++) {
         if (username == accounts[index].name && password == accounts[index].password) {
             check = 1;
@@ -122,7 +133,8 @@ app.post('/registratie' ,(req :any, res :any) => {
 
     if (password == passwordRepeat) {
         let account: IUser = {name: username, password: password, email: email, travel: travel, score: 0}
-        saveUserData(account)
+        addUserToDB(account);
+        //saveUserData(account)
         //accounts.push(account)
         res.redirect('/login');
     }
@@ -178,6 +190,17 @@ app.get('/logout', (req :any, res :any) => {
     res.redirect('index');
 });
 
+process.on('SIGTERM', () => {
+    console.info('SIGTERM signal received.');
+    console.log('Closing http server.');
+    
+    app.close(() => {
+        console.log('Http server closed.');
+    });
+});
+
 // Listens for connections on the specified port 
 app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
+
+
 export{  };

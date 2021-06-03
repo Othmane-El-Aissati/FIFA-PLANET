@@ -1,8 +1,8 @@
-import {client, connect_to_db, close_db_connection, DATABASE, COLLECTION} from "./database_connection";
+//import {client, connect_to_db, close_db_connection, DATABASE, COLLECTION} from "./database_connection";
 import { IUser } from "./interfaces";
 
 // start connection to Database
-let addUserToDB = async (userData :IUser) => {
+/*let addUserToDB = async (userData :IUser) => {
     try {
         await connect_to_db();
 
@@ -17,4 +17,4 @@ let addUserToDB = async (userData :IUser) => {
     }
 };
 
-export{addUserToDB};
+export{addUserToDB};*/
