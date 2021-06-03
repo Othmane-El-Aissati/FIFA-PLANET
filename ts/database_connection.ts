@@ -1,4 +1,4 @@
-const {MongoClient} = require('mongodb');
+const {MongoClient, ObjectId} = require('mongodb');
 import { IUser } from "./interfaces";
 
 // Link to MongoDB
@@ -56,4 +56,20 @@ const getUsersFromDB = async(): Promise<IUser[]> =>{
     return data;
 }
 
-export{addUserToDB, getUsersFromDB, openConnection};
+let updateUserScore = async(userID :number, newScore :number) => {
+    try {
+    
+        // Finding user's data
+        await client.db(DATABASE).collection(COLLECTION).updateOne(
+            { _id: ObjectId(userID) }, 
+            { $set: { score: newScore } },
+            { upsert: true } // makes een new score if does not exists
+        );
+
+        await client.db(DATABASE).collection(COLLECTION).updateScore    
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+export{addUserToDB, getUsersFromDB, openConnection, updateUserScore};

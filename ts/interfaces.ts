@@ -5,6 +5,7 @@ interface IUser {
     email :string,
     travel :string,
     score :number,
+    _id? :number
 }
 
 interface IClubs{

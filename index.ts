@@ -1,10 +1,9 @@
 // Importing files
-//import { addUserToDB } from "./ts/userinfoToDB";
 const {MongoClient} = require('mongodb');
 import { saveUserData, getUsers, updateScore } from './ts/userData';
 import { ICombo, IUser, ICurrentUser, ILeagueReturnType } from "./ts/interfaces";
 import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
-import {addUserToDB, getUsersFromDB, openConnection} from "./ts/database_connection";
+import {addUserToDB, getUsersFromDB, openConnection, updateUserScore} from "./ts/database_connection";
 
 const express = require('express');
 const ejs = require('ejs');
@@ -39,6 +38,8 @@ let nav: string;
 let comboClubLeague :ILeagueReturnType;
 let clubLeagueCombo :ICombo;
 let correctAnwser :number;
+let score :number;
+let userID;
 
 let currentUser: ICurrentUser = {name: "", travel: ""};
 
@@ -101,6 +102,8 @@ app.post('/login', async(req :any, res :any) => {
         if (username == accounts[index].name && password == accounts[index].password) {
             check = 1;
             currentUser = {name: accounts[index].name, travel: accounts[index].travel}
+            score = accounts[index].score;
+            userID = accounts[index]._id;
         }
     }
     if (check == 1) {
@@ -142,17 +145,6 @@ app.post('/registratie' ,(req :any, res :any) => {
         res.render('registratie')
     }
 
-    /*Making a new user object
-    let newUser :IUser = {
-        name: username,
-        password : password,
-        email: email,
-        travel: travel,
-        score: 0
-    };
-
-    //Add new user to DB
-    addUserToDB(newUser);*/
 });
 
 app.get('/fifa', (req :any, res :any) => {
@@ -229,7 +221,6 @@ app.post('/fifaSpelen/check', (req: any, res: any) => {
     }
 })
 
-
 app.get('/logout', (req :any, res :any) => {
     status = false;
     res.redirect('index');
@@ -246,6 +237,5 @@ process.on('SIGTERM', () => {
 
 // Listens for connections on the specified port 
 app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
-
 
 export{  };
