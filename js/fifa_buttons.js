@@ -75,6 +75,7 @@ function anwser4Selected(){
         checkAnwser('3', 'answer4-side-one', 'answer4-side-two');
     }, 4000);
 }
+
 function removeAllSelectEvents(){
     document.getElementById('answer1').removeEventListener('click', anwser1Selected);
     document.getElementById('answer2').removeEventListener('click', anwser2Selected);
@@ -114,7 +115,6 @@ function wrongAnwser(sideOne, sideTwo){
 }
 
 async function checkAnwser(chosenAnwser, sideOne, sideTwo){
-    
     // sending a request to check if the chosen anwser is correct ... response expected
     const {data: correct} = await axios.post('/fifaSpelen/check',{
         chosenAnwser: chosenAnwser
@@ -122,13 +122,12 @@ async function checkAnwser(chosenAnwser, sideOne, sideTwo){
     // after getting a response from the server
     if (correct) {
         goodAnswer(sideOne, sideTwo);
-        
+        if(window.location.pathname == "/fifaSpelen/nextStage"){
+            setTimeout(async() => { window.location.href = "/fifaSpelen" ; }, 3500);
+        }else { setTimeout(async() => { window.location.href = "/fifaSpelen/nextStage"; }, 3500); }
     }else{
         wrongAnwser(sideOne, sideTwo);
-        setTimeout(async() => {
-            console.log('redirecting...')
-            window.location = "/fifaSpelen"
-        }, 2000);
+        setTimeout(async() => { window.location.href = "/fifaSpelen" ; }, 3500);
     }
 
 }

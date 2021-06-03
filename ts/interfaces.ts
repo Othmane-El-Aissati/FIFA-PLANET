@@ -32,8 +32,13 @@ interface ICurrentUser{
 
 interface ILeagueReturnType{
     correctPosition :number,
-    chosenClubName : string,
+    chosenName : string,
     anwsers : string[]
 }
 
-export{IUser, IClubs, ILeague, ICombo, ICurrentUser, ILeagueReturnType};
+interface ISeparatedClubs{
+    correctClubs :string[],
+    wrongClubs :string[]
+} 
+
+export{IUser, IClubs, ILeague, ICombo, ICurrentUser, ILeagueReturnType, ISeparatedClubs};
