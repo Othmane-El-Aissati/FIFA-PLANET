@@ -1,30 +1,59 @@
 const {MongoClient} = require('mongodb');
+import { IUser } from "./interfaces";
 
 // Link to MongoDB
 const mongoDB_URI :any = 'mongodb+srv://TestUser1:IAmATestUser@webontwikkelingdb.bcnwb.mongodb.net/myWebOntwikkelingDB?retryWrites=true&w=majority';
 
 // MongoDB Client Connection
 const client = new MongoClient( mongoDB_URI , { useUnifiedTopology: true });
+let openConnection = async() => { await client.connect(); }
 
 // Database name & collection name
 const DATABASE :string = 'FifaPlanetDB';
-const COLLECTION :string = 'Users'; 
+const COLLECTION :string = 'Users';
 
-let connect_to_db = async() => {
+let addUserToDB = async (userData :IUser) => {
     try {
-        // Creating a connection to the database
-        await client.connect();
-
-    } catch (exception) {
-        // Close databse connection in case of an occurred error
-        await client.close();
-        // Show the occured error after closed connection
-        console.error(exception);
-    } 
+        //await client.connect()
+        await client.db(DATABASE).collection(COLLECTION).insertOne(userData);
+    } catch (error) {
+        console.log(error)
+    }
+    /*finally{
+        client.close()
+    }*/
 };
 
-let close_db_connection =  async() => {
-    await client.close();
-};
+/*let getUsersFromDB = async () =>{
+    let data: IUser[] = [];
+    try {
+        await client.connect()
+        let users = await client.db(DATABASE).collection(COLLECTION).find({});
+        data = await users.toArray();
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+    finally{
+        client.close()
+    }
+    return data;
+}*/
 
-export{client, connect_to_db, close_db_connection, DATABASE, COLLECTION};
+const getUsersFromDB = async(): Promise<IUser[]> =>{
+    let data: IUser[] = [];
+    try {
+        //await client.connect()
+        let users = await client.db(DATABASE).collection(COLLECTION).find({});
+        data = await users.toArray();
+        
+    } catch (error) {
+        console.log(error)
+    }
+    /*finally{
+        client.close()
+    }*/
+    return data;
+}
+
+export{addUserToDB, getUsersFromDB, openConnection};

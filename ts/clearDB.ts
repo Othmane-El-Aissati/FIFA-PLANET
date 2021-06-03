@@ -1,11 +1,11 @@
-import {client, connect_to_db, close_db_connection, DATABASE, COLLECTION} from "./database_connection";
+//import {client, connect_to_db, close_db_connection, DATABASE, COLLECTION} from "./database_connection";
 import { IUser } from "./interfaces";
 
 // Before clearing the database, data will be saved just in case
 let saveAllUsers: IUser[] = [];
 
 // -- TO BE USED WITH CAUTION -- 
-let saveAndClearDB = async() => {
+/*let saveAndClearDB = async() => {
     try {
         await connect_to_db();
 
@@ -23,4 +23,4 @@ let saveAndClearDB = async() => {
         // Making sure the database connection in close regardless of anything
         await close_db_connection();
     }
-};
+};*/
