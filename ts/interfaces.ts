@@ -25,4 +25,15 @@ interface ICombo{
     leagueId: number
 }
 
-export{IUser, IClubs, ILeague, ICombo};
+interface ICurrentUser{
+    name: string,
+    travel: string
+}
+
+interface ILeagueReturnType{
+    correctPosition :number,
+    chosenClubName : string,
+    anwsers : string[]
+}
+
+export{IUser, IClubs, ILeague, ICombo, ICurrentUser, ILeagueReturnType};

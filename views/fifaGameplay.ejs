@@ -12,19 +12,19 @@
         <!-- club answer, where 1 anwser is correct -->
         <div type="button" class="btn-wrapper" id="answer1">
             <button class="answer-btn1" id="answer1-side-one" > <%= leagueAnswer1 %> </button>
-            <button class="answer-btn2" id="answer1-side-two" value='1' > <%= leagueAnswer1 %> </button>
+            <button class="answer-btn2" id="answer1-side-two" > <%= leagueAnswer1 %> </button>
         </div>
         <div type="button" class="btn-wrapper" id="answer2">
             <button class="answer-btn1" id="answer2-side-one" > <%= leagueAnswer2 %> </button>
-            <button class="answer-btn2" id="answer2-side-two" value='2'> <%= leagueAnswer2 %> </button>
+            <button class="answer-btn2" id="answer2-side-two" > <%= leagueAnswer2 %> </button>
         </div>
         <div type="button" class="btn-wrapper" id="answer3">
             <button class="answer-btn1" id="answer3-side-one" > <%= leagueAnswer3 %> </button>
-            <button class="answer-btn2" id="answer3-side-two" value='3'> <%= leagueAnswer3 %> </button>
+            <button class="answer-btn2" id="answer3-side-two" > <%= leagueAnswer3 %> </button>
         </div>
         <div type="button" class="btn-wrapper" id="answer4"> 
             <button class="answer-btn1" id="answer4-side-one" > <%= leagueAnswer4 %> </button>
-            <button class="answer-btn2" id="answer4-side-two" value='4'> <%= leagueAnswer4 %> </button>
+            <button class="answer-btn2" id="answer4-side-two" > <%= leagueAnswer4 %> </button> 
         </div>
     </article>
 </section>
@@ -69,3 +69,21 @@
     </article>
 </section>
 
+<br>
+<hr>
+<br>
+<!-- additional buttons to stop the game and see the a user's current score -->
+<section class="additional-buttons" >
+    <div class="button-container">
+        <div class="box-area" id="turn">
+            <button class="box side-one">View current score</button>
+            <button class="box side-two"><%= usersScore %></button>
+        </div>
+    </div>
+    <div class="button-container">
+        <div class="box-area" id="turn">
+            <button class="box side-one">STOP</button>
+            <button class="box side-two">Saving score...</button>
+        </div>
+    </div>
+</section>
