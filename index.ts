@@ -184,7 +184,7 @@ app.get('/fifaSpelen', (req :any, res :any) => {
         name: currentUser.name,
         clubName: comboClubLeague.chosenName,
         word1: "IN",
-        word2: "LEAGUE",
+        word2: "LEAGUE", 
         word3: "",
         word4: "CLUB",
         answer1: comboClubLeague.anwsers[0],
