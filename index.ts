@@ -2,12 +2,13 @@
 //import { addUserToDB } from "./ts/userinfoToDB";
 const {MongoClient} = require('mongodb');
 import { saveUserData, getUsers, updateScore } from './ts/userData';
-import { ICombo, IUser } from "./ts/interfaces";
+import { ICombo, IUser, ICurrentUser, ILeagueReturnType } from "./ts/interfaces";
 import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
 import {addUserToDB, getUsersFromDB, openConnection} from "./ts/database_connection";
 
 const express = require('express');
 const ejs = require('ejs');
+const axios = require('axios');
 
 const PORT :number =  3000;
 const app = express();
@@ -35,10 +36,8 @@ connect();
 let status: boolean;
 let nav: string;
 
-interface ICurrentUser{
-    name: string,
-    travel: string
-}
+let comboClubLeague :ILeagueReturnType;
+let correctAnwser :number;
 
 let currentUser: ICurrentUser = {name: "", travel: ""};
 
@@ -172,18 +171,34 @@ app.get('/lotr', (req :any, res :any) => {
 });
 
 app.get('/fifaSpelen', (req :any, res :any) => {
-    
-    let combo: ICombo = getCombo();
+
+    comboClubLeague = getLeagueAnswers(getCombo());
+    correctAnwser = comboClubLeague.correctPosition;
+    console.log(`correct anwser on : ${correctAnwser}, club  : ${comboClubLeague.chosenClubName}`);
     
     res.render('fifaSpelen', {
         name: currentUser.name,
-        club1: combo.club,
-        leagueAnswer1: getLeagueAnswers(combo)[0],
-        leagueAnswer2: getLeagueAnswers(combo)[1],
-        leagueAnswer3: getLeagueAnswers(combo)[2],
-        leagueAnswer4: getLeagueAnswers(combo)[3]
+        club1: comboClubLeague.chosenClubName,
+        leagueAnswer1: comboClubLeague.anwsers[0],
+        leagueAnswer2: comboClubLeague.anwsers[1],
+        leagueAnswer3: comboClubLeague.anwsers[2],
+        leagueAnswer4: comboClubLeague.anwsers[3],
+        usersScore: 0
     });
 });
+
+// checking the answer, if correct return true (color changes to green) else false (color changes to red)
+app.post('/fifaSpelen/check', (req: any, res: any) => {
+
+    let chosenAnwser = req.body.chosenAnwser;
+
+    if (Number(chosenAnwser) === correctAnwser) {
+        res.json(true);
+    }else{
+        res.json(false);
+    }
+})
+
 
 app.get('/logout', (req :any, res :any) => {
     status = false;
