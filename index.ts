@@ -28,6 +28,7 @@ let status: boolean;
 let nav: string;
 
 let comboClubLeague :ILeagueReturnType;
+let clubLeagueCombo :ICombo;
 let correctAnwser :number;
 
 let currentUser: ICurrentUser = {name: "", travel: ""};
@@ -160,17 +161,46 @@ app.get('/lotr', (req :any, res :any) => {
 
 app.get('/fifaSpelen', (req :any, res :any) => {
 
-    comboClubLeague = getLeagueAnswers(getCombo());
+    // globally assign the combination of club with their league
+    clubLeagueCombo = getCombo();
+
+    comboClubLeague = getLeagueAnswers(clubLeagueCombo);
     correctAnwser = comboClubLeague.correctPosition;
-    console.log(`correct anwser on : ${correctAnwser}, club  : ${comboClubLeague.chosenClubName}`);
+    console.log(`correct club anwser on : ${correctAnwser+1}`);
     
     res.render('fifaSpelen', {
         name: currentUser.name,
-        club1: comboClubLeague.chosenClubName,
-        leagueAnswer1: comboClubLeague.anwsers[0],
-        leagueAnswer2: comboClubLeague.anwsers[1],
-        leagueAnswer3: comboClubLeague.anwsers[2],
-        leagueAnswer4: comboClubLeague.anwsers[3],
+        clubName: comboClubLeague.chosenName,
+        word1: "IN",
+        word2: "LEAGUE",
+        word3: "",
+        word4: "CLUB",
+        answer1: comboClubLeague.anwsers[0],
+        answer2: comboClubLeague.anwsers[1],
+        answer3: comboClubLeague.anwsers[2],
+        answer4: comboClubLeague.anwsers[3],
+        usersScore: 0
+    });
+});
+
+// next stage in te game where user gets to choice which club is playing in a league 
+app.get('/fifaSpelen/:nextStage', (req :any, res :any) => {
+
+    let possibleClubAnwsers = getClubAnswers(clubLeagueCombo);
+    correctAnwser = possibleClubAnwsers.correctPosition;
+    console.log(`correct league anwser on : ${correctAnwser+1}`);
+
+    res.render('fifaSpelen', {
+        name: currentUser.name,
+        clubName: possibleClubAnwsers.chosenName,
+        word1: "",
+        word2: "CLUB",
+        word3: "NOG IN",
+        word4: "LEAGUE",
+        answer1: possibleClubAnwsers.anwsers[0],
+        answer2: possibleClubAnwsers.anwsers[1],
+        answer3: possibleClubAnwsers.anwsers[2],
+        answer4: possibleClubAnwsers.anwsers[3],
         usersScore: 0
     });
 });
