@@ -1,0 +1,28 @@
+{
+  "name": "fifa-planet",
+  "version": "1.0.0",
+  "description": "Fifa-planet project en de dependencies",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Othmane-El-Aissati/FIFA-PLANET.git"
+  },
+  "author": "fifa-planet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Othmane-El-Aissati/FIFA-PLANET/issues"
+  },
+  "homepage": "https://github.com/Othmane-El-Aissati/FIFA-PLANET#readme"
+}
