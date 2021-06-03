@@ -1,5 +1,5 @@
 import {getClubs, getLeagues } from "./API_Data";
-import {ICombo} from "./interfaces";
+import {ICombo, ILeagueReturnType} from "./interfaces";
 
 const clubAmount :number = 798;
 const leagueAmount :number = 47;
@@ -34,7 +34,7 @@ let getCombo = ():ICombo =>{
 }
 
 // returns 
-function getLeagueAnswers(data: ICombo) :string[]{
+function getLeagueAnswers(data: ICombo) :ILeagueReturnType{
     let randomPlace = getRandomNumber(3); 
     let possibleAnswer :string[] = [];
     
@@ -49,7 +49,7 @@ function getLeagueAnswers(data: ICombo) :string[]{
         }
         possibleAnswer[index] = league.name;
     }
-    return possibleAnswer;
+    return {correctPosition: randomPlace, chosenClubName: data.club, anwsers: possibleAnswer};
 }
 
 let getAllClubsInLeague = (data: ICombo): string[] =>{

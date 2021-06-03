@@ -31,7 +31,6 @@ function addSelectEffectEvent(){
     document.getElementById('answer3').addEventListener('click', anwser3Selected); 
     document.getElementById('answer4').addEventListener('click', anwser4Selected);
 }
-
 function anwser1Selected(){
     PlayButtonSounds(1);
     document.getElementById('answer1-side-one').style.transform = 'rotateX(180deg)'; 
@@ -40,7 +39,7 @@ function anwser1Selected(){
     document.getElementById('answer1-side-two').style.background = '#809fff';
     removeAllSelectEvents();
     setTimeout(() => {
-        checkAnwser('1', 'answer1-side-one', 'answer1-side-two');
+        checkAnwser('0', 'answer1-side-one', 'answer1-side-two');
     }, 4000);
 }
 function anwser2Selected(){
@@ -51,7 +50,7 @@ function anwser2Selected(){
     document.getElementById('answer2-side-two').style.background = '#809fff';
     removeAllSelectEvents();
     setTimeout(() => {
-        checkAnwser('2', 'answer2-side-one', 'answer2-side-two');
+        checkAnwser('1', 'answer2-side-one', 'answer2-side-two');
     }, 4000);
 }
 function anwser3Selected(){
@@ -62,7 +61,7 @@ function anwser3Selected(){
     document.getElementById('answer3-side-two').style.background = '#809fff';
     removeAllSelectEvents();
     setTimeout(() => {
-        checkAnwser('3', 'answer3-side-one', 'answer3-side-two');
+        checkAnwser('2', 'answer3-side-one', 'answer3-side-two');
     }, 4000);
 }
 function anwser4Selected(){
@@ -73,10 +72,9 @@ function anwser4Selected(){
     document.getElementById('answer4-side-two').style.background = '#809fff';
     removeAllSelectEvents();
     setTimeout(() => {
-        checkAnwser('4', 'answer4-side-one', 'answer4-side-two');
+        checkAnwser('3', 'answer4-side-one', 'answer4-side-two');
     }, 4000);
 }
-
 function removeAllSelectEvents(){
     document.getElementById('answer1').removeEventListener('click', anwser1Selected);
     document.getElementById('answer2').removeEventListener('click', anwser2Selected);
@@ -115,14 +113,22 @@ function wrongAnwser(sideOne, sideTwo){
     document.getElementById(sideOne).style.color = '#000';
 }
 
-async function checkAnwser(answer, sideOne, sideTwo){
-    console.log(`anwser fifabtn.js : ${answer}`);
+async function checkAnwser(chosenAnwser, sideOne, sideTwo){
+    
+    // sending a request to check if the chosen anwser is correct ... response expected
     const {data: correct} = await axios.post('/fifaSpelen/check',{
-        answer: answer
+        chosenAnwser: chosenAnwser
     });
+    // after getting a response from the server
     if (correct) {
         goodAnswer(sideOne, sideTwo);
+        
     }else{
         wrongAnwser(sideOne, sideTwo);
+        setTimeout(async() => {
+            console.log('redirecting...')
+            window.location = "/fifaSpelen"
+        }, 2000);
     }
+
 }
