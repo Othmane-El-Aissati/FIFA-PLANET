@@ -35,11 +35,7 @@ let getCombo = ():ICombo =>{
 
 // returns 
 function getLeagueAnswers(data: ICombo) :string[]{
-
-    console.log(`correct league : ${data.league}`);
-
-    let randomPlace = getRandomNumber(3); // random number (0-1-2-3)
-    console.log(`correct place : ${randomPlace}`);
+    let randomPlace = getRandomNumber(3); 
     let possibleAnswer :string[] = [];
     
     for (let index = 0; index < 4; index++) { //4 anwsers so 4 place (0-1-2-3)
@@ -81,6 +77,5 @@ function getClubAnswers(data: ICombo) :string[]{
     }
     return possibleAnswer;
 }
-
 
 export{getCombo, getLeagueAnswers, getClubAnswers}
