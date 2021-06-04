@@ -1,11 +1,11 @@
-import { IUser, IClubs, ILeague} from "./interfaces";
+//import { IUser, IClubs, ILeague} from "./interfaces";
 
 const fs = require('fs'); 
 
-const clubFileLink :string = './data/clubs.json';
-const leagueFileLink :string = './data/leagues.json';
+const clubFileLink = './data/clubs.json';
+const leagueFileLink = './data/leagues.json';
 
-function saveClubsData(dataToSave :IClubs[]) {
+function saveClubsData(dataToSave) {
     try {
         console.log('file searching...');
         if(!fs.existsSync(clubFileLink)){
@@ -21,7 +21,7 @@ function saveClubsData(dataToSave :IClubs[]) {
     }
 }
 
-function saveLeaguesData(dataToSave :ILeague[]) {
+function saveLeaguesData(dataToSave) {
     try {
         console.log('file searching...');
         if(!fs.existsSync(leagueFileLink)){
@@ -65,4 +65,9 @@ function getLeagues(){
 
 
 // saveLeaguesData & saveClubsData to be used during API call, not needed anywhere else
-export{ saveLeaguesData, saveClubsData, getClubs, getLeagues};
+//export{ saveLeaguesData, saveClubsData, getClubs, getLeagues};
+
+exports.saveLeaguesData = saveLeaguesData;
+exports.saveClubsData = saveClubsData;
+exports.getClubs = getClubs;
+exports.getLeagues = getLeagues;

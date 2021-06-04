@@ -1,13 +1,14 @@
-import {getClubs, getLeagues } from "./API_Data";
-import {ICombo, ILeagueReturnType, ISeparatedClubs} from "./interfaces";
+//import {getClubs, getLeagues } from "./API_Data";
+const {getClubs, getLeagues} = require('./API_Data')
+//import {ICombo, ILeagueReturnType, ISeparatedClubs} from "./interfaces";
 
-const clubAmount :number = 798;
-const leagueAmount :number = 47;
-let previousNumber :number = 0;
-let wrongClubsAnwsers :string[] = [];
+const clubAmount = 798;
+const leagueAmount = 47;
+let previousNumber = 0;
+let wrongClubsAnwsers = [];
 
-function getRandomNumber(maxValue :number) {
-    let newNumber :number ;
+function getRandomNumber(maxValue) {
+    let newNumber;
     do {
         // loop continues as long as the new number != to the last number
         newNumber = Math.floor(Math.random() * (maxValue - 0 + 1)) + 0;
@@ -17,7 +18,7 @@ function getRandomNumber(maxValue :number) {
     return newNumber; 
 }
 
-let getCombo = ():ICombo =>{
+let getCombo = () =>{
     let club, clubLeague, league, leagueId;
 
     club = getClubs()[getRandomNumber(clubAmount)];
@@ -30,14 +31,14 @@ let getCombo = ():ICombo =>{
         }
     }
     
-    let data: ICombo = {club: club.name, clubLeague: clubLeague, league: league, leagueId: leagueId}
+    let data = {club: club.name, clubLeague: clubLeague, league: league, leagueId: leagueId}
     return data;
 }
 
 // returns 
-function getLeagueAnswers(data: ICombo) :ILeagueReturnType{
+function getLeagueAnswers(data){
     let randomPlace = getRandomNumber(3); 
-    let possibleAnswers :string[] = [];
+    let possibleAnswers = [];
     
     for (let index = 0; index < 4; index++) { //4 anwsers so 4 place (0-1-2-3)
         
@@ -53,9 +54,9 @@ function getLeagueAnswers(data: ICombo) :ILeagueReturnType{
     return {correctPosition: randomPlace, chosenName: data.club, anwsers: possibleAnswers};
 }
 
-let getAllClubsInLeague = (data: ICombo): ISeparatedClubs => {
-    let correctClubsAnwsers: string[] = [];
-    let wrongClubsAnwsers :string[] = [];
+let getAllClubsInLeague = (data) => {
+    let correctClubsAnwsers = [];
+    let wrongClubsAnwsers = [];
 
     for (let index = 0; index < getClubs().length; index++) {
         if (data.club == getClubs()[index].name) { continue; }
@@ -69,10 +70,10 @@ let getAllClubsInLeague = (data: ICombo): ISeparatedClubs => {
     return { correctClubs: correctClubsAnwsers, wrongClubs: wrongClubsAnwsers };
 }
 
-function getClubAnswers(data: ICombo) :ILeagueReturnType {
+function getClubAnswers(data) {
     let listOfPossibleClubs = getAllClubsInLeague(data);
     let randomPlace = getRandomNumber(3);
-    let possibleAnswers :string[] = [];
+    let possibleAnswers = [];
     
     for (let index = 0; index < 4; index++) { 
         // assigning correct random clubs from the list to the possible anwsers list
@@ -89,4 +90,7 @@ function getClubAnswers(data: ICombo) :ILeagueReturnType {
     return {correctPosition: randomPlace, chosenName: data.league, anwsers: possibleAnswers};
 }
 
-export{getCombo, getLeagueAnswers, getClubAnswers}
+//export{getCombo, getLeagueAnswers, getClubAnswers}
+exports.getCombo = getCombo;
+exports.getLeagueAnswers = getLeagueAnswers;
+exports.getClubAnswers = getClubAnswers;

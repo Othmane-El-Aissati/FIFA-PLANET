@@ -1,9 +1,9 @@
-import { IUser } from "./interfaces";
+//import { IUser } from "./interfaces";
 
 const fs = require('fs'); 
 
-const userFileLink :string = './data/users.json';
-function saveUserData(newUser :IUser){
+const userFileLink = './data/users.json';
+function saveUserData(newUser){
     try {
         // Checking if user.json file exists, if not, create with empty array
         if (!fs.existsSync(userFileLink)) {
@@ -32,8 +32,8 @@ function getUsers(){
     return data;
 }
 
-function updateScore(username :string, newScore :number){
-    let user :IUser[] = getUsers().users;
+function updateScore(username, newScore){
+    let user = getUsers().users;
     console.log(user);
     for (let index = 0; index < user.length; index++) {
         if (user[index].name === username) {
@@ -45,4 +45,8 @@ function updateScore(username :string, newScore :number){
     fs.writeFileSync(userFileLink, JSON.stringify({users: user}, null, 2));
 }
 
-export{ saveUserData, getUsers, updateScore };
+//export{ saveUserData, getUsers, updateScore };
+
+exports.saveUserData = saveUserData;
+exports.getUsers = getUsers;
+exports.updateScore = updateScore;
