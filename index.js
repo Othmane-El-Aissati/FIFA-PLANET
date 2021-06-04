@@ -244,4 +244,6 @@ process.on('SIGTERM', () => {
 });
 
 // Listens for connections on the specified port 
-app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
+//app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
+app.set('port', (process.env.PORT || 5000));
+app.listen(app.get('port'), function() { });
