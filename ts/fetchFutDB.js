@@ -1,4 +1,4 @@
-import { IClubs, ILeague } from "./interfaces";
+//import { IClubs, ILeague } from "./interfaces";
 import { saveLeaguesData, saveClubsData } from "./API_Data";
 
 const fetch = require('node-fetch');
@@ -12,8 +12,8 @@ const fetch = require('node-fetch');
 const API_TOKEN = "4e13cc37-b81e-44ff-9b7c-7713299b703e";
 
 // Function to save clubs-data to local file retrieved from the API call  
-async function fetchClubs() :Promise<void> {
-    let clubs :IClubs[] = [];
+async function fetchClubs() {
+    let clubs = [];
     for (let index = 1; index <= 40; index++) {
         await fetch(`https://futdb.app/api/clubs?page=${index}&limit=30`,{
             headers: {
@@ -21,8 +21,8 @@ async function fetchClubs() :Promise<void> {
                 'X-AUTH-TOKEN': API_TOKEN
             }
         })
-        .then((response :any) => response.json())
-        .then((json :any) => {
+        .then((response) => response.json())
+        .then((json) => {
            clubs.push(...json.items); 
         });
     }
@@ -30,8 +30,8 @@ async function fetchClubs() :Promise<void> {
 };
 
 // Function to save leagues-data to local file retrieved from the API call  
-async function fetchLeagues() :Promise<void> {
-    let leagues :ILeague[] = [];
+async function fetchLeagues() {
+    let leagues = [];
     for (let index = 1; index < 4; index++) {
         await fetch(`https://futdb.app/api/leagues?page=${index}&limit=30`,{
             headers: {
@@ -39,15 +39,15 @@ async function fetchLeagues() :Promise<void> {
                 'X-AUTH-TOKEN': API_TOKEN
             }
         })
-        .then((response :any) => response.json())
-        .then((json :any) => {
+        .then((response) => response.json())
+        .then((json) => {
             leagues.push(...json.items);
         });
     }
     saveLeaguesData(leagues);
 };
 
-async function getClubImage(club_id: number) {
+async function getClubImage(club_id) {
     let image = await fetch(`https://futdb.app/api/clubs/${club_id}/image`,{
         headers: {
             'Accept': 'image/png',

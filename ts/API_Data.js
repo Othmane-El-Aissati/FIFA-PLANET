@@ -1,11 +1,11 @@
-import { IUser, IClubs, ILeague} from "./interfaces";
+//import { IUser, IClubs, ILeague} from "./interfaces";
 
 const fs = require('fs'); 
 
-const clubFileLink :string = './data/clubs.json';
-const leagueFileLink :string = './data/leagues.json';
+const clubFileLink = './data/clubs.json';
+const leagueFileLink = './data/leagues.json';
 
-function saveClubsData(dataToSave :IClubs[]) {
+function saveClubsData(dataToSave) {
     try {
         console.log('file searching...');
         if(!fs.existsSync(clubFileLink)){
@@ -21,7 +21,7 @@ function saveClubsData(dataToSave :IClubs[]) {
     }
 }
 
-function saveLeaguesData(dataToSave :ILeague[]) {
+function saveLeaguesData(dataToSave) {
     try {
         console.log('file searching...');
         if(!fs.existsSync(leagueFileLink)){

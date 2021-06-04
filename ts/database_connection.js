@@ -1,18 +1,18 @@
 const {MongoClient, ObjectId} = require('mongodb');
-import { IUser } from "./interfaces";
+//import { IUser } from "./interfaces";
 
 // Link to MongoDB
-const mongoDB_URI :any = 'mongodb+srv://TestUser1:IAmATestUser@webontwikkelingdb.bcnwb.mongodb.net/myWebOntwikkelingDB?retryWrites=true&w=majority';
+const mongoDB_URI = 'mongodb+srv://TestUser1:IAmATestUser@webontwikkelingdb.bcnwb.mongodb.net/myWebOntwikkelingDB?retryWrites=true&w=majority';
 
 // MongoDB Client Connection
 const client = new MongoClient( mongoDB_URI , { useUnifiedTopology: true });
 let openConnection = async() => { await client.connect(); }
 
 // Database name & collection name
-const DATABASE :string = 'FifaPlanetDB';
-const COLLECTION :string = 'Users';
+const DATABASE = 'FifaPlanetDB';
+const COLLECTION = 'Users';
 
-let addUserToDB = async (userData :IUser) => {
+let addUserToDB = async (userData) => {
     try {
         //await client.connect()
         await client.db(DATABASE).collection(COLLECTION).insertOne(userData);
@@ -40,8 +40,8 @@ let addUserToDB = async (userData :IUser) => {
     return data;
 }*/
 
-const getUsersFromDB = async(): Promise<IUser[]> =>{
-    let data: IUser[] = [];
+const getUsersFromDB = async() =>{
+    let data = [];
     try {
         //await client.connect()
         let users = await client.db(DATABASE).collection(COLLECTION).find({});
@@ -56,7 +56,7 @@ const getUsersFromDB = async(): Promise<IUser[]> =>{
     return data;
 }
 
-let updateUserScore = async(userID :number, newScore :number) => {
+let updateUserScore = async(userID, newScore) => {
     try {
         
         // Finding user's data
