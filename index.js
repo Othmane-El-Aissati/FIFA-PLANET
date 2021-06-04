@@ -1,8 +1,8 @@
 // Importing files
-import { saveUserData, getUsers, updateScore } from './ts/userData';
-import { ICombo, IUser, ICurrentUser, ILeagueReturnType } from "./ts/interfaces";
-import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
-import {addUserToDB, getUsersFromDB, openConnection, updateUserScore} from "./ts/database_connection";
+//import { saveUserData, getUsers, updateScore } from './ts/userData';
+//import { ICombo, IUser, ICurrentUser, ILeagueReturnType } from "./ts/interfaces";
+import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions.js";
+import {addUserToDB, getUsersFromDB, openConnection, updateUserScore} from "./ts/database_connection.js";
 
 const {MongoClient} = require('mongodb');
 const express = require('express');
