@@ -9,7 +9,7 @@ const express = require('express');
 const ejs = require('ejs');
 const axios = require('axios');
 
-const PORT :number =  3000;
+const PORT =  3000;
 const app = express();
 
 // Server properties set-up
@@ -30,20 +30,20 @@ let connect = async () => {
 }
 connect();
 
-let status: boolean;
-let nav: string;
+let status;
+let nav;
 
-let comboClubLeague :ILeagueReturnType;
-let clubLeagueCombo :ICombo;
-let correctAnwser :number;
-let score :number;
-let userID :number;
+let comboClubLeague;
+let clubLeagueCombo;
+let correctAnwser;
+let score;
+let userID;
 
-let currentUser: ICurrentUser = {name: "", travel: ""};
+let currentUser = {name: "", travel: ""};
 
 
 // Routes to the specified path with the specified callback functions
-app.get('/', (req :any, res :any) => {
+app.get('/', (req, res) => {
     if (status == false || status == undefined) {
         nav = "navigatieFalse"
     }
@@ -53,7 +53,7 @@ app.get('/', (req :any, res :any) => {
     res.render('index', {navigatie: nav});
 });
 
-app.get('/index', (req :any, res :any) => {
+app.get('/index', (req, res) => {
     if (status == false || status == undefined) {
         nav = "navigatieFalse"
     }
@@ -63,7 +63,7 @@ app.get('/index', (req :any, res :any) => {
     res.render('index', {navigatie: nav, name: currentUser.name});
 });
 
-app.get('/about', (req :any, res :any) => {
+app.get('/about', (req, res) => {
     if (status == false || status == undefined) {
         nav = "navigatieFalse"
     }
@@ -73,7 +73,7 @@ app.get('/about', (req :any, res :any) => {
     res.render('about', {navigatie: nav, name: currentUser.name});
 });
 
-app.get('/login', (req :any, res :any) => {
+app.get('/login', (req, res) => {
     if (status == false || status == undefined) {
         nav = "navigatieFalse"
     }
@@ -83,25 +83,25 @@ app.get('/login', (req :any, res :any) => {
     res.render('login', {navigatie: nav, status: status});
 });
 
-app.post('/login', async(req :any, res :any) => {
+app.post('/login', async(req, res) => {
     if (status == false || status == undefined) {
         nav = "navigatieFalse"
     }
     else{
         nav = "navigatieTrue"
     }
-    let username: string = req.body.username;
-    let password: string = req.body.password;
-    let check: number = 0;
+    let username = req.body.username;
+    let password = req.body.password;
+    let check = 0;
     //let accounts: IUser[] = getUsers().users;
     //let accounts: IUser[] = getUsersFromDB();
-    let accounts: IUser[] = await getUsersFromDB();
+    let accounts = await getUsersFromDB();
     for (let index = 0; index < accounts.length; index++) {
         if (username == accounts[index].name && password == accounts[index].password) {
             check = 1;
             currentUser = {name: accounts[index].name, travel: accounts[index].travel}
             score = accounts[index].score;
-            userID = accounts[index]._id!;
+            userID = accounts[index]._id;
         }
     }
     if (check == 1) {
@@ -114,7 +114,7 @@ app.post('/login', async(req :any, res :any) => {
     }
 });
 
-app.get('/registratie', (req :any, res :any) => {
+app.get('/registratie', (req, res) => {
     if (status == false || status == undefined) {
         nav = "navigatieFalse"
     }
@@ -124,16 +124,16 @@ app.get('/registratie', (req :any, res :any) => {
     res.render('registratie', {navigatie: nav});
 });
 
-app.post('/registratie' ,(req :any, res :any) => {
+app.post('/registratie' ,(req, res) => {
     // Extracting user info to be saved in the DB
-    let username: string = req.body.username;
-    let password: string = req.body.password;
-    let passwordRepeat: string = req.body.pswRepeat;
-    let email: string = req.body.email;
-    let travel: string = req.body.travel;
+    let username = req.body.username;
+    let password = req.body.password;
+    let passwordRepeat = req.body.pswRepeat;
+    let email = req.body.email;
+    let travel = req.body.travel;
 
     if (password == passwordRepeat) {
-        let account: IUser = {name: username, password: password, email: email, travel: travel, score: 0}
+        let account = {name: username, password: password, email: email, travel: travel, score: 0}
         addUserToDB(account);
         //saveUserData(account)
         //accounts.push(account)
@@ -145,23 +145,23 @@ app.post('/registratie' ,(req :any, res :any) => {
 
 });
 
-app.get('/fifa', (req :any, res :any) => {
+app.get('/fifa', (req, res) => {
     res.render('fifa', {name: currentUser.name, travel: currentUser.travel});
 });
 
-app.get('/fortnite', (req :any, res :any) => {
+app.get('/fortnite', (req, res) => {
     res.render('fortnite', {name: currentUser.name, travel: currentUser.travel});
 });
 
-app.get('/lego', (req :any, res :any) => {
+app.get('/lego', (req, res) => {
     res.render('lego', {name: currentUser.name, travel: currentUser.travel});
 });
 
-app.get('/lotr', (req :any, res :any) => {
+app.get('/lotr', (req, res) => {
     res.render('lotr', {name: currentUser.name, travel: currentUser.travel});
 });
 
-app.get('/fifaSpelen', (req :any, res :any) => {
+app.get('/fifaSpelen', (req, res) => {
 
     // globally assign the combination of club with their league
     clubLeagueCombo = getCombo();
@@ -186,7 +186,7 @@ app.get('/fifaSpelen', (req :any, res :any) => {
 });
 
 // next stage in te game where user gets to choice which club is playing in a league 
-app.get('/fifaSpelen/:nextStage', (req :any, res :any) => {
+app.get('/fifaSpelen/:nextStage', (req, res) => {
 
     let possibleClubAnwsers = getClubAnswers(clubLeagueCombo);
     correctAnwser = possibleClubAnwsers.correctPosition;
@@ -208,7 +208,7 @@ app.get('/fifaSpelen/:nextStage', (req :any, res :any) => {
 });
 
 // checking the answer, if correct return true (color changes to green) else false (color changes to red)
-app.post('/fifaSpelen/check', (req: any, res: any) => {
+app.post('/fifaSpelen/check', (req, res) => {
 
     let chosenAnwser = req.body.chosenAnwser;
 
@@ -222,12 +222,12 @@ app.post('/fifaSpelen/check', (req: any, res: any) => {
     }
 })
 
-app.post('/fifaSpelen/stopGame', async(req: any, res: any) => {
+app.post('/fifaSpelen/stopGame', async(req, res) => {
     await updateUserScore(userID, score);
     res.json({newScore: score});
 })
 
-app.get('/logout', (req :any, res :any) => {
+app.get('/logout', (req, res) => {
     status = false;
     res.redirect('index');
 });
