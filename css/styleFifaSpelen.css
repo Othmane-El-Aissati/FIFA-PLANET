@@ -265,11 +265,11 @@ hr{
 	height: fit-content;
 	position: relative;
 }
-.button-container{
+.button-container, .stop-container{
     display:flex;
     justify-content: center;
 }
-.box{
+.box, .stop{
 	margin: 5px;
 	width: var(--answer-btn-width);
    	height: var(--answer-btn-heigth);

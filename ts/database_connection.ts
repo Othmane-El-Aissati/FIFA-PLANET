@@ -58,7 +58,7 @@ const getUsersFromDB = async(): Promise<IUser[]> =>{
 
 let updateUserScore = async(userID :number, newScore :number) => {
     try {
-    
+        
         // Finding user's data
         await client.db(DATABASE).collection(COLLECTION).updateOne(
             { _id: ObjectId(userID) }, 
@@ -66,7 +66,7 @@ let updateUserScore = async(userID :number, newScore :number) => {
             { upsert: true } // makes een new score if does not exists
         );
 
-        await client.db(DATABASE).collection(COLLECTION).updateScore    
+        console.log('User score saved...');    
     } catch (error) {
         console.error(error);
     }

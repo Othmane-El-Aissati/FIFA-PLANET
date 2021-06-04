@@ -1,10 +1,10 @@
 // Importing files
-const {MongoClient} = require('mongodb');
 import { saveUserData, getUsers, updateScore } from './ts/userData';
 import { ICombo, IUser, ICurrentUser, ILeagueReturnType } from "./ts/interfaces";
 import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions";
 import {addUserToDB, getUsersFromDB, openConnection, updateUserScore} from "./ts/database_connection";
 
+const {MongoClient} = require('mongodb');
 const express = require('express');
 const ejs = require('ejs');
 const axios = require('axios');
@@ -25,12 +25,10 @@ app.use(express.static('data'));
 app.use(express.json({ limit: '1mb' })); // limit of the 'to be' extracted data
 app.use(express.urlencoded({ extended: true}));
 
-
 let connect = async () => {
     await openConnection();
 }
 connect();
-
 
 let status: boolean;
 let nav: string;
@@ -39,7 +37,7 @@ let comboClubLeague :ILeagueReturnType;
 let clubLeagueCombo :ICombo;
 let correctAnwser :number;
 let score :number;
-let userID;
+let userID :number;
 
 let currentUser: ICurrentUser = {name: "", travel: ""};
 
@@ -103,7 +101,7 @@ app.post('/login', async(req :any, res :any) => {
             check = 1;
             currentUser = {name: accounts[index].name, travel: accounts[index].travel}
             score = accounts[index].score;
-            userID = accounts[index]._id;
+            userID = accounts[index]._id!;
         }
     }
     if (check == 1) {
@@ -183,7 +181,7 @@ app.get('/fifaSpelen', (req :any, res :any) => {
         answer2: comboClubLeague.anwsers[1],
         answer3: comboClubLeague.anwsers[2],
         answer4: comboClubLeague.anwsers[3],
-        usersScore: 0
+        usersScore: score
     });
 });
 
@@ -205,7 +203,7 @@ app.get('/fifaSpelen/:nextStage', (req :any, res :any) => {
         answer2: possibleClubAnwsers.anwsers[1],
         answer3: possibleClubAnwsers.anwsers[2],
         answer4: possibleClubAnwsers.anwsers[3],
-        usersScore: 0
+        usersScore: score
     });
 });
 
@@ -214,11 +212,19 @@ app.post('/fifaSpelen/check', (req: any, res: any) => {
 
     let chosenAnwser = req.body.chosenAnwser;
 
+    console.log({score})
+
     if (Number(chosenAnwser) === correctAnwser) {
+        score++; // +1 point if anwsered correctly
         res.json(true);
     }else{
         res.json(false);
     }
+})
+
+app.post('/fifaSpelen/stopGame', async(req: any, res: any) => {
+    await updateUserScore(userID, score);
+    res.json({newScore: score});
 })
 
 app.get('/logout', (req :any, res :any) => {
