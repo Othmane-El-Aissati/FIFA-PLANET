@@ -1,5 +1,5 @@
-import {getClubs, getLeagues } from "./API_Data";
-const {getCLubs, getLeagues} = require('./API_Data')
+//import {getClubs, getLeagues } from "./API_Data";
+const {getClubs, getLeagues} = require('./API_Data')
 //import {ICombo, ILeagueReturnType, ISeparatedClubs} from "./interfaces";
 
 const clubAmount = 798;

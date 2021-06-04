@@ -1,5 +1,5 @@
 //import { IClubs, ILeague } from "./interfaces";
-import { saveLeaguesData, saveClubsData } from "./API_Data";
+//import { saveLeaguesData, saveClubsData } from "./API_Data";
 const {saveLeaguesData, saveClubsData} = require('./API_Data')
 
 const fetch = require('node-fetch');
