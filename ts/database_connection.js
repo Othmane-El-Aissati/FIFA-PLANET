@@ -72,4 +72,9 @@ let updateUserScore = async(userID, newScore) => {
     }
 };
 
-export{addUserToDB, getUsersFromDB, openConnection, updateUserScore};
+//export{addUserToDB, getUsersFromDB, openConnection, updateUserScore};
+
+exports.addUserToDB = addUserToDB;
+exports.getUsersFromDB = getUsersFromDB;
+exports.openConnection = openConnection;
+exports.updateUserScore = updateUserScore;

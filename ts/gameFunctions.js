@@ -1,4 +1,5 @@
 import {getClubs, getLeagues } from "./API_Data";
+const {getCLubs, getLeagues} = require('./API_Data')
 //import {ICombo, ILeagueReturnType, ISeparatedClubs} from "./interfaces";
 
 const clubAmount = 798;
@@ -89,4 +90,7 @@ function getClubAnswers(data) {
     return {correctPosition: randomPlace, chosenName: data.league, anwsers: possibleAnswers};
 }
 
-export{getCombo, getLeagueAnswers, getClubAnswers}
+//export{getCombo, getLeagueAnswers, getClubAnswers}
+exports.getCombo = getCombo;
+exports.getLeagueAnswers = getLeagueAnswers;
+exports.getClubAnswers = getClubAnswers;

@@ -45,4 +45,8 @@ function updateScore(username, newScore){
     fs.writeFileSync(userFileLink, JSON.stringify({users: user}, null, 2));
 }
 
-export{ saveUserData, getUsers, updateScore };
+//export{ saveUserData, getUsers, updateScore };
+
+exports.saveUserData = saveUserData;
+exports.getUsers = getUsers;
+exports.updateScore = updateScore;

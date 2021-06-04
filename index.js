@@ -1,8 +1,10 @@
 // Importing files
 //import { saveUserData, getUsers, updateScore } from './ts/userData';
 //import { ICombo, IUser, ICurrentUser, ILeagueReturnType } from "./ts/interfaces";
-import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions.js";
-import {addUserToDB, getUsersFromDB, openConnection, updateUserScore} from "./ts/database_connection.js";
+//import {getCombo, getLeagueAnswers, getClubAnswers} from "./ts/gameFunctions.js";
+const {getCombo, getLeagueAnswers, getClubAnswers} = require('./ts/gameFunctions')
+//import {addUserToDB, getUsersFromDB, openConnection, updateUserScore} from "./ts/database_connection.js";
+const {addUserToDB, getUsersFromDB, openConnection, updateUserScore} = require('./ts/database_connection')
 
 const {MongoClient} = require('mongodb');
 const express = require('express');
@@ -243,5 +245,3 @@ process.on('SIGTERM', () => {
 
 // Listens for connections on the specified port 
 app.listen(app.get('port'), () => console.log( '[SERVER] http://localhost:' + app.get('port')));
-
-export{  };

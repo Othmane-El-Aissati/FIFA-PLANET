@@ -1,5 +1,6 @@
 //import { IClubs, ILeague } from "./interfaces";
 import { saveLeaguesData, saveClubsData } from "./API_Data";
+const {saveLeaguesData, saveClubsData} = require('./API_Data')
 
 const fetch = require('node-fetch');
 
@@ -63,4 +64,6 @@ getClubImage(10);
 // fetchClubs();
 // fetchLeagues();
 
-export{ getClubImage };
+//export{ getClubImage };
+
+exports.getClubImage = getClubImage;

@@ -65,4 +65,9 @@ function getLeagues(){
 
 
 // saveLeaguesData & saveClubsData to be used during API call, not needed anywhere else
-export{ saveLeaguesData, saveClubsData, getClubs, getLeagues};
+//export{ saveLeaguesData, saveClubsData, getClubs, getLeagues};
+
+exports.saveLeaguesData = saveLeaguesData;
+exports.saveClubsData = saveClubsData;
+exports.getClubs = getClubs;
+exports.getLeagues = getLeagues;
